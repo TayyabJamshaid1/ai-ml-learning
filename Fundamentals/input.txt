@@ -1,0 +1,4 @@
+b=input("Enter a number: ")
+v=input("Enter another number: ")
+sum=int(b)+int(v) #by default input() function takes input as string, so we need to convert it into integer using int() function
+print("The sum of the two numbers is: ",sum)

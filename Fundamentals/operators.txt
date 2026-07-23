@@ -1,0 +1,27 @@
+when we do 8+9=17
+//here 8 and 9 are operands,+ is known as operator 
+
+
+
+//comparison operators allways return boolean
+b=3>5
+print(b) //false
+
+
+//logical operator
+b= True or False
+print(b) //true      //in case of or ,dono values mei sy koi ek true huna zrori ha
+
+b=False and True
+print(b)      //   false because it requires both to be true
+
+b=False and False
+print(b) //true
+
+
+//!= operator
+b=not(True)
+print(b) //false     
+
+b=not(False)
+print(b) //true
