@@ -40,7 +40,13 @@ j=str(d)
 print(j)  #output: 78 as string
 
 
-b=input("Enter a number: ")
-v=input("Enter another number: ")
-sum=int(b)+int(v) #by default input() function takes input as string, so we need to convert it into integer using int() function
-print("The sum of the two numbers is: ",sum)
+# b=input("Enter a number: ")
+# v=input("Enter another number: ")
+# sum=int(b)+int(v) #by default input() function takes input as string, so we need to convert it into integer using int() function
+# print("The sum of the two numbers is: ",sum)
+
+
+q=input("Enter a number: ")
+w=input("Enter another number: ")
+e=int(q)%int(w)
+print("the remainder is ",e)
