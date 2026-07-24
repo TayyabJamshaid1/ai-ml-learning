@@ -1,0 +1,133 @@
+Python lists are containers to store a set of values of any data type.
+
+friends=["apple","grapes",23,False,12.3]
+friends[0]="banana" #unlike strings,lists are mutable
+print(friends) #output : ['banana', 'grapes', 23, False] ,it changes the original array
+
+
+catchData=friends[1:4] #output:['grapes', 23, False] INDEX 1 sy start kro aur 4 sy phly phly 3 tak jao
+
+
+Imp: string k upr koi b method run krny sy original string change ni hu while list k upr method run krny sy list update hu jai gi
+
+List methods
+
+1-Append
+friends=["apple","grapes",23,False,12.3]
+friends.append("Kesa") #output : ['apple', 'grapes', 23, False, 12.3, 'Kesa']
+print(friends)
+
+2-Sort
+l1=[2,9,3,1]
+l1.sort()
+print(l1)  #output : [1, 2, 3, 9]
+
+3-Reverse
+l1=[2,9,3,1]
+l1.reverse()
+print(l1)  #output : [1, 3, 9, 2]
+
+4-Insert
+Add item in array in any provided INDEX
+
+l1=[2,9,3,1]
+l1.insert(2,"Tayyab")
+print(l1)  # output : [2, 9, 'Tayyab', 3, 1]
+
+
+5-pop
+
+Way 1: Pass value in pop
+l1=[2,9,3,1]
+l1.pop(2)
+print(l1) # output : [2, 9, 1]
+ 
+Way 2: Without pass any value
+l1=[2,9,3,1]
+l1.pop()
+print(l1) # output : [2, 9, 3] Without passing any value
+
+6-remove
+l1=[2,9,3,1]
+l1.remove(1)  # output : [2, 9, 3] remove method remove the first match value from array
+print(l1)
+
+
+--------------------------------------------------------------
+Tuples
+Tuples are written in ()
+tup=(23,44,55,66)
+print(tup) 
+
+IMP:Diff btw tuples and array is that tuples are immutable like strings while lists are mutable
+
+Imp Scenario:
+tup=(23) # if given only 1 value,it will not consider it as tuple,it will consider it as int value
+print(tup) # output 23 ,consider it as int value ,not as a tuple
+
+To resolve this ,we have 2 possibilities
+
+Way 1:
+If tuple has only 1 value,add comma with it
+tup=(23,)
+print(tup) # output :  (23,) now it consider it as a tuple
+
+Way 2:
+Add another values too
+tup=(23,11,113)
+print(tup) # output : (23,11,113) now it consider it as a tuple
+
+Tuple methods:
+
+1)count
+tup=(23,11,113)
+print(tup.count(11)) # it counts how many time 11 is appeared in tupple
+
+2)INDEX
+tup=(23,11,113)
+print(tup.index(11)) # it tells index of passed value in tuple
+
+3)Repeated
+tup=(23,11,113)
+repeat=tup*3
+print(repeat) # (23, 11, 113, 23, 11, 113, 23, 11, 113) ,it multiplies all the passed values by 3 times
+
+4)Check existence of value by "in" 
+tup=(23,11,113)
+print(11 in tup) # output : true
+
+5)Concatenate
+tup1=(23,11,113)
+tup2=(19,21,13)
+concatenate=tup1+tup2
+print(concatenate) # output : (23, 11, 113, 19, 21, 13)
+
+6)len
+tup=(23,11,113)
+print(len(tup)) # output 3
+
+7)min & max
+tup=(23,11,113)
+print(min(tup)) # output 11
+print(max(tup)) # output 112
+
+8) slice
+tup=(23,11,113,33,211)
+val=tup[1:4]
+print(val)  # output : (11, 113, 33)
+
+9)Unpacking tuple values
+tup=(23,11,113,33,211)
+a,b,c,d,e=tup
+print(a,b,c,d,e) # output : 23 11 113 33 211
+
+
+
+
+
+
+------------------
+Problem :
+1. Write a program to sum a list with 4 numbers.(list k andr tamam numbers ko add kr du)
+a = (7, 0, 8, 0, 0, 9)
+print(sum(a))

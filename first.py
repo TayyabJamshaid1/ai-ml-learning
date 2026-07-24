@@ -50,6 +50,7 @@ print(j)  #output: 78 as string
 # w=input("Enter another number: ")
 # e=int(q)%int(w)
 # print("the remainder is ",e)
-name="Tayyab  Jamshaid"
-newString=name.replace("  "," ") 
-print(newString)
+
+
+a = (7, 0, 8, 0, 0, 9)
+print(sum(a))
