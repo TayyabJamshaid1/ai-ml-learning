@@ -1,0 +1,138 @@
+String is a data type in python.
+String is a sequence of characters enclosed in quotes.
+We can primarily write a string in these three ways.
+IMP: strings are immutable ,agr is k upr ap koi b method apply krty hu tu original string ko koi farq ni prta 
+
+a = 'harry' # Single quoted string
+b = "harry" # Double quoted string
+c = '''harry''' # Triple quoted string
+
+
+String Slicing
+A string in python can be sliced for getting a part of the strings.
+
+Example 1:
+df="Tayyab"
+sd=df[0:3]   //last index value is not included
+print(sd)  #output: Tay   
+
+
+Example 2:
+df="Tayyab"
+sd=df[1:4]
+print(sd)  #output: ayy
+
+Example 3:
+df="Tayyab"
+   -6-5-4-3-2-1
+ 
+sd=df[-4:-1]
+print(sd)  #output: yya
+
+
+Scenarios:
+in case  [:1]  //first value is not avaiable,now it will start from 0
+  if   [1:]  //last value is not avaiable,its mean its value is array.length
+
+
+  --------------------
+Slicing with Skip Value:
+
+df="TayyabJamshaid"
+sd=df[1:8:3]   #phly index 1 sy 8 index sy phly tak ki values pkro,aur phr jo third number pr number diya ha us mei sy 1 minimize kr k utni values ko skip pr du
+print(sd,"sd")  #aaa output
+
+
+-------------------
+
+String functions
+name="TayyabJamshaid"
+
+print(len(name))
+print(name.startswith("Tay")) #if starts with passed string,return true else false
+print(name.endswith("aid"))  #if ends with passed string,return true else false
+print(name.capitalize())  #only make first word capital
+
+replace:
+newString=name.replace("Jamshaid","Kesa")
+print(newString)  #TayyabKesa
+
+find:
+newString=name.find("Jamshaid") #it returns the index from where our passed string starts,
+print(newString)
+
+count:
+newString=name.count("a") #pori string me "a" kitni dfa aya ha,count kr k btaiy ga
+print(newString)
+
+-----------
+F's string
+str1="How are "
+str2="Tayyab"
+print(f"Hello classmates,{str1} {str2}") #by f string ,we can easily concatenate strings
+---------
+Escape sequence characters
+
+name="Tayyab Jamshaid is
+a good boy"       #i cannot write a string in python like this,it will give error,to resolve this,we have to use Escape sequence characters
+
+print(name)   
+
+Solution:
+
+a)\n  (breaks the string)
+name="Tayyab Jamshaid is \n a good boy thats \n great"
+print(name)
+output:
+Tayyab Jamshaid is 
+ a good boy thats 
+ great
+
+ b)add double/single quotes in string
+ Way 1:
+ name="Tayyab Jamshaid is \n a good boy thats \n 'great'"
+print(name)
+
+Way 2:
+name="Tayyab Jamshaid is \n a good boy thats \n \"great\""
+print(name)
+
+c)\t
+name="Tayyab Jamshaid is \n a good boy thats \t \"great\"" #if we have to add space like tab
+print(name)
+
+
+---------------------------------
+practice set:
+
+a)Extract the username after "Good After noon" text
+name="Good After noon Tayyab Jamshaid"
+print(len("Good After noon "))
+print(len(name))
+strio=name[16:31]
+print(strio)
+
+b) Write a program to fill in a letter template given below with name and date.
+letter = '''
+Dear <|Name|>,
+You are selected!
+<|Date|>
+'''
+
+Solution:
+
+str1=letter.replace("<|Name|>","Tayyab")
+str2=str1.replace("<|Date|>","August 29,2020")
+print(str2)
+
+
+c)Write a program to detect double space in a string.
+
+Solution:
+name="Tayyab  Jamshaid"
+newString=name.find(" ") 
+print(newString)
+
+d)Replace the double space from problem c with single spaces.
+newString=name.replace("  "," ") 
+print(newString)

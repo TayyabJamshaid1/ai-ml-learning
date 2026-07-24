@@ -46,7 +46,10 @@ print(j)  #output: 78 as string
 # print("The sum of the two numbers is: ",sum)
 
 
-q=input("Enter a number: ")
-w=input("Enter another number: ")
-e=int(q)%int(w)
-print("the remainder is ",e)
+# q=input("Enter a number: ")
+# w=input("Enter another number: ")
+# e=int(q)%int(w)
+# print("the remainder is ",e)
+name="Tayyab  Jamshaid"
+newString=name.replace("  "," ") 
+print(newString)
