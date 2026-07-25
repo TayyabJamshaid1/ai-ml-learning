@@ -58,19 +58,14 @@ data={
     "billi":"Cat",
     "larka":"boy"
 }
-e={}
-num1=input("Enter user name 1 : ")
-num2=input("Enter language : ")
-e.update({num1:num2})
-num3=input("Enter user name 2 : ")
-num4=input("Enter language : ")
-e.update({num3:num4})
-num5=input("Enter user name 3 : ")
-num6=input("Enter language : ")
-e.update({num5:num6})
-num7=input("Enter user name 4 : ")
-num8=input("Enter language : ")
-e.update({num7:num8})
 
-print(e)
+friends=["apple","grapes",23,False,12.3]
+user=input("Enter user name ")
+
+if (user in friends):
+    print("username exist in array")
+
+else :
+    print("username does not exist in array")    
+
 

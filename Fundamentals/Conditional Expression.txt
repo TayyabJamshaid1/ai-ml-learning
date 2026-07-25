@@ -1,0 +1,75 @@
+If Else And Elif In Python
+If else and elif statements are a multiway decision taken by our program due to certain conditions in our code.
+
+Syntax:
+if(condition1): # if condition1 is True
+ print("yes")
+elif(condition2): # if condition2 is True
+ print("no")
+else: # otherwise
+ print("maybe")
+
+
+ Write a program to print yes when the age entered by the user is greater than or equal to 18.
+
+givenAge=34
+userage=int(input("Enter user age "))
+if (userage<18):  
+    print("Nabalig") //statement if keyword k agay he start kary gy
+    print("hh")      //jaha sy upr wali statement start ki ha wahi sy dosri start kary gy
+elif (userage<30):
+    print("jawan")
+elif (userage<50):
+    print("going down")
+else :
+    print("Budha")    
+
+-----------------------------------
+Imp Scenario:
+
+Both the if statements are in dependent to each other
+givenAge=34
+userage=int(input("Enter user age "))
+#start of if statement # 1
+if (userage%2==0):
+   print("Even")
+#end of if statement # 1
+#start of if statement # 2
+if (userage<18):
+    print("Nabalig")
+    print("hh")   
+elif (userage<30):
+    print("jawan")
+elif (userage<50):
+    print("going down")
+else :
+    print("Budha")    
+#end of if statement # 2
+
+--------------------------------
+Problems
+
+Problem 1:
+Write a program to find whether a given username contains less than 10 characters or not.
+
+Solution:
+user=input("Enter user name ")
+
+if (len(user)<10):
+    print("username length less than 10")
+
+else :
+    print("Username length is greater than 10")    
+
+Problem 2:
+Write a program which finds out whether a given name is present in a list or not.    
+
+Solution:
+friends=["apple","grapes",23,False,12.3]
+user=input("Enter user name ")
+
+if (user in friends):
+    print("username exist in array")
+
+else :
+    print("username does not exist in array")  
