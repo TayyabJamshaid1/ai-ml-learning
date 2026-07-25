@@ -52,5 +52,25 @@ print(j)  #output: 78 as string
 # print("the remainder is ",e)
 
 
-a = (7, 0, 8, 0, 0, 9)
-print(sum(a))
+
+data={
+    "kursi":"chair",
+    "billi":"Cat",
+    "larka":"boy"
+}
+e={}
+num1=input("Enter user name 1 : ")
+num2=input("Enter language : ")
+e.update({num1:num2})
+num3=input("Enter user name 2 : ")
+num4=input("Enter language : ")
+e.update({num3:num4})
+num5=input("Enter user name 3 : ")
+num6=input("Enter language : ")
+e.update({num5:num6})
+num7=input("Enter user name 4 : ")
+num8=input("Enter language : ")
+e.update({num7:num8})
+
+print(e)
+

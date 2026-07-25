@@ -1,0 +1,140 @@
+Dictionary
+
+Key ,value pair ko python me dictionary kaha jata ha
+
+data={
+    "harry":100,
+    "usman":300
+}
+
+print(data,type(data)) #output : {'harry': 100, 'usman': 300} <class 'dict'>
+
+print(data["harry"]); #output: 100
+
+Imp: dictionary is mutable
+
+dictionary methods:-
+
+a)items
+Returns a list of (key,value) tuples.
+
+data={
+    "harry":100,
+    "usman":300
+}
+
+print(data.items()) # output : ict_items([('harry', 100), ('usman', 300)])
+
+b)Keys
+Returns a list of (keys) tuples.
+
+data={
+    "harry":100,
+    "usman":300
+}
+
+print(data.keys()) # output : dict_keys(['harry', 'usman'])
+
+c)values
+Returns a list of (values) tuples.
+
+data={
+    "harry":100,
+    "usman":300
+}
+
+print(data.values()) # output : dict_values([100, 300])
+
+e)clear
+data={
+    "harry":100,
+    "usman":300
+}
+data.clear()
+print(data) # output :{} remove all the obj keys and values
+
+f)shallow copy
+Way 1:
+data={
+    "ali":100,
+    "usman":300
+}
+data2=data.copy()
+print(data2) # output : {'ali': 100, 'usman': 300}
+
+Way 2:
+data={
+    "ali":100,
+    "usman":300
+}
+data2=data.copy()
+data2.update({"usman":100,"mam":800})
+print(data2,data) # output :{'ali': 100, 'usman': 100, 'mam': 800} {'ali': 100, 'usman': 300} changes in data2 will not reflect in data
+
+g)fromkeys
+data={
+    "ali":100,
+    "usman":300
+}
+key=["a","b","c"]
+data2=data.fromkeys(key,0)
+print(data2) # output : {'a': 0, 'b': 0, 'c': 0}
+
+h)popitem
+data={
+    "ali":100,
+    "usman":300
+}
+data2=data.popitem() # remove the last item in dictionary and return remove item in tuple
+print(data2,data) # output : ('usman', 300) {'ali': 100}
+
+i)pop
+Pop removes the item and return the value of remove item
+data={
+    "ali":100,
+    "usman":300
+}
+data2=data.pop("ali") # it removes the ali key from dict and return its value
+print(data2,data) # output : 100 {'usman': 300}
+
+Imp:if that key is not avaiable in dictionary,it gives the error,to avoid the error ,we give another default parameter in pop to avoid error
+data2=data.pop("ali",300) # it removes the ali key from dict and return its value,if "ali" is not avaiable,it will return 300
+print(data2,data)
+
+d)How to update dictionary?
+
+Example 1:
+data={
+    "harry":100,
+    "usman":300
+}
+data.update({"harry":99})
+print(data) # output :{'harry': 99, 'usman': 300}
+
+Example 2:
+data={
+    "harry":100,
+    "usman":300,
+    0:88
+}
+data.update({0:99})
+print(data) # output :{'harry': 100, 'usman': 300,0:99}
+
+Example 3:
+data={
+    "harry":100,
+    "usman":300
+}
+data.update({"noman":199}) #in update,you can also add new fields
+print(data) # output :{'harry': 99, 'usman': 300,'noman':199}
+
+e)How to get specific key value?
+data={
+    "harry":100,
+    "usman":300
+}
+
+print(data.get("harry")) # output : 100 ,if found return that key value,if not return none
+
+Imp: Diff btw data.get("harry") & data["harry"]?
+we can also get the key value by data["harry"] but the difference btw both methods is that in data.get("harry"),if harry key is not exist,then it return none while in data["harry"],if key does not exist ,it gives error

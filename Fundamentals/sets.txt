@@ -1,0 +1,175 @@
+Set is a collection of non-repetitive elements.
+
+=>dictionary & set both use curly brackets{}
+=>d={} //it will consider empty dictionary
+=>now to make empty new set,we use  d=set(),now d is a new set
+=>dictionary works with key value pair while set contains only values
+=>If set contains repetitive values,it will not consider it and return only unique values
+s={12,88,12,"kesa"}
+print(s) # output : {88, 'kesa', 12} ,it will ignore another 12
+=>sets are unordered,agr apny set me {1,2,3,4} dia tu zrori ni ye sequence me he ye dy,it will change their order
+=>sets are unindexed (u cannot access it by index)
+=>There is no way to change items in sets.{1,2,3} mei sy mai 2 ko change ni kr skta,but we can remove 2 and insert another value in it
+
+Set Methods:
+
+a)add
+d=set()
+d.add(88) # {88}
+
+b)clear
+d={12,88,12,"kesa"}
+d.clear()
+print(d) # output : set()
+
+c)shallow copy
+d={12,88,12,"kesa"}
+d2=d.copy()
+d2.add(67)
+print(d2,d)  #output {88, 'kesa', 67, 12} {88, 'kesa', 12}
+
+d)difference
+Returns a new set with elements in the set that are not in the other set.
+d={12,88,12,"kesa"}
+d2={88,98,"jjs"}
+d3=d.difference(d2)
+print(d3) # output : {'kesa', 12}
+
+e)discard
+Removes element from the set if it is a member,if it is not a member,do nothing
+d={12,88,12,"kesa"}
+d.discard(88)
+print(d) # output : {'kesa', 12}
+
+f)Intersection
+Returns a commmon values
+d={12,88,12,"kesa"}
+d2={12,65,66,88,"esa"}
+
+d3=d.intersection(d2)
+print(d3) # output : {88, 12}
+
+g)union
+d={12,88,12,"kesa"}
+d2={12,65,66,88,"esa"}
+
+d3=d.union(d2)  //it will unite all the values together ignore duplicates because set ignores duplicates
+print(d3) # output : {65, 66, 'esa', 'kesa', 12, 88}
+
+h)pop
+removes any random value from set,we should not use it
+d={12,88,12,"kesa"}
+
+d3=d.pop()
+print(d3,d) # output : 88 {'kesa', 12}
+
+
+i)len
+d={12,88,12,"kesa"}
+
+d3=len(d)
+print(d3) # output : 3
+
+
+j)remove
+d={12,88,12,"kesa"}
+
+d.remove(12)
+print(d) # output : {88, 'kesa'} removes 12
+
+k)subset
+Example 1:
+d={12,88,12,"kesa"}
+m={88}   //agr m ki all values d k andr avaiable ha,its mean it is a subset
+y=m.issubset(d)
+print(y) # output : True
+
+
+Example 2:
+d={12,88,12,"kesa"}
+m={88,21}
+y=m.issubset(d)
+print(y) # output : False
+
+Problems:
+
+1- What will be the length of following set s:
+s = set()
+s.add(20)
+s.add(20.0)
+s.add('20') # length of s after these operations?
+
+Output : 2 while i expect 3
+
+Why Does This Happen?
+Python sets use hashing to store unique elements. For an element to be considered a duplicate:
+Hash values must be equal
+The elements must be equal (using == comparison)
+
+Let me demonstrate:
+# Check hash values
+print(hash(20))    # Output: 20
+print(hash(20.0))  # Output: 20 (same hash!)
+print(hash('20'))  # Output: Some different number like 4053125114
+
+# Check equality
+print(20 == 20.0)   # Output: True (Python considers them equal!)
+print(20 == '20')   # Output: False (different types)
+
+---------------
+Problem 2:
+Write a program to create a dictionary of Hindi words with values as their English
+translation. Provide user with an option to look it up!
+
+
+data={
+    "kursi":"chair",
+    "billi":"Cat",
+    "larka":"boy"
+}
+word=input("Enter word")
+print(data.get(word))
+
+----------------------
+Problem 3:
+Write a program to input eight numbers from the user and display all the unique numbers
+
+e=set()
+num1=int(input("Enter number 1 : "))
+e.add(num1)
+num2=int(input("Enter number 2 : "))
+e.add(num2)
+num3=int(input("Enter number 3 : "))
+e.add(num3)
+num4=int(input("Enter number 4 : "))
+e.add(num4)
+num5=int(input("Enter number 5 : "))
+e.add(num5)
+num6=int(input("Enter number 6 : "))
+e.add(num6)
+num7=int(input("Enter number 7 : "))
+e.add(num7)
+num8=int(input("Enter number 8 : "))
+e.add(num8)
+
+print(e)
+
+Problem 4:
+Create an empty dictionary. Allow 4 friends to enter their favorite language as value and
+use key as their names. Assume that the names are unique.
+
+e={}
+num1=input("Enter user name 1 : ")
+num2=input("Enter language : ")
+e.update({num1:num2})
+num3=input("Enter user name 2 : ")
+num4=input("Enter language : ")
+e.update({num3:num4})
+num5=input("Enter user name 3 : ")
+num6=input("Enter language : ")
+e.update({num5:num6})
+num7=input("Enter user name 4 : ")
+num8=input("Enter language : ")
+e.update({num7:num8})
+
+print(e)
