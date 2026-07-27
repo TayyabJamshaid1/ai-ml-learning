@@ -73,3 +73,46 @@ if (user in friends):
 
 else :
     print("username does not exist in array")  
+
+ Problem 3:
+Write a program to find out whether a student has passed or failed if it requires a total of
+40% and at least 33% in each subject to pass. Assume 3 subjects and take marks as an
+input from the user.
+
+ Solution:
+ 
+marksDictionary={}
+q=int(input("Enter a marks in physics: "))
+marksPhysics=(q/100)*100
+marksDictionary.update({"physics":f"{marksPhysics}%"})
+
+q=int(input("Enter a marks in chemistry: "))
+marksChemistry=(q/100)*100
+marksDictionary.update({"chemistry":f"{marksChemistry}%"})
+
+q=int(input("Enter a marks in math: "))
+marksmath=(q/100)*100
+marksDictionary.update({"math":f"{marksmath}%"})
+
+total_percentage=((marksPhysics+marksChemistry+marksmath)/300)*100
+
+
+print(marksDictionary,total_percentage)
+
+if (total_percentage>=40 and (marksmath>32 and marksChemistry>32 and marksPhysics>32)):
+    print(f"student has been passed,his percentage is {total_percentage}")
+else :
+    print("Below than 33%,failed")
+
+
+Problem 4:
+A spam comment is defined as a text containing following keywords: “Make a lot of
+money”, “buy now”, “subscribe this”, “click this”. Write a program to detect these spams.
+
+Solution:
+b=input("Enter a statement to detect: ")
+if (b.find("subscribe this")!=-1 or b.find("buy now")!=-1 or b.find("click this")!=-1 or b.find("Make a lot of money")!=-1):
+    print("span detected")
+else :
+    print("Your Statement is correct")
+   

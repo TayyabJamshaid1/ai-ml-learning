@@ -46,26 +46,10 @@ print(j)  #output: 78 as string
 # print("The sum of the two numbers is: ",sum)
 
 
-# q=input("Enter a number: ")
-# w=input("Enter another number: ")
-# e=int(q)%int(w)
-# print("the remainder is ",e)
-
-
-
-data={
-    "kursi":"chair",
-    "billi":"Cat",
-    "larka":"boy"
-}
-
-friends=["apple","grapes",23,False,12.3]
-user=input("Enter user name ")
-
-if (user in friends):
-    print("username exist in array")
-
+b=input("Enter a statement to detect: ")
+if (b.find("subscribe this")!=-1 or b.find("buy now")!=-1 or b.find("click this")!=-1 or b.find("Make a lot of money")!=-1):
+    print("span detected")
 else :
-    print("username does not exist in array")    
-
-
+    print("Your Statement is correct")
+# newString=name.find("Jamsjhaid")
+# print(newString,"newString")
