@@ -44,12 +44,30 @@ print(j)  #output: 78 as string
 # v=input("Enter another number: ")
 # sum=int(b)+int(v) #by default input() function takes input as string, so we need to convert it into integer using int() function
 # print("The sum of the two numbers is: ",sum)
+# l = ["Harry", "Soham", "Sachin", "Rahul"]
+
+# for i in l:
+#     if (i.startswith("S")):
+#         print (f"Congratulations {i}")
+# else : print('sdsd')
+
+#prime number wo number huty ha jo ya tu 1 pr divide hu ya khud pr divide huty ha
+# Prime number: A number that is only divisible by 1 and itself
+n = int(input("Enter a number: "))
+
+# for i in range(1,n+1):
+#     print("*"*(i),end=" ")
+#     print(" " * (n-i),end=" ")
+
+#     print(" ")
 
 
-b=input("Enter a statement to detect: ")
-if (b.find("subscribe this")!=-1 or b.find("buy now")!=-1 or b.find("click this")!=-1 or b.find("Make a lot of money")!=-1):
-    print("span detected")
-else :
-    print("Your Statement is correct")
-# newString=name.find("Jamsjhaid")
-# print(newString,"newString")
+# Logic: Row i has (n-i) stars
+for i in range(n):
+    print("*" * (n - i))
+
+
+
+   
+
+

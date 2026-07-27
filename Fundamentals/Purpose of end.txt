@@ -1,0 +1,69 @@
+The end parameter in Python's print() function controls what is printed at the end of the output, instead of the default newline character (\n).
+
+The Default Behavior
+By default, print() adds a newline (\n) at the end:
+
+
+print("Hello")
+print("World")
+
+# Output:
+# Hello
+# World
+Behind the scenes, this is equivalent to:
+
+
+print("Hello", end="\n")  # \n is the default
+print("World", end="\n")
+The Purpose of end
+The end parameter allows you to:
+
+Prevent newlines (print on the same line)
+
+Add custom characters between prints
+
+Control output formatting
+
+Common Use Cases
+1. Print on the Same Line
+
+# Without end (default)
+print("Loading")
+print(".")
+print(".")
+print(".")
+
+# Output:
+# Loading
+# .
+# .
+# .
+
+# With end=""
+print("Loading", end="")
+print(".", end="")
+print(".", end="")
+print(".")
+
+# Output:
+# Loading....
+2. Custom Separators
+
+# Add a space instead of newline
+print("Hello", end=" ")
+print("World")
+
+# Output: Hello World
+
+# Add a comma
+print("Apple", end=", ")
+print("Banana", end=", ")
+print("Cherry")
+
+# Output: Apple, Banana, Cherry
+
+# Add a tab
+print("Name:", end="\t")
+print("Tayyab")
+
+# Output: Name:    Tayyab

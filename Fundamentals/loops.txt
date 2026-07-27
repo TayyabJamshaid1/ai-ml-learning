@@ -1,0 +1,227 @@
+for loop & while loop
+
+for loop:
+We can use for loop with list,tuples & set
+
+Range Function In for loop
+The range() function with for in python is used to generate a sequence of number.
+We can also specify the start, stop and step-size as follows:
+range(start, stop, step_size) 
+
+# by default,if start is not provided,it will start from 0
+# step_size is usually not used with range()
+# if step_size is provided,it will jump/ignore the provided numbers
+Example 1:
+for i in range(1,6):
+    print(i)
+
+Example 2:
+for i in range(6):    # by default start with 0
+    print(i)
+
+Example 3:
+for i in range(0,6,2):
+    print(i,' for loop')
+
+Output :
+0  for loop
+2  for loop
+4  for loop   
+#step_size ki logic ye ha k provided value me sy 1 ko minimize kr k iterations ko show krta ha
+
+Example 4:
+implement for loop with set
+arr=(67,88,34,45)
+for i in arr:
+    print(i,' for loop')
+
+Example 5:
+implement for loop with string
+for i in "Tayyab":
+    print(i,' for loop')
+
+------------------------------------------------------
+For Loop With Else
+
+Example 6:
+An optional else can be used with a for loop if the code is to be executed when the loops exhausts
+arr=[88,66,98,34]
+for i in arr :
+    print(i,' for loop')
+else :
+    print("loop ended")
+
+Output:
+88  for loop
+66  for loop
+98  for loop
+34  for loop
+loop ended
+------------------------------------
+Break:
+it will come out from the loop when condition meets
+for i in range(1,50) :
+    if (i==20): break    #it will come out from the loop when i is 20
+    print(i,' for loop')
+
+
+--------------------------------------------
+Continue:
+it will come out from that particular iteration only when condition meets
+for i in range(1,50) :
+    if (i==20): continue    #it will skip this iteration when i is 20
+    print(i,' for loop')
+
+-----------------------------------------------
+Pass Statement
+pass is a null statement in python.
+It instructs to “do nothing
+
+Example:
+for i in range(20):
+    pass
+
+for i in range(1,50) :
+    if (i==20): continue    #it will skip this iteration when i is 20
+    print(i,' for loop')
+
+
+imp:# mai abi ye for loop execute ni krna chahta, aur nichay ka code execute krna chahta hu for this purpose,python give us the "pass" statement,by using this ,ab hum bad me kabhi b apna loop likh skty ha,in case agr hum pass ni likhty,tu yaha pr error throw kary ga k phly for loop ko execute kro
+----------------------------------------------
+while loop:
+Example 1:
+i=1
+while(i<6):
+    print(i)
+    i+=1
+
+Example 2:
+arr=["tayyab","usman",99,False,"kesa"]
+i=0
+while(i<len(arr)):
+      print(arr[i])
+      i+=1
+
+
+--------------------------------------------------
+Problems:
+
+Problem 1:
+Write a program to print multiplication table of a given number using for loop.
+Solution:
+for i in range(1,10):
+    print (f"2 X {i} = {2*i}")
+
+
+Problem 2:
+Write a program to greet all the person names stored in a list ‘l’ and which starts with S.
+l = ["Harry", "Soham", "Sachin", "Rahul"]
+Solution:
+
+for i in l:
+    if (i.startswith("S")):
+        print (f"Congratulations {i}")
+
+
+Problem 3:
+Attempt problem 1 using while loop
+Solution:
+
+i=1
+while(i<11):
+     print (f"2 X {i} = {2*i}")
+     i+=1
+
+Problem 4:
+Write a program to print multiplication table of n using for loops in reversed order.
+
+Solution:
+i=10
+while(i>0 and i<11):
+     print (f"2 X {i} = {2*i}")
+     i-=1
+
+
+Problem 5:
+Write a program to find the sum of first n natural numbers using while loop
+
+Solution:
+n = int(input("Enter a number: "))
+
+sum=0
+for i in range(1,n+1):
+    sum+=i
+
+
+print(sum)
+
+Problem 6:
+ Write a program to find whether a given number is prime or not.
+Solution:
+#prime number wo number huty ha jo ya tu 1 pr divide hu ya khud pr divide huty ha
+n=int(input("Enter a number: "))
+for i in range(2,n):
+    if (n%i)==0:
+          print("Number is not prime")
+          break
+    else:
+          print("Number is  prime")
+          break
+
+Problem 7:
+Write a program to calculate the factorial of a given number using for loop.
+
+Solution:
+n = int(input("Enter a number: "))
+
+product=1
+for i in range(1,n+1):
+          product=product*i
+
+print(f"factorial of {n} is {product}")
+
+Problem 8:
+Write a program to print the following star pattern.
+* * *
+*   *     for n = 3
+* * *
+Solution:
+n = int(input("Enter a number: "))
+
+for i in range(1,n+1):
+    if (i==1 or n==i):
+        print("*"*n,end="")
+    else:
+        print("*",end="")
+        print(" "*(n-2),end="")
+        print("*",end="")
+    print() 
+
+Problem 9:
+Write a program to print the following star pattern:
+*
+**
+*** for n = 3
+
+Solution:
+n = int(input("Enter a number: "))
+
+for i in range(1,n+1):
+    print("*"*(i),end=" ")
+    print(" " * (n-i),end=" ")
+
+    print(" ")
+
+Problem 10:
+Make below pattern
+
+# *****
+# ****
+# ***
+# **
+# *
+
+Solution:
+n = int(input("Enter a number: "))
+for i in range(n):
+    print("*"*(n-i))
