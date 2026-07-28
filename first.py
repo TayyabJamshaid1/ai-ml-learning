@@ -53,7 +53,7 @@ print(j)  #output: 78 as string
 
 #prime number wo number huty ha jo ya tu 1 pr divide hu ya khud pr divide huty ha
 # Prime number: A number that is only divisible by 1 and itself
-n = int(input("Enter a number: "))
+# n = int(input("Enter a number: "))
 
 # for i in range(1,n+1):
 #     print("*"*(i),end=" ")
@@ -62,12 +62,7 @@ n = int(input("Enter a number: "))
 #     print(" ")
 
 
-# Logic: Row i has (n-i) stars
-for i in range(n):
-    print("*" * (n - i))
-
-
-
-   
-
+# a=input("Enter a number 1: ")
+# b=input("Enter another number 2: ")
+# c=input("Enter another number 3: ")
 

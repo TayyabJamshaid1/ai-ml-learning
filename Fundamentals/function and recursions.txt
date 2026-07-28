@@ -1,0 +1,157 @@
+A function is a group of statements performing a specific task.
+
+Function definition:
+def avg():   
+    n1 = int(input("Enter a number n1: "))
+    n2 = int(input("Enter a number n2: "))
+    n3 = int(input("Enter a number n3: "))
+    calcavg=(n1+n2+n3)/300
+    print(f"average is {calcavg*100}")
+
+function call:
+avg()
+
+-----------------------
+Types Of Functions In Python
+There are two types of functions in python:
+=>Built in functions (Already present in python)
+=>User defined functions (Defined by the user)
+Examples of built in functions includes len(), print(), range() etc.
+The avg() function we defined is an example of user defined function.
+---------------------------
+
+Function with arguments:
+
+def wishes(username,regars):
+   
+    print(f"Good Day {username}")
+    print(f"{regars}")
+
+
+wishes("Tayyab","Thanks")
+
+--------------------------
+You can also return a value and get a returned value
+
+def wishes(username,regars):
+    print(f"Good Day {username}")
+    print(f"{regars}")
+    return "Kesa"
+
+
+a=wishes("Tayyab","Thanks")
+print(a)
+
+----------------------------------
+Default Value
+
+def wishes(username,regars="Thank you"):
+    print(f"Good Day {username}")
+    print(f"{regars}")
+    return "Kesa"
+
+
+a=wishes("Tayyab")
+print(a)
+
+---------------------
+Recursion:
+Recursion is a function which calls itself.
+It is used to directly use a mathematical formula as function.
+
+Example :
+def factorial(n):
+        if (n==1) or (n==0):
+             return 1 #because the factorial of 1 and 0 is by default 1
+        return n*factorial(n-1)
+
+
+a=factorial(5)
+print(a)
+
+
+-----------------------------------------------------------------------------
+Problems:
+Problem 1. Write a program using functions to find greatest of three numbers:
+Solution:
+a=input("Enter a number 1: ")
+b=input("Enter another number 2: ")
+c=input("Enter another number 3: ")
+
+def greaterNumber(a,b,c):
+        if (a>b) and(a>c):
+             return f"{a} is greater"
+        elif (b>a) and(b>c):
+             return f"{b} is greater"
+        elif (c>a) and(c>b):
+             return f"{c} is greater"
+
+
+res=greaterNumber(a,b,c)
+print(res)
+
+Problem 2:
+Write a python program using function to convert Celsius to Fahrenheit
+Solution:
+userTemp=int(input("Enter Temperature: "))
+
+def calculateFarheight(c):
+    return (c * 1.8) + 32
+
+temp=calculateFarheight(userTemp)
+print(temp)
+
+Problem 3:
+Write a recursive function to calculate the sum of first n natural numbers.
+Solution:
+def recur(n):
+    if (n==0) or (n==1):
+       return 1
+    return n+recur(n-1)
+
+res=recur(5)
+print(res)
+
+
+Problem 4:
+Write a python function which converts inches to cms
+Solution:
+userInches=int(input("Enter Inches: "))
+
+def calculateCentimeter(c):
+    return c*1.54
+
+cmLength=calculateCentimeter(userInches)
+print(f"{cmLength}cm")
+
+
+Problem 5:
+Write a python function to remove a given word from a list and strip it at the same time.
+Solution:
+
+--------------------------------------
+strip function background:
+Strip() method removes leading and trailing characters (spaces, tabs, and newlines by default) from both ends of a string. Because Python strings are immutable, it returns a new string copy and does not modify the original data
+l=["harry","rohan","subham","an"]
+
+# 1. Default: Removing whitespace
+text = "  \n Python Programming \t  "
+print(text.strip())  
+# Output: 'Python Programming'
+
+# 2. Custom characters: Removing specific symbols
+w3_example = ",,,,rrttgg.....banana....rrr"
+print(w3_example.strip(",.grt"))  
+# Output: 'banana'
+
+----------------------------------
+def removeWord(arr,word):
+       unique=[]
+       for i in arr:
+            if (i!=word):
+               unique.append(i.strip(word))
+       return unique
+ 
+
+uni=removeWord(l,"an")
+print(uni)
