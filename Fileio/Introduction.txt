@@ -1,0 +1,31 @@
+Jab b hum apna code run krty ha tu jitny b variables wagaira jo bnty ha ,wo ram pr store huty ha but the problem of ram is "It is volatile" means ek dfa hum ny apna system bnd kr dia tu hamara sara data remove hu jata ha lekin agr hum chahty ha k hamara data lost na hu,jab b hum system on karain hamara data avaiable hu tu us data ko hum file ki sorat me store kr skty ha for example hum apny code ko hamesha file ki sorat me rkhty ha taky system k refresh huny pr hamara code secure/persist rhy,is trah hum koi image/video download krty ha tu usy ram pr store krny ki bjaiy as a file k tor pr save krty ha taky hamara data persist/secure rhy
+
+
+=>The ram(random-access memory) is volatile, and all its contents are lost once a program terminates. In order to persist the data forever, we use files.
+=>Python can be used to perform operations on a file (read & write file)
+=>A file is data stored in a storage device. A python program can talk to the file by reading content from it and writing content to it.
+
+Type Of Files.
+There are 2 types of files:
+1. Text files (.txt, .c, etc)
+2. Binary files (.jpg, .dat, etc)
+Python has a lot of functions for reading, updating, and deleting files.
+Remember: at the end hamari sari files (text and binary) memory me bits(0,1) k tor pr he save huti ha but python me upper level me hum isy 2 types(text and binary) me divide krty ha
+
+
+How to read file:
+=>Open take two parameters: (See openFUnctionSyntax image)
+ a)file name(e.g sample.txt,.jpeg)      b)mode (read mode or write mode)
+=> by default mode is "r" read
+=>We have different kind of modes (See differentModes.png)
+f=open("Fundamentals/Dictionary .txt","r")  #by default, r is already set
+data=f.read()
+print(data)
+f.close()
+
+How to create/write file:
+It will create new file in same directory
+str="Kesa,para tayyab"
+f=open("myTayyab.txt","w")
+f.write(str)
+f.close()

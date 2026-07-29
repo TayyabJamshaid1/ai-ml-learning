@@ -1,0 +1,5 @@
+With Statement
+The best way to open and close the file automatically is the with statement
+with open("verify.txt","rt") as f:
+      line=f.read() 
+      print(line,type(line))

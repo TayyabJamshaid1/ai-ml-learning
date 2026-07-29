@@ -1,0 +1,24 @@
+3-write
+agr mai kisi aisi file ko write kr rha hu,jo phly sy exist krti ha aur us k andr data b ha,python write operation k run huny pr us saray data ko overrite kr k new data waha add kr dy ga
+f=open("verify.txt","w") 
+allWrite=f.write("Kesaaaaa") 
+print(allWrite) #Output 8, it returns number of characters you are overriding 
+-------------------------------------
+
+4-Append
+
+strs="\n I am a new line to be added"
+f=open("verify.txt","a") #if verify.txt does not exist,append will create it automatically
+
+line=f.write(strs) #it will added at last of the file,if i will run it 10 times,10 times it will be added
+
+
+f.close()
+
+4-rb (read in binary)
+f=open("verify.txt","rb")
+line=f.read() 
+print(line,type(line)) 
+f.close()
+
+# output:b'I am a Tayyab\nTayyab is a good boy\nGood f0r you TaibiI am a new line to be added' <class 'bytes'>

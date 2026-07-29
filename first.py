@@ -66,3 +66,24 @@ print(j)  #output: 78 as string
 # b=input("Enter another number 2: ")
 # c=input("Enter another number 3: ")
 
+
+
+
+# f=open("Fundamentals/Dictionary .txt")
+# data=f.read()
+# print(data)
+# f.close()
+
+# f=open("verify.txt","rt")
+
+# line=f.read() 
+
+# print(line,type(line))
+# f.close()
+
+#agr mai kisi aisi file ko write kr rha hu,jo phly sy exist krti ha aur us k andr data b ha,python write operation k run huny pr us saray data ko overrite kr k new data waha add kr dy ga
+
+
+
+
+
