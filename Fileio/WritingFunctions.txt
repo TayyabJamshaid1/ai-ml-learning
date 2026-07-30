@@ -1,24 +1,47 @@
-3-write
+7-write
 agr mai kisi aisi file ko write kr rha hu,jo phly sy exist krti ha aur us k andr data b ha,python write operation k run huny pr us saray data ko overrite kr k new data waha add kr dy ga
 f=open("verify.txt","w") 
 allWrite=f.write("Kesaaaaa") 
 print(allWrite) #Output 8, it returns number of characters you are overriding 
--------------------------------------
 
-4-Append
+8-Append
 
 strs="\n I am a new line to be added"
 f=open("verify.txt","a") #if verify.txt does not exist,append will create it automatically
 
-line=f.write(strs) #it will added at last of the file,if i will run it 10 times,10 times it will be added
+line=f.write(strs) #it will added at last of the file,because the Pointer is positioned at end of the file .if i will run it 10 times,10 times it will be added at the last.
 
 
 f.close()
 
-4-rb (read in binary)
-f=open("verify.txt","rb")
-line=f.read() 
-print(line,type(line)) 
+9-w+
+#it is open for reading and writing. The file is created if it does not exist otherwise it remove all the content of file.The Pointer is positioned at beginning of the file
+
+f=open("verify.txt","w+")
+data=f.read() 
+print(data) #it will show empty because w+ remove all the content from it and pointer is positioned at the end of file
+f.write("kesa")#it will write new content "kesa"
 f.close()
 
-# output:b'I am a Tayyab\nTayyab is a good boy\nGood f0r you TaibiI am a new line to be added' <class 'bytes'>
+Imp Scenario:
+f=open("verify.txt","w+")
+f.write("kesa")
+data=f.read()
+print(data) #it will still show nothing after write "kesa" because pointer is position after "kesa" text,after this text,nothing is avaiable in file to show
+f.close()
+
+10-a+
+#it is open for reading and writing.if verify.txt does not exist,append will create it automatically.The Pointer is positioned at end of the file
+
+f=open("verify.txt","a+")
+f.write("kesa")
+data=f.read() # kesa will be appended at the end of file
+print(data) #it will print empty because a+ mei pointer file k sab sy last pr huta ha
+f.close()
+
+
+Summary:
+r+  read + override (Pointer is at start) no truncate(data will not removed)
+w+  read + override (Pointer is at start)  truncate(data will  removed)
+a+  read + append   (Pointer is at last)  no truncate(data will not removed)
+#w override the content while append add content at last of file

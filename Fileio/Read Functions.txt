@@ -64,7 +64,9 @@ Tayyab is a good boy
 Good f0r you TaibiI am a new line to be added <class 'str'>
 
 5-r+
-r+ lets you read and write to the same file, overwriting content from the current pointer position while keeping the rest of the file intact.
+=>#it is open for reading and writing.The Pointer is positioned at beginning of the file
+=>r+ lets you read and write to the same file, overwriting content from the current pointer position while keeping the rest of the file intact.
+=>Agr file ko start sy hum override krna chahty ha tu use r+
 
 f=open("verify.txt","r+")
 f.write("Kesaaaaa") 
@@ -84,3 +86,11 @@ I am a Tayyab
 Tayyab is a good boy
 Good f0r you Taibi
 I am a new line to be added
+
+7-rb (read in binary)
+f=open("verify.txt","rb")
+line=f.read() 
+print(line,type(line)) 
+f.close()
+
+# output:b'I am a Tayyab\nTayyab is a good boy\nGood f0r you TaibiI am a new line to be added' <class 'bytes'>
