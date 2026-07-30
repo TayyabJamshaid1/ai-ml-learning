@@ -1,8 +1,6 @@
-with open("practice.txt",'r') as f:
-      data=f.read()
-      splitted=data.split(',')
-      arr=[]
-      for i in splitted:
-          if (int(i)%2==0):
-              arr.append(int(i))
-      print(len(arr))
+import os
+with open("practice.txt") as f:
+     content=f.read()
+with open("rename_practice.txt","w") as f:
+     f.write(content)
+os.remove("practice.txt")

@@ -8,16 +8,20 @@ Problem:WAF to find in which line of the file does the word “learning”occur 
 
 Solution 1:
 word="learning"
-with open("practice.txt","r") as f:
-     no_of_line=1
-     findLine=True
-
-     while(findLine):
-           readData=f.readline()
-           if (word in readData):
-               print(f"line find {no_of_line}")
-               findLine=False
-           no_of_line+=1
+with open("practice.txt",'r+') as f:
+      no=1
+      data=True
+      while data:
+            readD=f.readline()
+            if (len(readD)>0):
+                if(word in readD):
+                   print(no,"i am")
+                   data=False
+                no+=1
+            else:
+                 print("not found")
+                 data=False
+                
 
 
 Solution 2:(NOT RECOMMENDED)

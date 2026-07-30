@@ -1,0 +1,93 @@
+
+Write a program to generate multiplication tables from 2 to 20 and write it to the different
+files. Place these files in a folder for a 13-year-old
+
+for j in range(2,20):
+    with open(f"practice{j}.txt",'a') as f:
+         for i in range(1,11):
+              f.write(f"\n{j}*{i}={j*i}")
+
+--------------------
+Write a program to read the text from a given file ‘poems.txt’ and find out whether it
+contains the word ‘twinkle’.
+
+with open("practice.txt",'w') as f:
+      data=f.read()
+      contain=data.find("Twinkle")
+      if (contain!=-1):
+          print("It contains")
+      else:
+           print("It dont have")
+    
+-------------------------------------
+A file contains a word “Donkey” multiple times. You need to write a program which
+replaces this word with ##### by updating the same file.
+
+with open("practice.txt",'r+') as f:
+      data=f.read()
+      latest=data.replace("Donkey","Dog")
+
+with open("practice.txt",'w+') as f:
+      f.write(latest)
+      f.seek(0)
+      data=f.read()
+      print(data)  
+
+------------------------------------------
+The game() function in a program lets a user play a game and returns the score as an
+integer. You need to read a file ‘Hi-score.txt’ which is either blank or contains the previous
+Hi-score. You need to write a program to update the Hi-score whenever the game()
+function breaks the Hi-score.
+
+
+import random
+def checkScore():
+    print("You are playing the game")
+    score=random.randint(1,62)
+    with open("practice.txt") as f:
+          hisScore=f.read()
+          if(hisScore!=""):
+             hisScore=int(hisScore)
+          else:
+              hisScore=0
+    print(f"Your score {score}")
+    if (score>hisScore):
+        with open("practice.txt","w") as f:
+             f.write(str(score))
+             print("You win")
+    else:
+        print("You loose")
+    return score
+
+
+print(checkScore())
+--------------------------------------
+A file contains a word Doggh & yuu multiple times. You need to write a program which
+replaces this word with ##### by updating the same file.
+
+
+words=["yuu","Doggh"]
+
+with open("practice.txt") as f:
+    content=f.read()
+    for i in words:
+        content=content.replace(i,"#" * len(i))
+
+    with open("practice.txt","w") as f:
+         f.write(content)
+
+----------------------------------------
+Write a program to wipe out the content of a file using python
+
+with open("practice.txt","w") as f:
+   f.write("")
+
+------------------------------------------
+Write a python program to rename a file to “renamed_by_python.txt”.
+
+import os
+with open("practice.txt") as f:
+     content=f.read()
+with open("rename_practice.txt","w") as f:
+     f.write(content)
+os.remove("practice.txt")
