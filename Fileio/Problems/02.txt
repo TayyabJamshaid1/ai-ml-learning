@@ -1,0 +1,44 @@
+practice.txt file:
+Hi everyone
+we are learning File I/O
+using Python.
+I like programming in Python
+
+Problem:WAF to find in which line of the file does the word “learning”occur first
+
+Solution 1:
+word="learning"
+with open("practice.txt","r") as f:
+     no_of_line=1
+     findLine=True
+
+     while(findLine):
+           readData=f.readline()
+           if (word in readData):
+               print(f"line find {no_of_line}")
+               findLine=False
+           no_of_line+=1
+
+
+Solution 2:(NOT RECOMMENDED)
+word="learning"
+with open("practice.txt","r") as f:
+     line1=f.readline()
+     newFind=line1.find("learning")
+     if (newFind!=-1):
+          print("Found word in line 1")
+    
+     line2=f.readline()
+     newFind=line2.find("learning")
+     if (newFind!=-1):
+              print("Found word in line 2")
+     line3=f.readline()
+     newFind=line3.find("learning")
+     if (newFind!=-1):
+              print("Found word in line 3")
+    
+     line4=f.readline()
+     newFind=line4.find("learning")
+     if (newFind!=-1):
+                  print("Found word in line 4")
+    

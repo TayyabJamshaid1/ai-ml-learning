@@ -136,3 +136,13 @@ print(newString)
 d)Replace the double space from problem c with single spaces.
 newString=name.replace("  "," ") 
 print(newString)
+
+e)string into array
+text = "Python is fun"
+array = text.split()
+# Output: ['Python', 'is', 'fun']
+
+or
+text = "Python,is,fun"
+array = text.split(',')
+# Output: ['Python', 'is', 'fun']

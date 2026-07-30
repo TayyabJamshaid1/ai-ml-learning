@@ -1,3 +1,6 @@
+practice file:
+12,34,55,88,75,17
+
 with open("practice.txt",'r') as f:
       data=f.read()
       splitted=data.split(',')
