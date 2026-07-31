@@ -1,0 +1,14 @@
+Class is a blueprint of objects
+let suppose hamary pas ek car ki factory ha ,wo factory multiple cars bna rhi ha,ab us car k andr jo jo properties ha wo sab factory sy he aai ha,similary object k andr jo jo properties huti ha wo sab uski class me pre defined huti ha
+
+Objects are also known as instance objects
+
+Syntax:
+class Student:   #class name should be capital
+     name="Tayyab"
+
+s1=Student()
+print(s1.name)
+
+----------------------
+=>Jo b variables hum class me use krty ha like name,age etc unhai "attributes" kehty ha

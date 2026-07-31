@@ -1,0 +1,143 @@
+Constructor:
+All classes have a function called __init__(), which is always executed when the object is being initiated (Jab b class ko use kr k koi object bnao gy,tu automatically Constructor function us object k liye call hu jaiy ga)
+
+=>Constructor allways take a  default parameter "self",jab b koi object bnta ha tu ye "self" usi object ko point out kr rha huta ha or ye can also say self k andr us object ka reference huta ha
+
+Example:
+class Student:
+     #default Constructor (takes no parameters except self)
+      def __init__(self):
+           pass
+
+      #parameterized Constructor
+      def __init__(self,username):
+           self.name=username
+
+s1=Student("Usman")
+print(s1.name)
+
+Types of Constructors
+1-Default Constructor
+Agr default Constructor ko hum ni bnaiy gy ,tu phython khud isko bna k execute kr dy ga
+
+2-parameterized Constructor
+Constructor with parameters(Aisa Constructor jis me self k ilawa b parameters hu)
+
+=>You can also give default values to parameters
+class Student:
+     #default Constructor (takes no parameters except self)
+      def __init__(self):
+           print("Default called")
+           pass
+
+      #parameterized Constructor
+      def __init__(self,username="noman"):
+           print("parameterized called")
+           self.name=username
+
+s1=Student("Usman")
+print(s1.name)
+
+s2=Student()
+print(s2.name)
+
+Output:
+parameterized called
+Usman
+parameterized called
+noman
+------------------------------------------------------------------------------
+Imp Point:
+=>Constructor allways take a  default parameter "self",jab b koi object bnta ha tu ye "self" usi object ko point out kr rha huta ha or ye can also say self k andr us object ka reference huta ha
+
+Example:
+class Student:
+      #parameterized Constructor
+      def __init__(self,username):
+           print(self)
+           self.name=username   
+      
+s1=Student("Usman")
+print(s1)
+
+Output:
+<__main__.Student object at 0x7f2e7d257ee0>
+<__main__.Student object at 0x7f2e7d257ee0>
+Both have same reference, which proves that self object ko point out krta ha
+-------------------------------------------------------------------------------
+Important Rule for constructors:
+In Python, you CANNOT have multiple constructors (__init__ methods) in the same class. The last one defined OVERWRITES all previous ones.
+
+Example:
+class Student:
+    def __init__(self):
+        print("Default called")
+        pass
+
+    def __init__(self, username):
+        print("parameterized called")
+        self.name = username
+
+    def __init__(self, username="noman"):  # ← This is the ONLY one that exists!
+        print("parameterized called with default")
+        self.name = username
+
+s1 = Student("Usman")
+print(s1.name)
+
+s2 = Student()
+print(s2.name)
+
+
+Step 1: Python reads the class definition
+        ↓
+Step 2: First __init__ is created
+        ↓
+Step 3: Second __init__ OVERWRITES the first one
+        ↓
+Step 4: Third __init__ OVERWRITES the second one
+        ↓
+Step 5: Only the THIRD __init__ exists!
+
+
+Scenario 2:
+
+class Student:
+    def __init__(self):
+        print("Default called")
+        pass
+
+    def __init__(self, username):
+        print("parameterized called")
+        self.name = username
+
+    def __init__(self, age):  # ← ONLY THIS EXISTS!
+        print("parameterized called with default")
+        self.age = age
+
+s1 = Student("Usman")  # Uses the third constructor
+print(s1.name)         # ❌ ERROR! 'name' doesn't exist
+
+s2 = Student(78)       # Uses the third constructor
+print(s2.age)          # ✅ Works
+
+
+Whats happened here:
+
+
+Only the LAST __init__ exists:
+┌─────────────────────────────────────┐
+│ def __init__(self, age):            │ ← ONLY THIS EXISTS
+│     print("parameterized called")   │
+│     self.age = age                  │
+└─────────────────────────────────────┘
+
+When you call: Student("Usman")
+- It uses the ONLY constructor that exists
+- Parameter 'age' gets value "Usman"
+- Creates self.age = "Usman"
+- But 'self.name' was NEVER created!
+
+Result: s1 has 'age' attribute, not 'name'!
+
+----------------------------------------------------------------------------------------

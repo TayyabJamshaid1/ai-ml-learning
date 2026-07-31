@@ -1,6 +1,9 @@
-import os
-with open("practice.txt") as f:
-     content=f.read()
-with open("rename_practice.txt","w") as f:
-     f.write(content)
-os.remove("practice.txt")
+class Student:
+      #parameterized Constructor
+      def __init__(self,username):
+           print(self)
+           self.name=username   
+      
+s1=Student("Usman")
+print(s1)
+
