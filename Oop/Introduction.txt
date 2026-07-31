@@ -10,5 +10,5 @@ class Student:   #class name should be capital
 s1=Student()
 print(s1.name)
 
-----------------------
-=>Jo b variables hum class me use krty ha like name,age etc unhai "attributes" kehty ha
+----------------------------------------------------------------------------------------
+

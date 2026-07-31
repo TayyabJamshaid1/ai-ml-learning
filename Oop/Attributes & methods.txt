@@ -1,0 +1,107 @@
+=>Jo b variables hum data store krwany k liye use krty ha like name,age etc unhai "attributes" kehty ha
+
+attributes can be used by two categories
+1-Class attributes
+Aisy attributes jisy class khud own krti ha,jo sab objects k liye accessible/common huty ha
+
+Example:
+class Student:
+      college_name="Shalimar College"
+      #parameterized Constructor
+      def __init__(self,username):
+           print(self)
+           self.name=username   
+      
+s1=Student("Usman")
+print(s1.college_name) #You can access college name by object because it is accessible for all
+print(Student.college_name) #You can also called class attributes by Class name
+
+2-Instance attributes
+Ye har object k hisab sy different huty ha.See below scenario
+
+a)To provide value to each object:
+Har individual object ko value provide krny k liye "self." ka use krty ha
+Example :
+Ab har student ka na
+
+class Student:
+      #parameterized Constructor
+      def __init__(self,username):
+           print(self)
+           self.name=username   #here we are using self. to provide each individual object a separate value
+      
+s1=Student("Usman")
+print(s1)
+
+-------------------------------
+Important scenario:
+
+class Student:
+      college_name="Shalimar College"
+      name="mehran"
+      #parameterized Constructor
+      def __init__(self,username):
+           print(self)
+           self.name=username   
+      
+s1=Student("Usman")
+print(s1.name) 
+
+#now name is avaiable as a class attribute as well as object attribute,now question is s1.name will print which name attribute?
+
+The answer is object attribute > class attribute,which means it always give the importance to object attribute,so it will print "Usman"
+-------------------------------------
+
+Now class is dealing with two things
+a)attributes(data)
+b)method
+
+Method:
+Method are functions that belong to objects
+
+=> class k andr methods likhty huay jo first parameter hum allways pass kary gy wo self ha,chahy hum agay usy use na kary
+
+Example:
+
+class Student:
+      college_name="Shalimar College"
+      name="mehran"
+      #parameterized Constructor
+      def __init__(self,username,marks):
+           self.name=username
+           self.marks=marks
+
+      def hello(self):
+          print(self.name)
+      def getMarks(self):
+          return self.marks
+      
+s1=Student("Usman",34)
+s1.hello()
+print(s1.getMarks()) 
+s1.name="Noman" # here you can again update/overide the instance variable values
+s1.hello()  #Output Noman
+
+--------------------------------------------
+Problem:
+Create student class that takes name & marks of 3 subjects as arguments in constructor.Then create a method to print the average.
+
+class Student:
+      college_name="Shalimar College"
+      name="mehran"
+      #parameterized Constructor
+      def __init__(self,username,marks):
+           self.name=username
+           self.marks=marks
+
+      
+      def getAvgMarks(self):
+          sum=0
+          for i in self.marks:
+              sum+=i
+          avg=sum/300
+          return avg
+      
+s1=Student("Usman",[34,45,33])
+print(s1.getAvgMarks()) 
+s1.name="Aleem" # again you can overide the name
