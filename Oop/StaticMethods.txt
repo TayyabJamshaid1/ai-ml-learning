@@ -17,3 +17,25 @@ class Student:
       
 s1=Student()
 s1.hello()
+
+Imp:
+Can Static Methods Access Class Attributes and Functions?
+Short Answer: NO, they CANNOT directly access class attributes or functions.
+
+See Static access.png
+
+Example:
+How attribute can be access in static because we cannot directly access it
+
+class Account:
+      def __init__(self,acc_no,acc_pass):
+            self.acc_no=acc_no
+            self.__acc_pass=acc_pass
+   
+      @staticmethod
+      def resetPassword(a1):
+          print( a1.acc_no)
+
+a1=Account(12345,"kesa")
+a1.resetPassword(a1) #pass the object
+

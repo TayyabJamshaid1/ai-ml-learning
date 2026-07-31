@@ -1,12 +1,11 @@
+When one class(child/derived) derives properties & attributes of another class(parent/base)
+
+Example:
 class Car:
       def __init__(self,car_no,car_model):
             self.car_no=car_no
             self.car_model=car_model
-
-      @staticmethod
-      def startByBtn():
-          print("Static method")
-
+   
       def start(self):
           print("Car Start")
 
@@ -18,7 +17,6 @@ class ToyotaCar(Car): # this is how you can extend the class
            super().__init__(car_no, car_model)     
       def clickButton(self):
            self.start()
-           self.startByBtn()  #you can also call static method here
            print(self.car_model)  
 
 a1=ToyotaCar(12345,"kesa")
