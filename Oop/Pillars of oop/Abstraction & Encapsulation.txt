@@ -1,0 +1,53 @@
+Abstraction:
+Hiding the implementation details of a class and only showing the essential features to the user.
+
+Example:
+class Student:
+      def __init__(self):
+            self.clutch=False
+            self.gear=False
+            self.breakCar=False
+
+      def startCar(self):
+            self.clutch=True
+            self.gear=True
+            print("Car start")
+      
+s1=Student()
+s1.startCar()
+
+Yaha pr user ko srf car start huny sy matlab ha,is k pichay ka mechanism kya ha usy koi idea ni,similarly user ko wohi show krwaiy gy jo wo chahta ha instead of sharing all code details
+
+---------------------
+Encapsulation:
+Wrapping data and functions into a single unit (object).
+
+Basically ,hum ny ek class bnai jis mei hamary pas attributes aur methods ha aur usi class ka object bna k hum use krty ha, that particular object( which has attributes+ methods) is known as Encapsulation
+
+--------
+Problem:
+Create Account class with 2 attributes - balance & account no.Create methods for debit, credit & printing the balance.
+
+
+class Account:
+      def __init__(self):
+            self.balance=0
+            self.account_number=0
+
+      def debit(self,amount):
+          self.balance=self.balance-amount
+          print(f"{amount} is debited and remaining balance is {self.remaining()}")
+
+      def credit(self,amount):
+          self.balance=self.balance+amount
+          print(f"{amount} is credited and remaining balance is {self.remaining()}")
+
+
+      def remaining(self):
+          return self.balance
+
+      
+a1=Account()
+a1.credit(1000)
+a1.credit(5000)
+a1.debit(3000)

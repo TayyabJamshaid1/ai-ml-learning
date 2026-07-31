@@ -1,19 +1,22 @@
-class Student:
-      college_name="Shalimar College"
-      name="mehran"
-      #parameterized Constructor
-      def __init__(self,username,marks):
-           self.name=username
-           self.marks=marks
+class Account:
+      def __init__(self):
+            self.balance=0
+            self.account_number=0
+
+      def debit(self,amount):
+          self.balance=self.balance-amount
+          print(f"{amount} is debited and remaining balance is {self.remaining()}")
+
+      def credit(self,amount):
+          self.balance=self.balance+amount
+          print(f"{amount} is credited and remaining balance is {self.remaining()}")
+
+
+      def remaining(self):
+          return self.balance
 
       
-      def getAvgMarks(self):
-          sum=0
-          for i in self.marks:
-              sum+=i
-          avg=sum/300
-          return avg
-      
-s1=Student("Usman",[34,45,33])
-print(s1.getAvgMarks()) 
-s1.name="Aleem" # again you can overide the name
+a1=Account()
+a1.credit(1000)
+a1.credit(5000)
+a1.debit(3000)

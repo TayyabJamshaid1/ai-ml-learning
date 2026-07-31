@@ -1,0 +1,19 @@
+=>Methods that dont use the self parameter (works at class level)
+
+=>Aisy method jis me object ya us k attributes ki zrort he ni ha,aisy methods ko object level ki bjaiy class level pr ly aao,tu is liye jo class level k methods huty ha usy static/class methods kehty ha
+
+=>To make a static member ,we use the  @staticmember which is a decorator
+
+=>decorator aisa function ha jo apny parameter me function laita ha aur return me b function dta ha
+
+Proper Definition:
+"Decorators allow us to wrap another function in order to extend the behaviour of the wrapped function, without permanently modifying it"
+
+Syntax:
+class Student:
+      @staticmethod
+      def hello():
+            print("Kesa")
+      
+s1=Student()
+s1.hello()
