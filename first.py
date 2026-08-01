@@ -1,14 +1,18 @@
 class Person:
-      name="Chair"
+      def __init__(self,math,phy,chem):
+            self.math=math
+            self.phy=phy 
+            self.chem=chem
 
-      @classmethod
-      def changeNameMethod(cls,updatedName):
-            cls.name=updatedName
-            return cls.name
+      @property
+      def percentage(self):
+            return str(((self.math+self.phy+self.chem)/300)*100)+"%"
+
+                  
 
 
-p1=Person()
-print(p1.changeNameMethod("Glass"))
-print(Person.name)
-
-
+p1=Person(18,25,66)
+print(p1.percentage)
+p1.math=99
+print(p1.percentage)
+#now the problem is you updated math score but still it is showing previous percentage instead of calculate again.This can be solved by two ways

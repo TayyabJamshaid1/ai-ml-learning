@@ -1,0 +1,57 @@
+class Person:
+      def __init__(self,math,phy,chem):
+            self.math=math
+            self.phy=phy 
+            self.chem=chem
+            self.percentage=str(((self.math+self.phy+self.chem)/300)*100)+"%"
+      
+
+
+p1=Person(18,25,66)
+print(p1.percentage)
+p1.math=99
+print(p1.percentage)
+#now the problem is you updated math score but still it is showing previous percentage instead of calculate again.This can be solved by two ways
+
+Way 1:
+By making percentage method separate instead of constructor
+
+class Person:
+      def __init__(self,math,phy,chem):
+            self.math=math
+            self.phy=phy 
+            self.chem=chem
+
+
+      def percentage(self):  #HERE WE MAKE separate FUNCTion of percentage
+            return str(((self.math+self.phy+self.chem)/300)*100)+"%"
+
+                  
+
+
+p1=Person(18,25,66)
+print(p1.percentage())
+p1.math=99
+print(p1.percentage())
+
+Way 2:
+We use property jab attributes ki value Function k upr depend krti ha tab hum us function ko apni property bna skty ha,like percentage ki values totally attributes k upr depend thi is liye hum us function ko he property bna ly gy
+By using property decorator
+
+class Person:
+      def __init__(self,math,phy,chem):
+            self.math=math
+            self.phy=phy 
+            self.chem=chem
+
+      @property
+      def percentage(self):
+            return str(((self.math+self.phy+self.chem)/300)*100)+"%"
+
+                  
+
+
+p1=Person(18,25,66)
+print(p1.percentage)  #point to be noted ,percentage is now behaving like a property,ab jab b attributes me update hu ga,ye property hamesha latest value k mutabiq result dy gi
+p1.math=99
+print(p1.percentage)
