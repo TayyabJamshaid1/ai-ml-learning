@@ -1,27 +1,14 @@
-class Car:
-      def __init__(self,car_no,car_model):
-            self.car_no=car_no
-            self.car_model=car_model
+class Person:
+      name="Chair"
 
-      @staticmethod
-      def startByBtn():
-          print("Static method")
+      @classmethod
+      def changeNameMethod(cls,updatedName):
+            cls.name=updatedName
+            return cls.name
 
-      def start(self):
-          print("Car Start")
 
-      def stop(self):
-          print("Car Stop")
+p1=Person()
+print(p1.changeNameMethod("Glass"))
+print(Person.name)
 
-class ToyotaCar(Car): # this is how you can extend the class
-      def __init__(self, car_no, car_model):
-           super().__init__(car_no, car_model)     
-      def clickButton(self):
-           self.start()
-           self.startByBtn()  #you can also call static method here
-           print(self.car_model)  
-
-a1=ToyotaCar(12345,"kesa")
-a1.start()
-a1.clickButton()
 

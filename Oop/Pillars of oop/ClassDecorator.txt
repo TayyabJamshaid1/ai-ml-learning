@@ -1,0 +1,61 @@
+Background:
+class Person:
+      name="Chair"
+            
+      def changeNameMethod(self,updatedName):
+            self.name=updatedName
+            return self.name
+
+
+p1=Person()
+print(p1.changeNameMethod("Glass"))
+print(Person.name)
+
+
+
+Output:
+Glass
+Chair
+
+#why my class attribute name did not change,still chair while it updated in changeNameMethod,the reason is humny jo changeNameMethod me name ko update kiya,wo asal me ek particular object/instance me ek new attribute "name" create hu k update huwa ha.Is name ka class attribute name sy koi taluq ni ha,wo class attribute ha aur ye instance attribute,Thats why class attribute name is not change.
+
+How we can change it?
+Way 1:
+By class name:
+ def changeNameMethod(self,updatedName):
+            Person.name=updatedName
+            return Person.name
+
+Way 2:
+By __class__
+ def changeNameMethod(self,updatedName):
+            Person.__class__.name=updatedName
+          
+Way 3:
+Class method is bound to class & receive the class as an implicit first argument
+
+class Person:
+      name="Chair"
+
+      @classmethod
+      def changeNameMethod(cls,updatedName): # phly argument is always for class 
+            cls.name=updatedName
+            return cls.name
+
+
+p1=Person()
+print(p1.changeNameMethod("Glass"))
+print(Person.name)
+
+-----------------------------------------------------------------------------------------
+Summary of different methods in class
+
+1-Static method #takes no argument
+Jab humny class attributes aur instance attributes dono k sath kam ni krna,then use static method
+
+2-Class methods #takes 1 argument by default (cls)
+ Jab humny class attributes k sath kam krna hu then hum class methods ka use krty ha
+
+3-Instance methods #takes 1 argument by default (self)
+ Jab humny object attributes k sath kam krna hu tab instance methods ka use krty ha
+

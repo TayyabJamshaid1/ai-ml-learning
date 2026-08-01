@@ -1,4 +1,5 @@
-When one class(child/derived) derives properties & attributes of another class(parent/base)
+=>Inheritance Definition: When one class(child/derived) derives properties & attributes of another class(parent/base)
+=>Super Definition:Super() method is used to access methods of parent class
 
 Example:
 class Car:
@@ -22,4 +23,103 @@ class ToyotaCar(Car): # this is how you can extend the class
 a1=ToyotaCar(12345,"kesa")
 a1.start()
 a1.clickButton()
+
+Example 2:
+Child has its own attributes
+
+class Car:
+      def __init__(self,car_no,car_model):
+            self.car_no=car_no
+            self.car_model=car_model
+
+      @staticmethod
+      def startByBtn():
+          print("Static method")
+
+      def start(self):
+          print("Car Start")
+
+      def stop(self):
+          print("Car Stop")
+
+class ToyotaCar(Car): # this is how you can extend the class
+      def __init__(self, car_no, car_model,car_specility):
+           super().__init__(car_no, car_model)    
+           self.car_specility=car_specility 
+      def clickButton(self):
+           self.start()
+           self.startByBtn()  #you can also call static method here
+           print(self.car_model,self.car_specility)  
+
+a1=ToyotaCar(12345,"kesa","Special engine")
+a1.start()
+a1.clickButton()
+
+-----------------------------------------------------------------------------------
+
+Types of inheritance:
+1-Single inheritance:
+   Only have 1 parent class
+Base class======>child class
+
+2-Multi level inheritance
+Only have 2 parent classes
+Base class======>child class=====>child class
+
+Example:
+class Car:
+      def __init__(self,car_no,car_model):
+            self.car_no=car_no
+            self.car_model=car_model
+
+      @staticmethod
+      def startByBtn():
+          print("Static method")
+
+      def start(self):
+          print("Car Start")
+
+      def stop(self):
+          print("Car Stop")
+
+class ToyotaCar(Car): # this is how you can extend the class
+      def __init__(self, car_no, car_model,car_specility):
+           super().__init__(car_no, car_model)    
+           self.car_specility=car_specility 
+      def clickButton(self):
+           self.start()
+           self.startByBtn()  #you can also call static method here
+           print(self.car_model,self.car_specility)  
+
+class ToyotaMiniCar(ToyotaCar): # this is how you can extend the class
+      def __init__(self, car_no, car_model,car_specility,car_ac):
+           super().__init__(car_no, car_model,car_specility)    
+           self.car_ac=car_ac 
+      def clickChildButton(self):
+           self.clickButton()
+           print(self.car_model,self.car_specility,self.car_ac,"ToyotaMiniCar")  
+
+a1=ToyotaMiniCar(12345,"kesa","Special engine","ultra")
+a1.clickChildButton()
+a1.clickButton()
+
+3-Multiple inheritance
+When you have two or multiple parents
+class A:
+      var_a="I am A"
+
+class B:
+      var_b="I am B"
+
+class C(A,B):
+      var_c="I am C"
+
+
+c=C()
+print(c.var_a)
+print(c.var_b)
+print(c.var_c)
+
+
+
 

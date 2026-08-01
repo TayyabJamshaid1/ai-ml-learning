@@ -1,9 +1,9 @@
 =>Methods that dont use the self parameter (works at class level)
 
-=>Aisy method jis me object ya us k attributes ki zrort he ni ha,aisy methods ko object level ki bjaiy class level pr ly aao,tu is liye jo class level k methods huty ha usy static/class methods kehty ha
+=>Aisy method jis me object ya us k attributes ki zrort he ni ha,aisy methods ko object level ki bjaiy class level pr ly aao,tu is liye jo class level k methods huty ha usy static methods kehty ha
 
 =>To make a static member ,we use the  @staticmember which is a decorator
-
+=>Har object/instance k liye hamara static method bar bar create ni huta,static method pori class k liye common rhy ga,srf ek he bar create huta ha
 =>decorator aisa function ha jo apny parameter me function laita ha aur return me b function dta ha
 
 Proper Definition:
@@ -38,4 +38,7 @@ class Account:
 
 a1=Account(12345,"kesa")
 a1.resetPassword(a1) #pass the object
+
+Drawback of Static Methods:
+Static method cannot access or modify class state & generally for utility(Aisay method jaha hamary class attributes use ni hu rhy,tab hum generally usy static method bna dty ha)
 
