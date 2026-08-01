@@ -1,18 +1,22 @@
-class Person:
-      def __init__(self,math,phy,chem):
-            self.math=math
-            self.phy=phy 
-            self.chem=chem
+class Order:
+    def __init__(self,itemName,itemPrice):
+        self.itemName=itemName
+        self.itemPrice=itemPrice
 
-      @property
-      def percentage(self):
-            return str(((self.math+self.phy+self.chem)/300)*100)+"%"
+    def showOrder(self):
+        print(self.itemName," itemName with price ",self.itemPrice)
 
-                  
+    def __gt__(self, other):
+         if (self.itemPrice>other.itemPrice):
+             return Order(self.itemName,self.itemPrice)
+         elif (self.itemPrice<other.itemPrice):
+             return Order(other.itemName,other.itemPrice)
 
 
-p1=Person(18,25,66)
-print(p1.percentage)
-p1.math=99
-print(p1.percentage)
-#now the problem is you updated math score but still it is showing previous percentage instead of calculate again.This can be solved by two ways
+o1=Order("Tea",78)
+o1.showOrder()
+o2=Order("Biscuit",58)
+o2.showOrder()
+
+o3=o1>o2
+o3.showOrder()

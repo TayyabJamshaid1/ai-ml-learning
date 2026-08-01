@@ -1,0 +1,132 @@
+Def of Polymorphism(different forms/different meanings):When the same operator is allowed to have different meaning according to the context
+
+Best example of Polymorphism is Overloading
+
+Example
+print(2+3)
+print("good"+"boy")
+print([1,2,3]+[4,5,6])
+
+as see in upper examples,+ has different meaning according to the context.If you talking about int numbers, + will add it,if you talking about strings,+ will concatenate them,if talking about lists,+ will merge them.operator is same but execution are different according to context
+
+----------------------------------------
+Imp
+Python k andr already hamary pas string ,integer  wagaira ki classes built in bni huti ha aur us k andr phly sy methods pre define huty ha.Har method ki different implementation huti hai.Isy implicit Overloading kehty ha(Pre built/pre define).See below example:
+==>s="data" # hamary pas already string nam ki ek class bni hui ha jis ka hum yaha pr object bna rhy ha
+==>num=9 #yaha pr hum integer class ka obj bna rhy ha 
+----------------------------------------
+
+Har class k andr jo different operators hain un k implementation already define ha different different data types k liye which is also known as implicit Overloading,isi trah hum log apni class mei b apny mutabiq operator Overloading kr skty ha.Now python k andr complex numbers ko add krny ki koi class ni ha,is liye complex numbers ko add krny ki class hum khud bnaiy gy .For this python provide us dunder functions (See image Dunder functions.png).
+
+=>Dunder functions is allways written with __
+=>let suppose,Jab b hum 2 variables/attributes ko add kr rhy huty ha,tu internally huta ye ha k hum kisi ek object k liye ek dunder function ko call krty ha ,us dunder function mei hum second object pass kr dty ha jis pr hamara dunder function apna action perform krta ha
+for example we want to perform action of num1+num2 ,so is k liye hamai (__add__) dunder function chahiye.Hum num1 k liye dunder function ko call kry gy aur us me num2 pass kr dy gy.
+        num1.__add__(num2)
+
+See example:
+
+class Complex:
+     def __init__(self,real,img):
+          self.real=real
+          self.img=img
+
+     def showNumbers(self):
+          print(f"{self.real}i + {self.img}j")
+
+     def __add__(self,num2): #dunder function
+          realData=self.real+num2.real
+          imgData=self.img+num2.img
+          return Complex(realData,imgData)
+
+     def __sub__(self,num2): #dunder function
+          realData=self.real-num2.real
+          imgData=self.img-num2.img
+          return Complex(realData,imgData)
+
+
+num1=Complex(3,5)
+num1.showNumbers()
+num2=Complex(7,7)
+num2.showNumbers()
+
+num3=num1+num2
+num3.showNumbers()
+
+num4=num2-num1
+num4.showNumbers()
+
+now see hum ny yaha pr + and - ka matlab he change kr dia,this is known as operator overloading, isi ko Polymorphism  kehty ha
+
+
+------------------------------------------------------------
+Problems
+
+Problem 1:
+Calculate area,perimeter of circle
+
+Solution:
+class Circle:
+     def __init__(self,radius):
+          self.radius=radius
+
+     def calculateArea(self):
+          return 3.14*self.radius*2
+
+     def  calculatePerimeter(self):
+          return 2*3.14*self.radius
+
+c1=Circle(5)
+print(c1.calculateArea())
+print(c1.calculatePerimeter())
+
+Problem 2:
+Show a Employee class and make engineer class that inherit from Employee class
+
+Solution:
+class Employee:
+     def __init__(self,role,department,salary):
+          self.role=role
+          self.department=department
+          self.salary=salary
+
+     def showDetails(self):
+          info=f"role is {self.role},salary is ${self.salary} and department is {self.department}"
+          return info
+
+class Engineer(Employee):
+     def __init__(self, role, department, salary,name,age):
+          super().__init__(role, department, salary)
+          self.name=name
+          self.age=age
+
+     def showEngineerDetails(self):
+               info=f"My name is {self.name} ,age is {self.age} , role is {self.role},salary is ${self.salary} and department is {self.department} "
+               return info
+
+e1=Engineer("Frontend Engineer","Software",25000,"Usman",23)
+print(e1.showEngineerDetails())
+
+Problem 3: See dunder image
+
+class Order:
+    def __init__(self,itemName,itemPrice):
+        self.itemName=itemName
+        self.itemPrice=itemPrice
+
+    def showOrder(self):
+        print(self.itemName," itemName with price ",self.itemPrice)
+
+    def __gt__(self, other):
+         if (self.itemPrice>other.itemPrice):
+             return Order(self.itemName,self.itemPrice)
+         elif (self.itemPrice<other.itemPrice):
+             return Order(other.itemName,other.itemPrice)
+
+
+o1=Order("Tea",78)
+o1.showOrder()
+o2=Order("Biscuit",58)
+o2.showOrder()
+
+o3=o1>o2
+o3.showOrder()
