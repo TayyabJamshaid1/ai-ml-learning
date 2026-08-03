@@ -1,6 +1,26 @@
 =>Inheritance Definition: When one class(child/derived) derives properties & attributes of another class(parent/base)
 =>Super Definition:Super() method is used to access methods of parent class
+------------------
+Imp:
+if child_has_its_own_attributes:
+    MUST_USE_SUPER()  # ✅
+else:
+    NO_SUPER_NEEDED()  # ✅
 
+Example:
+class Order:
+     def __init__(self,amount):
+          self.amount = amount
+
+
+class OrderProcessor(Order):
+        def process(self):  #here i did not use super,i directly use parent attributes because no child attribute is needed here
+            print(f"Processing order of amount: {self.amount}")
+
+
+o1=OrderProcessor(100)
+o1.process()
+----------------------------
 Example:
 class Car:
       def __init__(self,car_no,car_model):

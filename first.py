@@ -1,22 +1,12 @@
 class Order:
-    def __init__(self,itemName,itemPrice):
-        self.itemName=itemName
-        self.itemPrice=itemPrice
-
-    def showOrder(self):
-        print(self.itemName," itemName with price ",self.itemPrice)
-
-    def __gt__(self, other):
-         if (self.itemPrice>other.itemPrice):
-             return Order(self.itemName,self.itemPrice)
-         elif (self.itemPrice<other.itemPrice):
-             return Order(other.itemName,other.itemPrice)
+     def __init__(self,amount):
+          self.amount = amount
 
 
-o1=Order("Tea",78)
-o1.showOrder()
-o2=Order("Biscuit",58)
-o2.showOrder()
+class OrderProcessor(Order):
+        def process(self):
+            print(f"Processing order of amount: {self.amount}")
 
-o3=o1>o2
-o3.showOrder()
+
+o1=OrderProcessor(100)
+o1.process()

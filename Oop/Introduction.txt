@@ -11,4 +11,14 @@ s1=Student()
 print(s1.name)
 
 ----------------------------------------------------------------------------------------
+Note: Instance attributes take preference over class attributes during assignment & retrieval.
 
+class Student:   #class name should be capital
+     studentName="Tayyab"  #Class attribute with same name "studentName"
+
+s1=Student()
+s1.studentName="Hamza"  #Instance attribute with same name "studentName"
+print(s1.studentName)  #Hamza
+When looking up for harry.attribute it checks for the following:
+1) Is attribute present in object?
+2) Is attribute present in class?
