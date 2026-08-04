@@ -1,11 +1,9 @@
-num=int(input("enter number : "))
+from functools import reduce
 
-try:
-    with(open("tables.txt","a") as f1):
+l=[2,7,9,5]
+def sum(a,b):
+    return a+b
 
-        table=[f"{num} X {i} = {num*i}\n" for i in range(1,11)]
-        for i in table:
-             f1.write(i)
+result=reduce(sum,l)
 
-except Exception as e:
-      print(e)
+print(result)

@@ -1,0 +1,98 @@
+Lambda Functions:
+A function without a name that you can write in one line.You can say it is a short cut to make function in one line.
+Function created using an expression using ‘lambda’ keyword.
+
+Syntax:
+lambda arguments: expression
+
+Example 1 :
+y=lambda x: x*x
+print(y(6)) 
+
+Example 2 :
+y=lambda a,b,c: a+b+c
+print(y(6,7,8)) 
+
+--------------------------------------------
+Join:
+It convert array into string,you can join them by adding space or giving comma etc
+
+Example 1:
+data=["Tayyab","Jamshaid","Rizvi"]
+cx=" ".join(data)
+print(cx) #output : Tayyab Jamshaid Rizvi
+
+Example 2:
+data=["Tayyab","Jamshaid","Rizvi"]
+cx=",".join(data)
+print(cx) #output : Tayyab,Jamshaid,Rizvi
+
+----------------------------
+Format
+Formats the values inside the string into a desired output.
+
+Example 1:
+data="{} is a good {}".format("Tayyab","boy")
+print(data)
+
+Example 2:
+You can also give the numbering ,0 is for first value,1 is for second value
+data="{0} is a good {1}".format("Tayyab","boy")
+print(data)
+
+---------------------------------------
+Map
+Map applies a function to all the items in an input_list.
+
+Syntax:
+map(function, input_list)
+
+Example 1:
+l=[2,7,9,5]
+square=lambda x:x*x
+result=map(square,l)
+
+print(list(result))
+
+Example 2:
+l=[2,7,9,5]
+multBy2=lambda x:x*2
+result=map(multBy2,l)
+
+print(list(result))
+----------------------------------------------
+Filter:
+Filter creates a list of items for which the function returns true.
+
+Syntax:
+filter(function, input_list)
+
+Example :
+l=[2,7,9,5]
+def even(n):
+    if (n%2==0):
+        return True
+    return False
+
+filtered=filter(even,l)
+
+print(list(filtered))
+
+--------------------------------------------------
+Reduce
+Reduce applies a rolling computation to sequential pair of elements.
+
+Syntax:
+from functools import reduce
+val = reduce(function, list1)
+
+Example:
+from functools import reduce
+
+l=[2,7,9,5]
+def sum(a,b):
+    return a+b
+
+result=reduce(sum,l)
+
+print(result)
