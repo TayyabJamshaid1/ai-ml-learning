@@ -1,0 +1,16 @@
+List Comprehension is an elegant way to create lists based on existing lists.
+
+Let suppose,i have to square a numbers avaiable in list,old syntax is below:
+l=[9,8,2]
+squardData=[]
+for index,value in enumerate(l):
+    print(f"the index is {index} and value is {value}")
+    squardData.append(value*value)
+
+print(squardData)
+
+latest Syntax :
+
+l=[9,8,2]
+squardData=[i*i for i in l]
+print(squardData)

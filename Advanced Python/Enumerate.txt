@@ -1,0 +1,13 @@
+Old Syntax to show index in loop
+
+l=[99,88,22]
+index=0
+for value in l:
+    print(f"the index is {index} and value is {value}")
+    index+=1
+
+
+Now you can show index by using enumerate
+l=[99,88,22]
+for index,value in enumerate(l):
+    print(f"the index is {index} and value is {value}")

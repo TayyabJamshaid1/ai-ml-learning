@@ -1,12 +1,3 @@
-def checkFinalFunctionality():
-    try:
-        a=int(input("Enter a number "))
-        print (a)
-        return
-    except Exception as e:
-        print(e)
-        return
-    finally:
-       print("I am finally,i will run forever")
-
-checkFinalFunctionality()
+l=[9,8,2]
+squardData=[i*i for i in l]
+print(squardData)

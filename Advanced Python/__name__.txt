@@ -1,0 +1,53 @@
+How to import custom function from another file
+
+=>Function in file 1 named first.py:
+
+def myFunc():
+    print("I am func")
+
+myFunc()
+
+=>File 2 named module.py
+from first import myFunc
+
+-------------------------------------------------------------
+__name__
+
+'__name__' evaluates to the name of the module in python from where the program is ran.
+If the module is being run directly from the command line, the '__name__' is set to string "__main__".
+Thus, this behaviour is used to check whether the module is run directly or imported to another file.
+
+
+File 1 first.py:
+def myFunc():
+    print("I am func")
+
+myFunc()
+print(__name__)
+
+File 2 module.py:
+from first import myFunc
+
+If i run myFunc function from  file2(module) by running python module.py,it will print the file name where it is from imported(first)
+
+Output:
+I am func
+first
+
+but if i run the file from first.py,it will show the __main__ in print(__name__) that means it run directly from file,not imported from any where
+
+
+To make it more better,we run the if condition in it,let suppose we have a scenario k function ko import hu jany du mgr dosri file jab isy import kr rhi hu tab ye call na hu while agr jis file me function bna ha,jab usko run kary tab wo function call hu then in this scenario __name__ logic mostly come
+
+
+def myFunc():
+    print("I am func")
+
+
+if (__name__ =="__main__"):
+    print("Function is not imported from any where")
+    myFunc()
+    print(__name__)
+else:
+    print("Function is imported from any file")
+

@@ -1,0 +1,24 @@
+Function k andr bnaiy huay variables us k apny huty variables huty ha,you cannot use it outside of function,although you can use global variables in your function
+
+a=90
+
+def data():
+    a=22
+    kesa="kesaaaa"
+    print(a,kesa)
+
+print(a,kesa) #you cannot use kesa outside of function also the value of a outside of function is 90
+
+
+Here comes the global usage,if we want k function k andr jo "a" variable ha,as a local variable ki bjaiy as a global variable ki trah treat kary,this can be done by global
+
+a=90
+
+def data():
+    global a  #now it is not a function variable,it becomes global variable
+    a=22
+    kesa="kesaaaa"
+    print(a,kesa)
+
+data()
+print(a)  # 22
