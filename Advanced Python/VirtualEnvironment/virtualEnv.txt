@@ -1,0 +1,14 @@
+install: pip install virtualenv
+ create your virtal env and give name:       virtualenv envtayy
+activate your virtual env  :  source envtayyab/bin/activate
+after activation,pranthesis appear with env name
+
+----------------------------------
+install new package in your virtal env : pip install pandas
+
+freeze command lists all the Python packages currently installed in your active environment along with their version numbers : pip freeze 
+
+This command creates a requirements.txt file listing all packages installed in your current environment :   pip freeze > requirements.txt
+
+now install the requirement text packages : pip install -r requirements.txt
+
