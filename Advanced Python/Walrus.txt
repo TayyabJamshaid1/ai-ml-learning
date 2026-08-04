@@ -1,0 +1,71 @@
+Assign values to variables as part of larger expression
+Written as :=
+
+#Initially in python,you are not allowed to assign value to variable within expression,after python 3.8,you are allowed
+
+Example 1:
+Before
+# a=True
+# print(a=False) #illegal,you have to use 1 extra line to make it false
+
+After:
+# a=True
+# print(a:=False)
+
+Example 2:
+loops
+ while in past we are not allowed to do below code
+ n=2
+ while(m=len([1,23,3,4,5])>n): #illegal
+      print("KESA")
+      n=10
+
+ print(m)
+
+ now,in python 3.8 we can do it
+ n=2
+ while(m:=len([1,23,3,4,5]))>n:
+      print("KESA")
+      n=10
+
+ print(m)
+
+ Example 3:
+ If statement
+
+old syntax
+names=["Ali","Noman"]
+name=input("Enter name : ")
+if (name in names):
+    print(f"{name} is avaiable")
+else:
+    print(f"{name} is not avaiable")
+
+latest syntax
+names=["Ali","Noman"]
+if (name:=input("Enter name : "))in names:
+    print(f"{name} is avaiable")
+else:
+    print(f"{name} is not avaiable")
+
+
+Example 4:
+Old way:
+foods=list()
+while True:
+      food=input("Enter food : ")
+      if (food=="quit"):
+            break
+      foods.append(food)
+
+print(foods)
+
+Latest way:
+foods=list()
+while True:
+      
+      if (food:=input("Enter food : "))=="quit":
+            break
+      foods.append(food)
+
+print(foods)

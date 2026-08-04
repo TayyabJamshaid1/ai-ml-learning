@@ -1,3 +1,17 @@
+Type hints are added using the colon (:) syntax for variables and the -> syntax for function return types.
+
+We have to define the types of vaiables and functions return type
+
+foods:list=list()
+num1:int=9
+name:str="Kesa"
+def sum(a:int,b:int)->int:
+    return a+b
+sum(7,9)
+
+-------------------------------------
+Advanced Type Hints:
+
 from typing import List,Tuple,Dict,Union
 # List of integers
 numbers: List[int] = [1, 2, 3, 4, 5]
