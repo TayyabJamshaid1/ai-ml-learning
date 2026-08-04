@@ -1,12 +1,12 @@
-from typing import List,Tuple,Dict,Union
-# List of integers
-numbers: List[int] = [1, 2, 3, 4, 5]
-# Tuple of a string and an integer
-person: Tuple[str, int] = ("Alice", 30)
-# Dictionary with string keys and integer values
-scores: Dict[str, int] = {"Alice": 90, "Bob": 85}
+def checkFinalFunctionality():
+    try:
+        a=int(input("Enter a number "))
+        print (a)
+        return
+    except Exception as e:
+        print(e)
+        return
+    finally:
+       print("I am finally,i will run forever")
 
-allData:Union[str,int]=90 #Union me ap is ki as a variable k tor pr koi b value string or integer datatype ki save krwa skty hu
-print(allData)
-allData="Kesa"
-print(allData)
+checkFinalFunctionality()

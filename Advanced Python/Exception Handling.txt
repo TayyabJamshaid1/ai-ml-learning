@@ -1,0 +1,106 @@
+It will not crash your program,in case of error,except will run,after that rest of the code will run
+try:
+    a=int(input("Enter a number "))
+    print (a)
+
+except Exception as e:
+    print(e)
+
+print("Program end")
+----------------------------
+Built in exceptions:
+There are many built-in exceptions which are raised in python when something goes wrong.
+
+try:
+    a=int(input("Enter a number "))
+    print (a)
+
+except ValueError as v:
+    print("You enter wrong data type data",v)
+except Exception as e:
+    print(e)
+
+print("Program end")
+
+Other built in exceptions are ZeroDivisionError,TypeError etc
+
+-------------------------------------------
+Raising Exceptions
+We can raise custom exceptions using the raise keyword in python.
+
+Example 1:
+age=-3
+if (age>0):
+    print("Age excepted")
+else:
+    raise ValueError("Age must be greater than 0") #it will crash the program,rest of code will not run
+
+print("kesa") 
+
+Example 2:
+
+num1=int(input("Enter num 1 : "))
+num2=int(input("Enter num 2 : "))
+
+if (num2==0):
+    raise ZeroDivisionError("Num 2 cannot be divisible by 0,enter number which should greater than 0")
+
+elif (num2>0):
+      num3=num1/num2
+      print(num3)
+
+
+-----------------------------------
+Try With Else Clause
+If try run successfully,then else will run
+try:
+ # Some code
+except:
+ # Some code
+else:
+ # Executed if try was successful
+
+ Example:
+ try:
+    a=int(input("Enter a number "))
+    print (a)
+
+except ValueError as v:
+    print("You enter wrong data type data",v)
+except Exception as e:
+    print(e)
+else :
+    print("i will run if try run successfully")
+print("Program end")
+
+---------------------------------
+
+Try With Finally:
+Finally hamesha chlta ha even error aiy ya na aiy
+
+Example 1:
+try:
+    a=int(input("Enter a number "))
+    print (a)
+
+except Exception as e:
+    print(e)
+
+finally:
+    print("I am finally,i will run forever")
+
+Example 2:
+normally function me ap return jab krty hu tab us k nichay wala code ni chlta but finally is rule ko b override kr dy ga,return huny k bawajood ye chly ga
+
+def checkFinalFunctionality():
+    try:
+        a=int(input("Enter a number "))
+        print (a)
+        return
+    except Exception as e:
+        print(e)
+        return
+    finally:
+       print("I am finally,i will run forever")
+
+checkFinalFunctionality()
