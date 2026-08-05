@@ -27,6 +27,13 @@ data=["Tayyab","Jamshaid","Rizvi"]
 cx=",".join(data)
 print(cx) #output : Tayyab,Jamshaid,Rizvi
 
+Example 3:
+Write a program to find the maximum of the numbers in a list using the reduce function.
+Solution:
+multipleOf7=[str(7*i) for i in range(1,11)]
+res="\n".join(multipleOf7)
+print(res)
+
 ----------------------------
 Format
 Formats the values inside the string into a desired output.
@@ -38,6 +45,19 @@ print(data)
 Example 2:
 You can also give the numbering ,0 is for first value,1 is for second value
 data="{0} is a good {1}".format("Tayyab","boy")
+print(data)
+
+Example 3:
+Write a program to input name, marks and phone number of a student and format it using
+the format function like below:
+“The name of the student is Harry, his marks are 72 and phone number is 99999888”
+
+Solution:
+name=input("Enter name : ")
+marks=input("Enter marks : ")
+phoneNumber=input("Enter phone number : ")
+
+data="My name is {},my grades are {} and my contact number is {}".format(name,marks,phoneNumber)
 print(data)
 
 ---------------------------------------
@@ -67,7 +87,7 @@ Filter creates a list of items for which the function returns true.
 Syntax:
 filter(function, input_list)
 
-Example :
+Example 1:
 l=[2,7,9,5]
 def even(n):
     if (n%2==0):
@@ -78,6 +98,19 @@ filtered=filter(even,l)
 
 print(list(filtered))
 
+Example 2:
+Write a program to filter a list of numbers which are divisible by 5.
+
+Solution:
+data=[7,14,21,28,35,42,49,56,63,70]
+
+def divisibleBy5(n):
+    if (n%5==0):
+        return True
+    return False
+
+result=filter(divisibleBy5,data)
+print(list(result))
 --------------------------------------------------
 Reduce
 Reduce applies a rolling computation to sequential pair of elements.
@@ -86,7 +119,7 @@ Syntax:
 from functools import reduce
 val = reduce(function, list1)
 
-Example:
+Example 1:
 from functools import reduce
 
 l=[2,7,9,5]
@@ -95,4 +128,26 @@ def sum(a,b):
 
 result=reduce(sum,l)
 
+print(result)
+
+Example 2:
+from functools import reduce
+
+l=[2,7,9,5]
+mult=lambda a,b:a*b
+
+result=reduce(mult,l)
+
+print(result)
+
+Example 3:
+Write a program to find the maximum of the numbers in a list using the reduce function
+Solution:
+
+data=[7,14,21,28,35,42,49,56,63,70]
+
+def findMaximum(a,b):
+     return a if a>b else b
+
+result=reduce(findMaximum,data)
 print(result)

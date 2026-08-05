@@ -12,3 +12,14 @@ This command creates a requirements.txt file listing all packages installed in y
 
 now install the requirement text packages : pip install -r requirements.txt
 
+to deactivate active environment : deactivate
+
+Check is it deactivate or not : which python
+
+If Active:
+(envtayyab) tayyab@...$ which python
+/home/tayyab/Documents/AI,ML Learning/envtayyab/bin/python  # ← Path to virtual env
+
+If Not Active:
+tayyab@...$ which python
+/usr/bin/python  # ← System Python
