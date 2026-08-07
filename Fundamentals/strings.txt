@@ -34,7 +34,11 @@ Scenarios:
 in case  [:1]  //first value is not avaiable,now it will start from 0
   if   [1:]  //last value is not avaiable,its mean its value is array.length
 
+Example 1:
+df='''Tayyab'''
 
+sd=df[-5:]
+print(sd)  #output : ayyab
   --------------------
 Slicing with Skip Value:
 
