@@ -1,14 +1,15 @@
-c = '''harry''' # Triple quoted string      usage
-#e={}
-# num1=input("Enter user name 1 : ")
-# num2=input("Enter language : ")
-# e.update({num1:num2})
-# num3=input("Enter user name 2 : ")
-# if e[num3]==num3
+e={}
+for i in range(1,5):
+     while True:
+            num1=input(f"Enter user name {i} : ")
+            if num1 in e:
+                  print(f"❌ '{num1}' already exists! Please enter a different name.")
+            else:
+                  break
+
+     num2=input("Enter his language : ")
+     e.update({num1:num2})
+
+print(e)
 
 
-poem = """Roses are red,
-Violets are blue,
-Python is awesome,
-And so are you!"""
-print(poem)

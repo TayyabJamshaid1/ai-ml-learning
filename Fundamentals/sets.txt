@@ -159,17 +159,15 @@ Create an empty dictionary. Allow 4 friends to enter their favorite language as 
 use key as their names. Assume that the names are unique.
 
 e={}
-num1=input("Enter user name 1 : ")
-num2=input("Enter language : ")
-e.update({num1:num2})
-num3=input("Enter user name 2 : ")
-num4=input("Enter language : ")
-e.update({num3:num4})
-num5=input("Enter user name 3 : ")
-num6=input("Enter language : ")
-e.update({num5:num6})
-num7=input("Enter user name 4 : ")
-num8=input("Enter language : ")
-e.update({num7:num8})
+for i in range(1,5):
+     while True:
+            num1=input(f"Enter user name {i} : ")
+            if num1 in e:
+                  print(f"❌ '{num1}' already exists! Please enter a different name.")
+            else:
+                  break
+
+     num2=input("Enter his language : ")
+     e.update({num1:num2})
 
 print(e)

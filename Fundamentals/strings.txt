@@ -39,6 +39,18 @@ df='''Tayyab'''
 
 sd=df[-5:]
 print(sd)  #output : ayyab
+----------------------------------
+Why we need ''' quotes while we already have single and double quotes:
+1-It help in Multi-line Strings
+poem = """Roses are red,
+Violets are blue,
+Python is awesome,
+And so are you!"""
+print(poem)
+
+2-Strings That Contain BOTH Single AND Double Quotes
+message = """She said, "I'm learning Python" and he replied, "That's great!" """
+print(message)
   --------------------
 Slicing with Skip Value:
 
