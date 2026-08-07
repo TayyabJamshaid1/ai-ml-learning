@@ -1,0 +1,77 @@
+Lists:
+Python lists are containers to store a set of values of any data type.
+friends = ["apple", "grapes", 23, False, 12.3]
+
+# ✅ Can change elements
+friends[0] = "mango"  # Works!
+
+# ✅ Methods modify the original list
+friends.append("banana")  # Original list changes
+friends.sort()            # Original list changes
+
+# ❌ Different from strings
+name = "Harry"
+name.upper()  # Original string doesn't change
+
+
+Imp: string k upr koi b method run krny sy original string change ni hu while list k upr method run krny sy list update hu jai gi
+
+---------------------------------------
+Tuples
+Tuples are written in ()
+tup=(23,44,55,66)
+print(tup) 
+
+IMP:Diff btw tuples and array is that tuples are immutable like strings while lists are mutable
+
+Imp Scenario:
+tup=(23) # if given only 1 value,it will not consider it as tuple,it will consider it as int value
+print(tup) # output 23 ,consider it as int value ,not as a tuple
+
+To resolve this ,we have 2 possibilities
+
+Way 1:
+If tuple has only 1 value,add comma with it
+tup=(23,)
+print(tup) # output :  (23,) now it consider it as a tuple
+
+Way 2:
+Add another values too
+tup=(23,11,113)
+print(tup) # output : (23,11,113) now it consider it as a tuple
+
+------------------------------------------------------------------------------
+Dictionary:
+Key ,value pair ko python me dictionary kaha jata ha
+
+data={
+    "harry":100,
+    "usman":300
+}
+
+print(data,type(data)) #output : {'harry': 100, 'usman': 300} <class 'dict'>
+
+print(data["harry"]); #output: 100
+
+Imp: dictionary is mutable
+
+----------------------------------------------------------------------------------
+Set is a collection of non-repetitive elements.
+
+=>dictionary & set both use curly brackets{}
+=>d={} //it will consider empty dictionary
+=>now to make empty new set,we use  d=set(),now d is a new set
+=>dictionary works with key value pair while set contains only values
+=>If set contains repetitive values,it will not consider it and return only unique values
+s={12,88,12,"kesa"}
+print(s) # output : {88, 'kesa', 12} ,it will ignore another 12
+=>sets are unordered,agr apny set me {1,2,3,4} dia tu zrori ni ye sequence me he ye dy,it will change their order
+=>sets are unindexed (u cannot access it by index)
+=>There is no way to change items in sets.{1,2,3} mei sy mai 2 ko change ni kr skta,but we can remove 2 and insert another value in it
+=>Sets are mutable, but they have a unique constraint: the elements contained within a set must be immutable.
+
+{1,"kesa",23.2}
+
+------------------------
+
+Enhanced Summary with Key Points (See image Summary of tuples,lists,set,dict.png)

@@ -10,6 +10,7 @@ print(s) # output : {88, 'kesa', 12} ,it will ignore another 12
 =>sets are unordered,agr apny set me {1,2,3,4} dia tu zrori ni ye sequence me he ye dy,it will change their order
 =>sets are unindexed (u cannot access it by index)
 =>There is no way to change items in sets.{1,2,3} mei sy mai 2 ko change ni kr skta,but we can remove 2 and insert another value in it
+=>Sets are mutable, but they have a unique constraint: the elements contained within a set must be immutable.
 
 Set Methods:
 
