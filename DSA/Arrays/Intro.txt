@@ -1,0 +1,24 @@
+Data Structure is basically a structures in our code  which are use to store data.Hamari sari websites and apps sab data k upr kam kr rhi huti ha.Data  is a fuel for development or programming.WE store a lot of data in different different  data structures.This data can be of multiple categories ,may be it is a linear,may be it is a heirechial,so alag alag type ka data hum different different data structures me store krwaty ha.
+
+Algorithm: Data k upr different trah k operations perform krny ko algorithm kehty ha let suppose,kisi data Structure sy hum data ko find/search krna chahty ha, tu us search krny k process ko hum algorithm kehth ha
+
+Arrays is the first Data Structure.To store a multiple data,we use a array.In array data structure, we store the each data in individual block.Is k har ek block me kuch na kuch information store ha.Is pori array ka ek he nam hu ga jis k zariye hum data ko track kary gy
+
+Properties of array:
+1-We can store  the same datatype of data in array,e.g no string & int together etc,agr hum integer store krwa ha tu sab me integer he store hu ga
+
+2-Arrays are contigous in memory(sab data ek sath memory me store huta ha)
+
+3-Array are also known as linear(straight line structure)
+
+Syntax:
+int marks[5] #we make a 5 blocks,har block ek integer jitni space occupied krta ha jis me hum different integer store krty ha.Ye sary blocks ek sath memory me store huty ha
+
+int marks[5]={12,33,35,77,12}
+int studentId[]={88,87,19} #automatically take 3 size
+
+now if we have to access array data,we have to use index,starts with 0 and ends with size-1
+
+=>Array will allways a pass by reference.It will share his address,not value
+
+
