@@ -1,0 +1,14 @@
+Time Complexity and Big O Notation:
+
+Big O Notation:
+
+Use  big O(n) jab apki time continuously change hu rha ha with input n while use big O(1) jab apka time constant ha even input jo b hu
+
+Big O has 2 defintions (1 is mathematical and other one is industrial)
+
+In industrial defintion, we can say it like order of while in mathematical defintion, we can say O(n)=O(n^2)=O(n^3)
+
+=Agr mera data chota ha tu mai 0(n)  use kro ga aur agr mera data large ha tu mai o(1) use kro ga (See time Complexity notes)
+
+
+=>Best algorithm wo huta ha jo zyada data ly k usy kam time me resolve kary like 0(1)
