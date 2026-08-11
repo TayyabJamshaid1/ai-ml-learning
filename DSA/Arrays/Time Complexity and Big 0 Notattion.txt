@@ -1,5 +1,54 @@
 Time Complexity and Big O Notation:
+Ja hum time Complexity ki bat krty ha tu is ka ye matlab ni k is operation ko perform huny mei kitna time lga because har machine mei operation run huny ki timing different ha,mac me time different hu ga,windows & linux me different. In reality , Time Complexity is actually a count how the amount of work/operations increases as n increases. We studied a relation in time complexity,phly n jab 2 tha tab isy kitna kam krna prta ha ,ab n jab 10 ha ,ab isy kitna kam krna prta ha.
 
+So time complexity is usually denoted/written by different Notations like big O,gamma,theta etc 
+
+So big O is most important,it tells us what would be the  worst case time complexity scenario(it means it give us the greater value of n) for example hum apny website ko ye soch kr ready kary gy k is pr 1 lac users hit kary gy,hum best scenario ni sochy gy k 100 ya 200 users aiy gy,hum worst case sochy gy k agr 1 lac user a gya tu kya hamari website stable rhy gi.So 1 lac would be the value of n. 
+
+Similary,in mathematics,time complexity can be any mathematical function. Math ka koi b function time complexity bn skta ha.generally jab b hamary pas boht bary bary expressions aty ha tu hum un me sy sab sy bari value ly lty ha ,yehi reason ha,jab b hum mathematical functions me time complexityko measure krty ha tab hum constants ko ignore kr dty ha aur sab sy greatest/worst value ko pick krty ha
+for example, O(5n^3+2n^2+89) ,in this mathematical function,hum ny time complexity niqalni ha ,is liye sab sy phly hum constants(5,2,89) ko remove krty ha ,then sab sy worst/greater value ko select krty ha which is n^3, so O(5n^3+2n^2+89) will become O(n^3)
+
+Common Complexities:
+1-O(1) (constant time complexity)
+Jab apka input size jitna marzi bara hu,ap k number of operations constant rehty ha
+e.g:
+function data(arr){  
+# ab yaha array ka size 10 hu ya 10 cr,operation srf 1 he rhy ga print krwany ka
+    print(arr)
+}
+
+Its graph is always straight (see image 0(1) graph)
+
+Practical example of O(1) : jab hum array me sy koi value lna chahty ha aur us  value ka index already hamai pta ha ,hamai srf usy get krna ha,this is best example of O(1)
+
+2-O(n) (Linear time complexity)
+Jesy jesy hamara input size/n increase hu rha ha waisy waisy hamaray no of operations b increase hu rhy ha
+
+Practical example:
+We print all the elements in string or array,jesy jesy string or array ka size increase hu ga waisy waisy no of operations b increase hu gy
+
+Imp:
+Jab hamary code me multiple time Complexities hu tab hum choti complexity ko ignore kr dty ha aur sab sy bari/worst complexity ko pakar lty ha.
+Now,Dono cases(O(1) and O(n)) me hamai kesy pta lgy ga k 2no mei sy bary wali complexity knsi ha,the answer is hum hamesa n ko khud sy sab sy large  value consider kary gy.Means    O(n) me agr n=100000 ha, tu  hamai 100000 operations perform krny pary gy while O(1) me srf 1. Jitni zyda n hu gi,utni kharab/bad/worst hamari complexity hu gi kyu k usy utny operations perform krny pary gy.So we can also say O(1) is better than O(n)
+e.g: 
+  print(arr) #it is O(1), we will ignore this in front of O(n) because hamara worst case 10000 loop ko run krna ha
+  loop of 10000
+
+See image of O(1) graph
+
+3-O(n^2) (Quadratic complexity)
+Ye generally hamai nested loops mei milta ha.Mainy ek for loop bnaya ,us k andr ek aur for loop bna dia,dono mei n value ja rhi ha ,is liye hum isy n^2 kehty ha.
+ALso,in 2D matrix,jab humny har value k upr operation perform krna ha,jab humny pory matrix me travel krna ha ,tab hum O(n^2) complexity ka use krty ha,See image of Quadratic O(n^2) matrix example.png
+
+See graph image of O(n^2) graph.png.
+Jitna hum upr jaty jai gy utni kharab hamari complexity huti jai gi,so O(1) is best,O(n) is bad,O(n^2) is worst
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------
 Big O Notation:
 
 Use  big O(n) jab apki time continuously change hu rha ha with input n while use big O(1) jab apka time constant ha even input jo b hu
@@ -8,7 +57,7 @@ Big O has 2 defintions (1 is mathematical and other one is industrial)
 
 In industrial defintion, we can say it like order of while in mathematical defintion, we can say O(n)=O(n^2)=O(n^3)
 
-=Agr mera data chota ha tu mai 0(n)  use kro ga aur agr mera data large ha tu mai o(1) use kro ga (See time Complexity notes)
+=Agr mera data chota ha tu mai O(n)  use kro ga aur agr mera data large ha tu mai O(1) use kro ga (See time Complexity notes)
 
 
-=>Best algorithm wo huta ha jo zyada data ly k usy kam time me resolve kary like 0(1)
+=>Best algorithm wo huta ha jo zyada data ly k usy kam time me resolve kary like O(1)
