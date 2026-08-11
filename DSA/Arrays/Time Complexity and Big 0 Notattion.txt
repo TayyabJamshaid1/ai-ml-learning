@@ -44,10 +44,72 @@ See graph image of O(n^2) graph.png.
 Jitna hum upr jaty jai gy utni kharab hamari complexity huti jai gi,so O(1) is best,O(n) is bad,O(n^2) is worst
 
 
+4-O(logn)
+It is much better then O(n)
+
+The number of operations grows logarithmically with n. It usually happens when the problem size is repeatedly divided by a constant factor, such as half. log n gives us the approximate growth/number of steps, not the exact number of operations for every input.
 
 
+Example:
+8 → 4 → 2 → 1
+There are 3 divisions:
+log₂(8) = 3
 
 
+Most commonly we use it in Binary Search
+
+Binary Search is the classic example.
+=>Array must be sorted:
+
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+To find 2:
+
+[1, 2, 3, 4, 5, 6, 7, 8]
+          ↑
+          4
+
+2 < 4, so ignore the right half:
+
+[1, 2, 3]
+
+Check middle:
+
+[1, 2, 3]
+    ↑
+    2
+
+Found.
+
+The important idea is:
+
+We repeatedly eliminate approximately half of the remaining data.
+
+Therefore:
+
+Binary Search → O(log n)
+
+For example:
+
+n = 100
+
+100 → 50 → 25 → 13 → 7 → 4 → 2 → 1
+
+Approximately 7 halving steps.
+O(log₂(100)) = 7
+
+For:
+
+n = 1,000
+
+1000 → 500 → 250 → 125 → 63 → 32 → 16 → 8 → 4 → 2 → 1
+
+Approximately 10 halving steps.
+O(log₂(1000)) = 10
+
+Remember log(n),in Binary search , reduces number of operations ,to make our code efficient for example for n = 1,000,if have to get 1000 value,in O(n) ,we have to perform 1000 operations while in log(n) we only have to perform 10 operations,which is very much faster
+So,in generally,
+O(1)>O(logn)>O(n)>O(n2)​
 ------------------------------------------------------------------------------------------------
 Big O Notation:
 
