@@ -1,0 +1,23 @@
+Rule 1 : Drop the non dominent terms.
+Explanation:
+let suppose,initialization mei jitna b time lga ,usy hum k1 assume krty ha aur loop k andr sary operations ko huny me k2n time lga,ab is me k1 ka time as compare to k2n time, boht kam lgy ga,is liye rule 1 ye kehta ha k jis chez me boht kam time lgy usy ignore kr du.See Rule1 image
+T=k1+k2n
+k1 will be ignored now k2n will left
+T=k2n
+
+Rule 2:
+Drop the constant values
+Explanation:
+K2 is a constant value we will remove it
+T=n 
+which becomes O(n) as we know Time complexity is represent by O in this scenario
+
+Rule 3:
+Break the code into fragments
+Explanation:
+Hum sary code ko phly fragments mei divide kary gy aur phr prticular fragment ka time assume kry gy.
+let suppose,initialization mei jitna b time lga ,usy hum k1 assume krty ha aur loop k andr sary operations ko huny me k2n time lga,isi trah second loop k andr sary operations ko huny me k3n time lga,ab is me k1 ka time as compare to k2n & k3n time boht thora lga,is liye rule 1 k mutabiq hum usy ignore kary gy.And second rule k mutabiq constant ko b remove kr dy gy,which will become again O(n)
+See image of Rule 3
+
+
+

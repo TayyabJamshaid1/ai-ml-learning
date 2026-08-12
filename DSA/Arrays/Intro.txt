@@ -1,3 +1,9 @@
+Data Structure:
+Data Structure is basically a structures in our code  which are use to store data.Hamari sari websites and apps sab data k upr kam kr rhi huti ha.Data  is a fuel for development or programming.WE store a lot of data in different different  data structures.This data can be of multiple categories ,may be it is a linear,may be it is a heirechial,so alag alag type ka data hum different different data structures me store krwaty ha.
+
+Algorithm: Data k upr different trah k operations perform krny ko algorithm kehty ha let suppose,kisi data Structure sy hum data ko find/search krna chahty ha, tu us search krny k process ko hum algorithm kehth ha
+---------------------------------------------
+
 Abstract Data Type:
 Abstract data type is basically a blueprint which tells us the minimal requirements along with operations. e.g let sppose ,mjy ek pc bnana ha ,pc bnany k liye jo minimal requirements jo ho gi wo ha ram,cheap,engine etc,agr ye chezain pori hu gi tu hum khud sy pc build kr ly gy aur pc pr hum multiple operations perform kary gy like gaming etc.
 
@@ -7,12 +13,12 @@ Array Def : "Collection of elements accessible by an index"
 
 Array cannot be risize,let suppose apny 10 elements ki array "man" bnai aur k bad apny us program ya kisi aur program me koi aur arrays wagaira bnai,ab "man" array k sath jo avaiable space thi wo kisi aur ny occupied kr li,ab "man" array k sath wali space occupied ha,is liye hum usy resize ni kr skty although hum ek new big array bna k "man" array k elements us me copy kr skty ha
 
-Data Structure is basically a structures in our code  which are use to store data.Hamari sari websites and apps sab data k upr kam kr rhi huti ha.Data  is a fuel for development or programming.WE store a lot of data in different different  data structures.This data can be of multiple categories ,may be it is a linear,may be it is a heirechial,so alag alag type ka data hum different different data structures me store krwaty ha.
-
-Algorithm: Data k upr different trah k operations perform krny ko algorithm kehty ha let suppose,kisi data Structure sy hum data ko find/search krna chahty ha, tu us search krny k process ko hum algorithm kehth ha
-
 Arrays is the first Data Structure.To store a multiple data,we use a array.In array data structure, we store the each data in individual block.Is k har ek block me kuch na kuch information store ha.Is pori array ka ek he nam hu ga jis k zariye hum data ko track kary gy
 
+
+
+
+-------------------------------------------------------------------
 Properties of array:
 1-We can store  the same datatype of data in array,e.g no string & int together etc,agr hum integer store krwa ha tu sab me integer he store hu ga
 
