@@ -1,0 +1,23 @@
+data=[1,5,7,9,23] #data is a sorted array named arr
+
+best case : hamai 1 find krny ka he task mil jai jo k starting pr he ha ,in this scenario ,O(1) case will be used
+
+worst case:hamai 23 find krny ka he task mil jai jo k ending pr  ha ,in this scenario ,O(n) case will be used
+
+expected case:
+avgCase=O(E(all possible runtimes)/total no of possibilties)
+
+=O((k+2k+3k......nk)+nk)/n+1
+
+#(k+2k+3k......nk) means no of possibilties, agr arr mei 1 ko find krny ka task mila tu no of operation(k) 1 hu ga,agr 5 ko find krny ka mila,tu no of operations 2 hu gy,agr 7 ko mila tu no of operations 3 hu gy ,then ye nk tak bat chly jai gi according to formula because arr ka size bara b hu skta ha
+
+#all possibilties k sath humny last mei humny nk ko add b kiya ha ((k+2k+3k......nk)+nk),it represents the possibilty of  agr value is array me mujood he na hu ,us possibilty ko represent krta ha
+
+#n+1 total no of arr possibilties+ jo 1 humny add kiya ye wo possibilty ha in case agr value mujood he na hu 
+
+=k((1+2+3...n)+n)/n+1
+
+mathematical formaula :   1+2+3...n =   n(n+1)/2
+
+See further solution on Best ,worst & expected img 1
+
