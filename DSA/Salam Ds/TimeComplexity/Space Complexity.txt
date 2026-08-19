@@ -1,0 +1,112 @@
+Space Complexity:
+ How much EXTRA memory grows as input size (n) grows.
+
+
+Example 1:
+let suppose ,you have a program
+
+function findFifthElement(arr){
+    return arr[5]
+}
+
+=>now what is the time Complexity of this program?The time Complexity is O(1)
+
+=>What is the space Complexity here? 
+a)Space Complexity: O(1)
+b)Extra space used: 0 variables
+c)Does it grow with n? No (it doesn't matter if array has 5 or 5 million elements)
+
+
+Example 2:
+function findMaxNumber(arr){
+    let maxNumber=arr[0]
+    for (let i=0;i<arr.length;i++){
+        if (arr[i]>maxNumber){
+            maxNumber=arr[i]
+        }
+    }
+    return maxNumber;
+}
+
+=>now what is the time Complexity of this program?The time Complexity is O(n)
+
+=>What is the space Complexity here? 
+Space Complexity: O(1)
+Extra space used: 1 variable (maxNumber) + 1 variable (i) = 2 variables
+
+Does it grow with n? No
+
+If array has 10 elements → you use 2 extra variables
+If array has 1 million elements → you still use only 2 extra variables
+
+Example 3:
+function doubleArray(arr){
+    let newArr = []  // ← This GROWS with input!
+    for (let i=0; i<arr.length; i++){
+        newArr.push(arr[i] * 2)
+    }
+    return newArr;
+}
+
+=>now what is the time Complexity of this program?The time Complexity is O(n)
+
+=>What is the space Complexity here? 
+Extra space grows with n → O(n)
+If arr has 10 elements → newArr has 10 elements
+If arr has 1 million elements → newArr has 1 million elements
+
+
+-----------------------------------------------------------
+Use cases
+
+1-Use case 1
+function data(arr){
+for (let i=0;i<arr.length;i++){}
+for (let j=0;j<arr.length;j++){}
+}
+
+Its time Complexity is O(n+n)=O(2n)
+now constants will be ignore,so it will become O(n)
+
+See image (Use Case 1 of Time Complexity.png)
+
+Why the constants is being ignored?See the Comparison btw O(n^2) vs O(2n),you will know the reason:
+
+O(n^2):
+n=10, now x=100 times now it will iterate 100 times
+n=100,now x=10,000 times now it will iterate 10000 times
+n=1 million,now x=(1 million)^2 times now it will iterate in millions
+
+
+O(2n):
+n=10, now x=20 times now it will iterate 30 times
+n=100, now x=200 times now it will iterate 200 times
+n=1 million, now x=2 million times now it will iterate 2 million times
+ 
+ in O(2n), as you see 2 k huny sy hamari calculation me itna farq ni par rha ,so we can easily ignore it
+
+
+See image (Comparison of O(n^2) vs O(2n).png)
+
+
+==>Use Case 2:
+
+function data(arr){
+for (let i=0;i<arr.length;i++){
+    for (let j=0;j<arr.length;j++){}
+
+}
+for (let k=0;k<arr.length;k++){}
+}
+
+Its time Complexity is O(n^2+n) , here again we ignore lower value which is n ,it will become O(n^2) ,because when we talking about millions iterations, we will not consider lower values e.g jis k pas 1 crore 100 rupy ha,jab b us sy puch jai ga tu wo 1 crore btaiy ga,100 ko ignore kr dy ga
+
+===>Use case 3:
+if time Complexity is O(n^3+n^2+n),we will ignore lower values (n^2 & n),so it becomes O(n^3)
+
+===>Use case 4:
+if time Complexity is O(n^2+2n),we will ignore lower values (2n),so it becomes O(n^2)
+
+===>Use case 5:
+if time Complexity is O(n^2+nlog+2n+5),we will ignore lower values (nlog+2n+5),so it becomes O(n^2)
+
