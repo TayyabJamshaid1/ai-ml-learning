@@ -1,0 +1,84 @@
+Time complexity is represented by Big O notation
+
+In Big O notation,We will measure the time complexity in worst case.
+Before proceeding,we will discuss the best case & worst case in linear & binary search algorithm.See image(Best vs worst case in Big O.png)
+
+So whenever we have to  check the performance of the algorithm,we will test it with worst case because in best case,both the algorithms will take same .Both will get result in first iteration.So whenever we are comparing the performance of your algorithm,we will check it in worst case.In worst case,we will case what is the maximum amount of complexity it can have.What is the maximum number of iterations it can have
+
+Common daily example is that if i want to check the performance of any laptop,i will not open simple terminal or youtube,it will work fine on all laptops.I will open the android studio or run heavy apps or projects to check the performance of your laptop
+
+So time complexity is measured by Big O notation.
+What is notation? Notation is nothing but a symbol.like rupee,dollar $, % percentage is a symbol.So Notation is just used for represnentation
+
+So Big O Notation represents the worst case time complexity of algorithm.For example,
+ time complexity of linear search is represented like, O(n) n represents no of operations/iterations
+ while time complexity of binary search is represented like, O(log n) 
+ See graph image (Big O graph representation of binary & linear search.png)
+
+ So we can say that
+ logn is much efficient than n
+ O(logn)>>O(n)
+
+ So Big O is just the representation of time complexity
+
+ Different Time complexities:
+
+ 1-O(n)
+ e.g linear search ,here we are doing n operations where x=n (x is number of times)
+
+ 2-O(logn)
+  e.g Binary search  ,here we are doing n,n/2,n/4...1 operations where x=logn 
+
+3-O(n^2)
+Nested loop is best example 
+
+
+4-O(nlogn)
+Merge sort is best example of it
+
+Explanation:
+Suppose we have a below for loop,that loop will run n times,now assume we are doing binary search operations in for loop by n times like we are diving our n by 2 continuously until it reach 1 .So,its time complexity is represented by nlogn
+
+for (let i=0;i<n;i++){
+ n/2 X 1/2 X 1/2 ......1
+}
+
+5-O(n^3)
+3 nested loops we have
+
+
+6-O(2^n)
+Suppose you are writing a code in such a  way that it is multiplying the operations 2 times every time
+
+like
+suppose you have an array of 2 numbers and it is taking 4 iterations/operations
+n=2 => total 4 operations 
+
+suppose you have an array of 3 numbers and it is taking 8 iterations/operations
+n=3 => total 8 operations 
+
+similarly,
+
+n=4 => total 16 operations 
+n=5 => total 25 operations 
+
+so this is increasing 2^n pattern ,so their time complexity will be O(2^n)
+
+
+7-O(n!)
+Its a very high time complexity,generally we do not use it
+
+
+8-O(1) Contant time complexity 
+Its means whatever the input/n size is, its operations will remain constant
+
+n=10  x=1
+n=100 x=1
+n=1000 x=1
+
+-----------------------------------------
+See graph image(All time complexities graph.png)
+-------------------------
+Efficieny Rate:
+
+O(1) > O(logn) > O(n) > O(nlogn) > O(n^2) > O(2^n) > O(n!)

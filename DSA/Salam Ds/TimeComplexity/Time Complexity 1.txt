@@ -89,4 +89,4 @@ n=1000 then x=10
 
 See image (Binary & Linear Search graph.png)
 
-so,as the input size increases,we can analyze the speed of both algorithms.This is known as time complexity
+so,as the input size increases,we can analyze the speed of both algorithms.This is known as time complexity.Time complexity is represented by Big O notation
