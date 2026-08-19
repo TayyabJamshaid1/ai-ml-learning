@@ -1,0 +1,92 @@
+Dsa is language agnostic(It does not care about language,what matters is how you approaching the problem,)
+
+Time Complexity:
+It is used to measure efficiency of algorithm in terms of speed ,as the input size grows.
+What is algorithm?In easy words,the solution you are developing for your problem is known as algorithm.So whenever we discuss the time Complexity ,speed comes into the picture. The algorithm with low time Complexity means it has high speed .Thats a better approach.
+
+So, low time Complexity means better speed,high time Complexity means bad speed.
+
+Some people think 
+time Complexity=time taken by algorithm to solve problem
+In reality,time Complexity is not equal to it because time taken to run some piece of code depends on where you are running your code .It depends on which machine and language you are using
+
+So,whenever time Complexity name arrives,you suddenly thought what is speed of this algorithm when the input size grows.
+
+Example:
+Linear Search Example:
+let arr=[2,1,3,5,4,7]
+
+now i have to find 7,we will use for loop, we will run iterations one by one until we reach 7,this is how linear search works.
+
+assume n is total number of elements,Now ,how many times will this loop will run ? the answer is n times,
+if i have 10 elements,it will run 10 times,if 1 lac elements,it will run 1 lac time
+
+
+
+Binary Search Example:
+It only works in a sorted array
+
+let arr=[1,3,4,7,9,10,15]
+
+now we have to search 15 on arr array.Binary search works in a way that it divide the array in 2 parts,then again 2 parts and then again 2 parts until it reach 1.Thats how this algorithm works.
+
+Array should be in a sorted form.Firstly,i have to find middle element.In my example,middle element is 7.Now i will compare my middle element to number which i am searching which is 10.Now 7 is less than 10.So definately,my expected number will be on a right side of array.So we can safely assume our number will be on right part of array.So our iterations will be now less,After division,now my array become [9,10,15],now again we pick the middle number 10 and compare with our search number which is 15.Now  it will again divide in 2 parts and most probably it will be on right part,so we assume right part of array which is [15].Now it will match it.So whole operation is proceed in 3 iterations.
+
+assume n is total number of elements,so binary search formula will be
+
+n,n/2,n/4,n/8 ..... 1 (n is continuosly dividing in 2 parts till 1 appeared)
+
+n/2 X 1/2 X 1/2 .... x (it continuosly divide it by 2 ,till x times )
+
+so we can also say that
+n/2^x=1 ( x is no of times you are dividing it,divide it untill it reach 1 )
+
+n=2^x 
+
+so by taking log
+
+log2n=x (see image linear search vs binary search example in time complexity.png)
+
+do it in calculator 
+log2(1000) ,it will give 10
+
+now take another example,
+==>n=100
+if my n is 100==>50==>25==>12==>6==>3==1
+so loop runs 7 times when n=100
+
+For n = 100, the loop will run:
+Iteration 1: 100 elements → check mid
+Iteration 2: 50 elements
+Iteration 3: 25 elements
+Iteration 4: 12 elements
+Iteration 5: 6 elements
+Iteration 6: 3 elements
+Iteration 7: 1 element → FOUND or NOT FOUND
+So 7 iterations.
+
+
+==>n=1000
+n==1000==>500==>250==>125===>62===>31===>15===>7===>3===>1
+
+for n=1000, 10 time loop will iterate operations
+
+
+===>both the algorithms doing a same task,finding a number but you can compare the way both  algorithms is working,you can compare the number of operations as well as time.like for n=100,linear search will perform 100 iterations while in binary search,it will perform 7 operations. So by comparing,we understand that binary search algorithm is speed efficient(Clear winner) 
+
+Conclusion:
+
+Linear Search:
+n is total size and x is total time
+n=10 then x =10
+n=100 then x=100
+n=1000 then x=1000
+
+Binary Search,
+n=10 then x =3
+n=100 then x=7
+n=1000 then x=10 
+
+See image (Binary & Linear Search graph.png)
+
+so,as the input size increases,we can analyze the speed of both algorithms.This is known as time complexity
