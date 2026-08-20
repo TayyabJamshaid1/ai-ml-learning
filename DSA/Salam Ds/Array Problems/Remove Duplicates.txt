@@ -1,0 +1,39 @@
+See image Duplicate Array Problem.png
+
+=>Whenever it is said "Given a integer array nums",it means positive and negative both numbers are possible in nums array
+
+=> diff btw increasing or decreasing array:
+
+[1,2,4,8,12]  //sorted,increasing order array
+[12,9,8,7,5,1]  //non sorted,decreasing order array
+
+
+In decreasing order,Each of the next number is less than previous number.You can also write it as 
+nums[i+1]<nums[i]
+
+Similarly,In increasing order,Each of the next number is greater than previous number.You can also write it as 
+nums[i+1]>nums[i]
+
+IMP 1:
+So whenver in Dsa,it says "non decreasing / non increasing array",it means it have duplicates in array.So our problem says "sorted in non decreasing order",so theoratically,it can be written as nums[i+1]>=nums[i]
+
+IMP 2:
+So whenver in Dsa,it says "in place array",it means you have to make the changes in original array, not allow to create  a new array or make a copy of original array
+
+Problem Solution:
+
+let data=[0,0,1,1,1,2,2,3,3,4]
+
+
+function removeDuplicate(arr){
+    let x=0;
+    for (let i=0;i<arr.length;i++){
+        if (arr[i]>arr[x]){
+            x=x+1
+            arr[x]=arr[i]
+        }
+    }
+    return {x:x+1}
+}
+
+console.log(removeDuplicate(data),data)
