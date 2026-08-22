@@ -1,0 +1,23 @@
+See Problem Image
+
+Solution:
+console.log("Hello, World!");
+let data=[7,1,5,3,6,4]
+
+function BestProfitCalculate(arr){
+let min=arr[0]
+let maxProfit=0
+
+for (let i=1;i<arr.length;i++){
+
+    if (arr[i]-min>maxProfit){
+        maxProfit= arr[i]-min
+    }
+    if (min>arr[i]){
+        min=arr[i]
+    }
+}
+  return maxProfit
+}
+
+console.log(BestProfitCalculate(data))
