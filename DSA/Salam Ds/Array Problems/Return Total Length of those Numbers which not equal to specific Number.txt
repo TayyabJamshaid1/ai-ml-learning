@@ -1,7 +1,7 @@
 See Return Total Length of those Numbers which not equal to specific Number.txt
 
 
-My Solution
+My Solution  Not recommended
 console.log("Hello, World!");
 let data=[67,67,22,88,78,67]
 
@@ -15,6 +15,9 @@ let data=[67,67,22,88,78,67]
 //     }
 //     return arr
 // }
+
+The Golden Rule to Remember
+Whenever you use splice(), shift(), or unshift() inside a loop, your algorithm becomes O(n²)!
 
 function removeSpecificNumber(arr,num){
     let x=0;

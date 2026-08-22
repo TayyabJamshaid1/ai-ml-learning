@@ -1,0 +1,34 @@
+See Reverse string
+let data=["m","a","h","s","i","t","h","a"]
+
+my solution
+function removeSpecificNumber(arr){
+  let x=0
+  for (let i=0;i<Math.ceil(arr.length/2);i++){
+        let last=arr[arr.length-i-1]
+         arr[arr.length-i-1]=arr[x]
+         arr[x]=last
+         x++
+  }
+  return data
+}
+
+Performance wise both are same,both take O(n) but still Your Approach Has 2 Issues:
+
+Unnecessary variable x — x is always equal to i, so you're using an extra variable for no reason (wastes memory and makes code confusing).
+
+Unnecessary iteration with Math.ceil() — For odd-length arrays (like 7 elements), ceil(7/2) = 4 means you do 4 swaps, but the 4th swap swaps the middle element with itself (useless work). Math.floor(7/2) = 3 is enough because the middle element doesn't need swapping.
+
+
+
+recommended solution:
+function reverseString(arr){
+  for (let i=0;i<Math.floor(arr.length/2);i++){
+        let last=arr[arr.length-i-1]
+         arr[arr.length-i-1]=arr[i]
+         arr[i]=last
+  }
+  return data
+}
+
+console.log(reverseString(data))
