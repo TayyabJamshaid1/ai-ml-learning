@@ -1,0 +1,8 @@
+Two-pointer works when:
+- Arrays are already partially sorted
+- You need to find pairs (Two Sum)
+- You need to remove duplicates
+- You need to reverse an array
+
+Two-pointer DOES NOT work for:
+- Sorting a completely unsorted array ❌
