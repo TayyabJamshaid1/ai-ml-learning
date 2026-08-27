@@ -1,0 +1,22 @@
+Solution 1:
+
+let arr=[1,2,3]
+let arr2=[2,5,6]
+let len=arr.length+arr2.length
+let copyArr1=[].concat(arr)
+let p1=0,p2=0
+for (let i=0;i<len;i++){
+   if (p2>=arr2.length||(p1<copyArr1.length&&copyArr1[p1]<arr2[p2])){
+       arr[i]=copyArr1[p1]
+       p1++
+   }else{
+    arr[i]=arr2[p2]
+       p2++
+   }
+}
+
+console.log(arr)
+
+Time comlexity is O(m+n) 
+m suppose to arr.length & n suppose to arr2.length
+in my example it is O(arr.length+arr2.length)
