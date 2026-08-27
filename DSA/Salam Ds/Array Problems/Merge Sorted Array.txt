@@ -17,6 +17,26 @@ for (let i=0;i<len;i++){
 
 console.log(arr)
 
-Time comlexity is O(m+n) 
+Time comlexity is O(m+n) ,space comlexity is O(m)
 m suppose to arr.length & n suppose to arr2.length
 in my example it is O(arr.length+arr2.length)
+
+
+Recommended Solution
+Here no extra space is needed
+
+let arr=[4,5,6,0,0,0],m=3
+let arr2=[1,2,3],n=3
+let p1=m-1
+let p2=n-1
+for (let i=arr.length-1;i>=0;i--){
+    if (p2<0) break;
+    if (p1>=0 && arr[p1]>arr2[p2]){
+          arr[i]=arr[p1]
+          p1--
+    }else{
+         arr[i]=arr2[p2]
+          p2--
+    }
+}
+console.log(arr)
