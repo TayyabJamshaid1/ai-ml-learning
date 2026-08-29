@@ -1,0 +1,27 @@
+My Solution:
+
+let arr=[9,6,4,2,3,5,7,0,1],missingNumber;  
+function getMissingNumber(arrSend){
+        for (let i=0;i<=arrSend.length;i++){
+           if (!arrSend.includes(i)){
+               missingNumber=i
+           }
+        }
+        return missingNumber
+}
+console.log(getMissingNumber(arr))
+
+
+Recommended Solution:
+let arr=[9,6,4,2,3,5,7,0,1],missingNumber,sumOfArray=0;  
+function getMissingNumber(arrSend){
+  let n=arrSend.length;
+  let totalSum=(n*(n+1))/2
+
+        for (let i=0;i<n;i++){
+           sumOfArray+=arrSend[i]
+        }
+        missingNumber=totalSum-sumOfArray
+        return missingNumber
+}
+console.log(getMissingNumber(arr))
