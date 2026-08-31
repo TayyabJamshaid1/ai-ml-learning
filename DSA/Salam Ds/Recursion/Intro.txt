@@ -1,0 +1,3 @@
+See Intro image
+
+Generally,In recursion we have to pay focus on base case because base case will decide when will recursion stops.See (Recursion base case example image)
