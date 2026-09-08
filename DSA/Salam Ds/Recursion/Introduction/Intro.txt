@@ -13,9 +13,3 @@ Whenever we will write recursion code, most of the time we write  base case on  
 As soon as the recursion is happening,it is continuously pushing the functions in call stack.See Recursion CallStack.png.So if the recusion is infinite loop,then call stack is pushing functions continuously inside it.Now this call stack in this situation is known as "Stack Overflow".It becomes hang and stop working
 
 "Infinite Recursion leads to stack overflow"
-
-Imp:
-Allways keep in mind,whenever you are printing numbers 1....n,using recursion or for loop,its time complexity will be O(n).See Common Mistakes image
-
-===================
-When to use Recursion, see image of When to use recursion.png
