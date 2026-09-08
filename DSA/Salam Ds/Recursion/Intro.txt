@@ -1,3 +1,7 @@
 See Intro image
 
 Generally,In recursion we have to pay focus on base case because base case will decide when will recursion stops.See (Recursion base case example image)
+
+Whenever we will write recursion code, most of the time we write  base case on  top of the program.Allways make sure your base case is written on the top and it actually stops the recursion else it will go on infinite loop
+
+As soon as the recursion is happening,it is continuously pushing the functions in call stack.See Recursion CallStack.png.So if the recusion is infinite loop,then call stack is pushing functions continuously inside it.Now this call back in this situation is known as "Stack Overflow"
