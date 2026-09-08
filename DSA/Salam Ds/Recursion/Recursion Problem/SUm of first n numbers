@@ -1,0 +1,19 @@
+
+
+
+function calculateSum(n){
+if (n==0) return 0;
+return n+calculateSum(n-1)
+}
+
+let result=calculateSum(5)
+console.log(result)
+
+
+
+Sum of 5(5+4+3+2+1) logic is below 
+5+sum(4)
+   4+sum(3)
+     3+sum(2)
+        2+sum(1)
+           1+sum(0)
