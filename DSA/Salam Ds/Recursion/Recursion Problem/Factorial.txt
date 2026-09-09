@@ -1,0 +1,16 @@
+Factorial:
+
+
+Recursion factoral formula is below
+5*4!
+   4*3!
+     3*2!
+       2*1!
+       
+       My Solution:
+       function factorial(n){
+          if (n==1) return 1
+           return n*factorial(n-1)
+              
+       }
+console.log(factorial(5))
