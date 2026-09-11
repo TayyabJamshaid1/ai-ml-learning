@@ -26,3 +26,9 @@ Also see the how the function is dividing into sub functions until it raise to b
 
 Function branches expanded:
 If we are calling the function two times,then it will have two branches for each function call,if we will it 3 times,then it will have 3 branches for each function call and our algorithm will become even more complex.See image of (Function branches expanded)
+
+---------------------------------------------------
+Interview Problem: (See interview 1 and interview 2 pic)
+Suppose we have 2 rabbits,they are multiply by 2 every month,how many rabbits will be there after n months?
+Answer:
+So it is Fibonacci or recursion approach,they multiply themselves by 2 every month,it is leading to a Fibonacci series 
