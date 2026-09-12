@@ -53,4 +53,8 @@ while(right>=left){
 console.log(binarySearch())
 
 
+Time complexity of binary search=O(logn)
+Space Complexity is O(1)
+
+
 
