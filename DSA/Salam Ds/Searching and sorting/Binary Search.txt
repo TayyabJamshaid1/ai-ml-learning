@@ -1,0 +1,56 @@
+Binary Search is an algorithm which searches for a element inside an array only if array in a ascending sorted form.It is an optimised approach.So in future,if you have to find an element inside sorted array,use binary search
+
+So,when we are working with binary search ,we tried to find out the middle element of an array.We will divide our array in such a way we try to find out the middle element of array.We will take 2 pointers(Left and right).My left pointer points to the first index and my right pointer points the last index.
+ e.g let arr=[-1,0,3,5,9,12] left=0,right=5,target=9
+ So we can calculate middle element by this formula=(left index +right index)/2=  (0+5)/2=2.5 so we assume 2 index is an middle index
+ 
+ Once we find out the middle element,we will check did our middle element is equal to target.If it is not equal to target,then we will check is middle element is greater or less then target element.In our example,our target is greater than middle element(9>3),that means my target lies in right part of array([5,9,12]),so we can safely ignore left part of array([-1,0,3]).So now we assume left pointer is now starter of right side of array(Left=Left+1,2+1=3 now left pointer index is 3) and leave right pointer as it is.Now we will again find our middle value, 
+ middle element=(left index +right index)/2=3+5/2=8/2=4 ,now our middle index is 4.Now we will check,did our middle element is equal to target and this time yes,it is equal to target.Now we will just return our m .Thats how our binary search works.
+
+Assume if our target was on left part of array,now left pointer will remain its position as it is and right pointer will shift to last index of left part by this formula right index=middle index-1
+
+See binary Search img
+
+So when we have to iterate on each element,we follow for loop but when we have to change our pointer positions,we will assume while loop
+My Solution Binary Search:
+
+let arr=[-20,-8,-1,0,5,8,9,12,15],left=0,right=arr.length-1,target=110,middle=0,currentIndex=-1;
+function binarySearch(){
+while(right>=left){
+  middle=Math.floor((left+right)/2)
+  if(arr[middle]==target){
+    currentIndex=middle
+    break
+  }else if (arr[middle]>target){
+    right=middle-1
+  }else{
+     left=middle+1
+  } 
+}
+  return currentIndex
+}
+console.log(binarySearch())
+
+Recommended solution:
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+console.log("Start small. Ship something.");
+let arr=[-20,-8,-1,0,5,8,9,12,15],left=0,right=arr.length-1,target=110;
+function binarySearch(){
+while(right>=left){
+  let middle=Math.floor((left+right)/2)
+  if(arr[middle]==target){
+    return middle
+  }else if (arr[middle]>target){
+    right=middle-1
+  }else{
+     left=middle+1
+  } 
+}
+  return -1
+}
+console.log(binarySearch())
+
+
+
