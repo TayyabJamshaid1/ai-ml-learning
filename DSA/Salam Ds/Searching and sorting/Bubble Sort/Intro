@@ -17,3 +17,24 @@ So its time complexity is O(n^2) and space complexity is O(1).SO it is not recom
 
 Why its name is bubble sort?
 Bubble Sort is called Bubble Sort because the largest elements repeatedly "bubble"/move toward the end of the array through adjacent swaps.
+
+
+How to make bubble sort better?
+If on any iteration,no swapping is happening,its mean array is already sorted ,so we dont need extra iterations,for example [9,1,2,3,4,5,6,7,8],in this array,in first iteration,  first element will be placed at last, after that no need of iterations because array is already sorted.So we should stop it.
+
+Solution:
+let arr=[9,1,2,3,4,5,6,7,8];
+  let n=arr.length;
+for (let i=0;i<n-1;i++){
+  let isSwapped=false
+   for (let j=0;j<n-1-i;j++){
+     if (arr[j]>arr[j+1]){
+     let temp=arr[j]
+     arr[j]=arr[j+1]
+     arr[j+1]=temp
+       isSwapped=true
+   }}
+  if (!isSwapped) break;
+}
+console.log(arr)
+
