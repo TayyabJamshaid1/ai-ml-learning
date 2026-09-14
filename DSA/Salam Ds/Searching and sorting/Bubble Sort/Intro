@@ -1,0 +1,19 @@
+See swap loop old behaviour img,it iterates 3 times on per condition.It should work like img (How should swap loop work.png) 
+
+console.log("Start small. Ship something.");
+let arr=[5,4,9,1,8];
+  let n=arr.length;
+for (let i=0;i<n-1;i++){
+   for (let j=0;j<n-1-i;j++){
+     if (arr[j]>arr[j+1]){
+     let temp=arr[j]
+     arr[j]=arr[j+1]
+     arr[j+1]=temp
+   }}
+}
+console.log(arr)
+
+So its time complexity is O(n^2) and space complexity is O(1).SO it is not recommended at that to use bubble sort.
+
+Why its name is bubble sort?
+Bubble Sort is called Bubble Sort because the largest elements repeatedly "bubble"/move toward the end of the array through adjacent swaps.
