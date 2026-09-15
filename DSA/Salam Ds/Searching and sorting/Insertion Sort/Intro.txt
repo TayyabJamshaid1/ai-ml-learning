@@ -1,0 +1,26 @@
+In Insertion Sort, we continuously divide the array into two logical parts: a sorted part and an unsorted part. On each iteration, we take one element from the unsorted part (called the current or key), compare it with the elements in the sorted part from right to left, and shift every element that is greater than the current element one position to the right. Once we find the correct position, we insert the current element there.
+
+or 
+
+Insertion Sort divides the array into a sorted part and an unsorted part. On each iteration, we take the first element from the unsorted part as the current/key element. We compare it with the elements in the sorted part from right to left. If a previous element is greater than the current element, we shift that element one position to the right. We continue comparing until we find an element smaller than or equal to the current element, and then insert the current element in that position. This process continues until the entire array is sorted.
+
+
+See Image (How insertion sort works)
+
+Solution:
+let arr=[7,1,5,12,-10,0,4,3,2];
+  let n=arr.length;
+for (let i=1;i<n;i++){
+curr=arr[i] 
+  prev=i-1
+  while(arr[prev]>curr && prev>=0){
+    arr[prev+1]=arr[prev]
+    prev--
+  }
+  arr[prev+1]=curr
+ 
+ 
+}
+console.log(arr)
+
+So its time complexity is O(n^2) and space complexity is O(1).
