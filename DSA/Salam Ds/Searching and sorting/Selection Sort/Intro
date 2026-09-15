@@ -1,0 +1,50 @@
+It will select one by one each element and it will put it in the right place.It will loop through all the elements of an array and will try to find out the minimum element of the array,so it will go to each element one by one and it will select the minimum element.After selection,it will move the element on first index.Here n-1 iterations will be happened
+
+See image of How selection sort works.png
+
+Solution:
+let arr=[9,1,2,3,4,5,6,7,8];
+  let n=arr.length;
+for (let i=0;i<n-1;i++){
+  let min=i
+   for (let j=i+1;j<n;j++){
+     if (arr[j]<arr[min]){
+     
+       min=j
+   }}
+ let temp=arr[i]
+     arr[i]=arr[min]
+     arr[min]=temp
+}
+console.log(arr)
+
+
+EVen more better: if array is already sorted,then not need to swap same elements
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+console.log("Start small. Ship something.");
+let arr=[9,1,2,3,4,5,6,7,8];
+  let n=arr.length;
+for (let i=0;i<n-1;i++){
+  //find minimum element in the array
+  let min=i
+   for (let j=i+1;j<n;j++){
+     if (arr[j]<arr[min]){
+     
+       min=j
+   }}
+  //if array is already sorted,then not need to swap same elements
+  if (arr[i]!=arr[min]){
+     //adjust the swapping
+ let temp=arr[i]
+     arr[i]=arr[min]
+     arr[min]=temp
+  }
+ 
+}
+console.log(arr)
+
+
+So its time complexity is O(n^2) and space complexity is O(1).SO it is not recommended at that to use selection sort.
