@@ -1,0 +1,9 @@
+Merge Sort:(Divide & conquer algorithm)
+
+It says if given an array,suppose having 8 elements in it,we will keep dividing an array in 2 halfs.Then each part divided into two half,then that each part is divided into two halfs till my array elements become singular & individual then we will merge them in a sorted way.(Same process like recursion).We will merge it in a sorted way while going back
+
+So Merge sort is implemented in 2 parts
+1-Divide Phase
+2-Merge/conquer Phase
+
+See divide and conquer image
