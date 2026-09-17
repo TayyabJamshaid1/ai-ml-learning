@@ -7,3 +7,5 @@ So Merge sort is implemented in 2 parts
 2-Merge/conquer Phase
 
 See divide and conquer image
+
+See Pseudo code and its example image(Remember in pseudo code image, until it calculate left and right,it does not move on return statement)
