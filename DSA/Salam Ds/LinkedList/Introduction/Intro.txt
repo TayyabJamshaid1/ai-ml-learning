@@ -16,17 +16,41 @@ Two types of linked list
 Each and every node has a pointer to next node(SEE Single linked list img)
 Node= 1 reference pointer+value 
 Head=Starting node is head
+Tail=Ending node is tail(tail is pointing to null)
 
 2-Doubly linked list (see Doubly Linked list.png)
 Doubly linked list has two reference pointers.It is a linked list where each node has a pointer to its next position and its previous position also.It has two reference pointers and a value.One pointer pointing to left and other pointer pointing to right.In Doubly linked list,We can move forward and also we can move backward.It also has a head(starting node is head) and each particular linked list is known as node.
 Node= 2 reference pointers+value 
 Head=Starting node is head
+Tail=Ending node is tail(tail is pointing to null)
 
+Imp:
+Most of the linked lists ends points to null
 ----------------------------
 Diff btw Linked list and array
 
 1-Array is contegeous(All values are stored together) while linked list is non contegeous(they are stored in different memory locations)
+
 2-Data fetching in array is easy,we can easily get the value by its index like arr[2],so its time complexity is O(1) while data fetching in linked list is hard because they are not stored together,so its time complexity is O(n)
+
+3-Suppose in linked list ,we have to insert an element 2 after 4,right now 4 is pointing to 5,what we will do,we will remove this pointer and create a new node having value 2,now we will link 4 node to 2 node and node 2 pointer link to 5 node.See insertion in linked list pic.So insertion in linked list is easy while it is hard in array
+
+4-Array is memory efficient.To insert 4 elements in an array,you just need 4 memory spaces while in linked list,if you have to store 4 elements,you need 8 memory spaces because in one memory space,it will store the value ,in the other memory space,it will store the reference.Each node takes 2 memory locations.So it takes extra memory.In Doubly linked list,it will take 3 memory spaces per node
 
 See other differences in image(Diff btw Linked list and array)
 
+----------------------------------------
+Use cases
+
+Use linkedlist,when
+1-Insert and delete at head or tail frequently
+
+2-Avoid reszing overhead or unknown size upfront
+Suppose you have a data which is incoming for you and you dont know the size of the data,you dont know anything about it,then we should use linked list because in linked list,you dont need to give a size,its very dynamic in nature
+
+3-Do lots of traversal and manipulation
+If you have to keep adding the values and you have to move nodes here and there then you should use linked list
+
+See use cases pic
+----------------------------
+Arrays are very useful datastructures.Rarely we use linked list in our daily life but we must have knowledge/understanding of linked list
