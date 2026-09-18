@@ -1,0 +1,13 @@
+linkedlist is a linear data stucture just like array.Data structure means you have to store data in a structured way.You cannot store data randomly  in data structure,thats why you have to store chunk of data in a particular structure.
+
+One type of linear data structure is array,it can have multiple values ,it also have indexes,we can fetch the data using these indexes.Similarly ,linked list is also a linear data structure but it is slightly different.It does not store data collectively.In arrays,numbers are stored together,they are one after the other while linked list says,we have nodes.Suppose we have to store 3,1,4,5 in linked list ,it creates nodes of each values.That nodes are linked together and it is forming a list.Thats why it is known as linked list.
+
+So,linked list are 
+===>Linear data structure
+===>Each value is stored in a node,that nodes are linked together by a reference field.
+
+In arrays,you dont have to link them together,they are already linked together.In memory,they are store together,one after the other while in linked list,they have the nodes separately.They are in a different different memory location but they also have a reference pointer which points to the next node.All the nodes are store here and there and they are pointing to each other with reference pointer.Node has two parts,one part has value,other part is a reference pointer which points to the other node.We represent array like arr=[3,1,4,5] while linked list is represented by its head.Head is again a node.If i says,i have a linked list,it means ,i have pointer to my head and suppose i have to move/iterate in linked list,i can just go the next pointer,then next pointer and then next and i can find the values of each node.Thats how linked list works.It is making a list of data which is linked to each other and these nodes locations are very separate to each other
+
+Two types of linked list
+1-Single linked list    
+2-Doubly linked list
