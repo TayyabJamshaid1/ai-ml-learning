@@ -11,3 +11,22 @@ In arrays,you dont have to link them together,they are already linked together.I
 Two types of linked list
 1-Single linked list    
 2-Doubly linked list
+
+1-Single linked list:
+Each and every node has a pointer to next node(SEE Single linked list img)
+Node= 1 reference pointer+value 
+Head=Starting node is head
+
+2-Doubly linked list (see Doubly Linked list.png)
+Doubly linked list has two reference pointers.It is a linked list where each node has a pointer to its next position and its previous position also.It has two reference pointers and a value.One pointer pointing to left and other pointer pointing to right.In Doubly linked list,We can move forward and also we can move backward.It also has a head(starting node is head) and each particular linked list is known as node.
+Node= 2 reference pointers+value 
+Head=Starting node is head
+
+----------------------------
+Diff btw Linked list and array
+
+1-Array is contegeous(All values are stored together) while linked list is non contegeous(they are stored in different memory locations)
+2-Data fetching in array is easy,we can easily get the value by its index like arr[2],so its time complexity is O(1) while data fetching in linked list is hard because they are not stored together,so its time complexity is O(n)
+
+See other differences in image(Diff btw Linked list and array)
+
