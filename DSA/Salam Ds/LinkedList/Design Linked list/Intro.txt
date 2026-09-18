@@ -1,0 +1,21 @@
+
+Design linked list
+We will go step by step
+
+1-What is node and how to create a node in linked list?
+Node: Node is represented by value along with reference pointer which is pointing to next element
+
+how to create a node?:In js,everything is represented by function but in some other languages,like java,you can make a classes or in c++,you can use a pointers.
+
+So,To create a node in js,we will creating a node function,we have to pass a value as a parameter in it which will be inserted in node element
+
+function Node(val){
+this.val=val;
+this.next=null  ;//Suppose,jo hum node bna rhy ha,agr ye kisi linked list ka part ni ha,then this .next should point to the null
+}
+
+let newNode=new Node(5)//so when you will execute this code,this code will create a new node or instance of a Node function.In a new node,value 5 is stored and a reference field is also stored which is currently pointing to null
+
+2-How to represent a linked list?
+
+As we know,linked list is a series of nodes which is pointing to next node.Now how to represnt in our code,linked list is a represention of it head
