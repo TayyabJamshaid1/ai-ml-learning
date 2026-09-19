@@ -1,4 +1,3 @@
-
 Design linked list
 We will go step by step
 
@@ -15,7 +14,117 @@ this.next=null  ;//Suppose,jo hum node bna rhy ha,agr ye kisi linked list ka par
 }
 
 let newNode=new Node(5)//so when you will execute this code,this code will create a new node or instance of a Node function.In a new node,value 5 is stored and a reference field is also stored which is currently pointing to null
-
+-----------------------------------------------------------------
 2-How to represent a linked list?
 
-As we know,linked list is a series of nodes which is pointing to next node.Now how to represnt in our code,linked list is a represention of it head
+As we know,linked list is a series of nodes w hich is pointing to next node.Now how to represent it in our code,as we know linked list is a represention of its head(every linked list is pointing to its head)
+
+//here we are initializing our linked list just like we initialize any variable like let a=0;
+function MyLinkedLinst(){
+this.head=null;  //suppose we are creating a empty linked list,it will pointing to null initially,it means there are no nodes in this linked list
+this.size=0;
+} 
+
+----------------------------------------------------------------------
+3-Adding nodes to the head & tail in linked list
+
+===>Adding to Head
+Steps:
+a)Create a new node
+b)New node should point to first node
+c)Head should point to new node
+
+function addToHead(val){
+let newNode=new Node(val)
+newNode.next=this.head;
+this.head=newNode;
+this.size++
+}
+
+===>Adding to tail
+
+To add data in tail,initially first we have to reach to the tail.We will reach to the tail by looping on all nodes of linked list.In arrays we can easily reach at last element by its index while in linked list,i have to traverse one by one,i have to start from head and keep going to the next  until i reach a point at the last of linked list,then i will a add a new node and that new node will poiny to null
+
+Steps:
+a)Reach at last node.To reach a last node,we will run a loop.While loop is very famous in linked list so we will use it.As we know ,each node.next have a reference of next node and last next node  has a null value,so we keep checking that if node.next!=null,then go ahead one by one,until we reach where node.next=null
+b)Create a new node
+c)If the head is null,means my linked list is empty,there is no element in list,then i will point this.head to new created node
+d)New node should point to last node
+
+Imp:
+No need to add extra step while assigning a new node to other
+//newNode.next=null 
+we do not need to write newNode.next=null here because newNode already pointed to null
+
+function AddToTail(val){
+let newNode =new Node(5);
+if (this.head==null){ //If the head is null
+this.head=newNode;
+}else{
+//reach at last node
+let curr=this.head
+
+while(curr.next!=null){
+curr=curr.next
+}
+
+curr.next=newNode //New node should point to last node
+}
+this.size++
+}
+
+-----------------------------------------------------
+Add at index
+
+Now if we have to add node in any position of linked list,then we will use this approach.Whenever any index given,it means ,i have to add node its previous position.like if 4 index is given,then i have to add new node at 3rd index position
+
+Steps:
+a)Create a new node
+
+b)React at index-1 position(Reach  one step before index position).Generally,we call index-1 position to current,so
+current=index-1
+
+c)Firstly ,you have to create link of newNode to next node and then you have to link current node(index-1) to new node.See (AddAtIndex moving pattern.png image) 
+newNode.next=current.next
+current.next=newNode
+
+d)corner cases
+May be this.head is null,means  linked list is empty or i have to add new node to first index means 0 index is given or may be last index is given
+e)increase the size
+
+Code:
+
+function addToIndex(index,value){
+let newNode=new Node(val)
+if (index==0){ //if want to add node on first index(means head)
+addToHead(val)
+return
+}else if (index==this.size){//if want to add node on last index(means tail)
+AddToTail(val)
+return
+}else{
+let current=this.head;
+for(let i=0;i<index-1;i++){
+current=current.next;
+}
+newNode.next=current.next;
+current.next=newNode
+}
+this.size++
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
