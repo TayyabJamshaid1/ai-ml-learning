@@ -112,10 +112,38 @@ current.next=newNode
 }
 this.size++
 }
+---------------------------------------------------------------
+To Get the value by index:
+
+How will we get the value in linked list?
+Keep the new pointer named current on index 0,i will keep on going till i reach the required position of index.Once i reach the position,i will return the value.SO we will run for loop.
+
+Corner case:
+If invalid index is given like -1 then use this condition index<0 or greater then size of linked list,like linked list has 4 nodes and index is 8 so use index<size,
+
+function getIndexValue(index){
+if (index<0 || index>=size) return -1
+let current=this.head;
+for (let i=0;i<index;i++){
+current=current.next;
+}
+return current.value;
+}
+
+----------------------------------------------------------------------
+Deleting an element:
 
 
+delete(2) //delete the value of index 2
+
+function deleteElement(index){
+let current=this.head
+for(let i=0;i<index-1;i++){
+   curr=current.next
+}
 
 
+}
 
 
 
