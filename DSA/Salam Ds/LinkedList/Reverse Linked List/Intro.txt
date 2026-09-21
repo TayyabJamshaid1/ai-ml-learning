@@ -1,0 +1,26 @@
+ Reverse a linked list:
+ 
+ In linked list,we have a next method to go forward but we dont have method to go previous.To resolve this problem,we will try to maintain the previous value also.As we iterate through the list,one by one we will go to each element and we will keeping a track of previous value also and then assign current to previous until loop ends
+ 
+ IMp:
+a)We have to keep a track of previous value
+b)We will start from first node and previous is initially null
+prev=null
+curr=head
+Then we will link our current to previous and then continuously  move current & previous ahead until current arrives to null
+
+
+Code:
+
+function ReverseLinkedList(head){
+let curr=head,prev=null;
+while(curr){
+   let temp=curr.next;//node k sath link torny sy phly us link ko secure kr lo taky next time loop wahi sy proceed hu
+   curr.next=prev;//now link current node to previous
+   prev=curr;//ab previous ko current bna du
+   curr=temp  //current ko next node assign kr du
+}
+head=prev
+return head
+
+}
