@@ -1,0 +1,35 @@
+Middle of linked list:
+See Problem image
+a)If size is odd number,then return the middle number e.g size 5 middle is 3,size 7 middle is 4
+b)If size is even number,then 2 middle values is formed,we will consider the right side of middle value,e.g for size 8,middle is 4,5 so we will consider 5 as a middle number
+
+
+Approach 1:(See Approach 1.png )
+
+a)Convert the linked list into array
+b) now divide the whole length with 2,middle will come
+
+return arr[arr.length/2]
+
+It is not a good approach for interviewers because this approach will use extra memory with space complexity of O(n) and time complexity will also O(n)
+
+Approach 2: (See approach 2.png)
+We will use slow & fast pointer approach 
+This approach says i will keep 2 pointers
+ Slow pointer---1 step ahead
+ Fast pointer---2 step ahead
+ i will move one by one but slow pointer moves 1 step at a time and fast pointer moves 2 step at a time.I will keep doing this and once i reach end of the list for the fast pointer,we have to stop the loop ,at that time slow pointer will be at a middle point.Both pointers will start from head.
+ 
+ Imp: We have to make sure where the fast pointer ends
+ 
+ Code:
+ 
+ function MiddleNode(head){
+ let fast=head,slow=head;
+ 
+ while(fast && fast.next){
+ slow=slow.next;
+ fast=fast.next.next
+ }
+ return slow
+ }
