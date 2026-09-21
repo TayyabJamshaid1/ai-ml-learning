@@ -89,14 +89,16 @@ newNode.next=current.next
 current.next=newNode
 
 d)corner cases
-May be this.head is null,means  linked list is empty or i have to add new node to first index means 0 index is given or may be last index is given
+  i)Index is less then 0 or index is greater then linked list size
+  ii) May be this.head is null,means  linked list is empty or i have to add new node to first index means 0 index is given or may be last index is given
 e)increase the size
 
 Code:
 
 function addToIndex(index,value){
 let newNode=new Node(val)
-if (index==0){ //if want to add node on first index(means head)
+if (index<0||index>this.size) {return}
+else if (index==0){ //if want to add node on first index(means head)
 addToHead(val)
 return
 }else if (index==this.size){//if want to add node on last index(means tail)
@@ -133,16 +135,32 @@ return current.value;
 ----------------------------------------------------------------------
 Deleting an element:
 
-
 delete(2) //delete the value of index 2
+Now we have to delete the value of index 2 ,hum aisa ni kary gy k direct index 2 pr ja k value delete kr dein blky hum us sy ek index phly he ruk jai gy,so to delete value of index 2 ,we have to reach at index 1(index-1),then point index 1 node to next position of deleted index,means we will point index 1 to index 3,index 2 will automatically removed (See image delete Approach.png)
+
+Steps:
+a)Reach the previous index (index-1) 
+b)Link it to the next position node
+c)handle corner cases
+    i)Index is less then 0 or index is greater then linked list size
+    ii)Suppose i have to delete first index(in this case,i have to move my head to next index ) 
+   
+d)reduce the size
+
 
 function deleteElement(index){
+if (index<0 || index>this.size){return}
+else if (index==0){
+this.head=this.head.next
+}else{
+
 let current=this.head
 for(let i=0;i<index-1;i++){
    curr=current.next
 }
-
-
+curr.next=curr.next.next; //It will also perfectly work for last index because in case of last index,value of curr.next.next is null so it will easily assigned to curr.next 
+}
+this.size--;
 }
 
 
