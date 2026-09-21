@@ -1,0 +1,29 @@
+In linked list cycle,it will go to infinite loop and never reach null.
+
+We have to found out the cycle inside linked list
+
+Approach 1: Hash Table(In Js,you also called it Set)
+Hash table/Set is just like a lookup table.Suppose,you have a set and you can add any value to that set.Now you added 5 different variables inside set (a,b,c,d,e).In this set,you can directly quickly check if the value is present inside the set or not
+like if i say, set.has(a) it quickly returns true.So Retrival is very fast,its time complexity is O(1) 
+
+
+Code:
+function hasCycle(head){
+let seenNodes=new Set();
+let curr=head;
+while(curr!=null){
+
+if (seenNodes.has(curr)){
+return true
+}
+ seenNodes.add(curr)
+ curr=curr.next
+
+}
+return false
+
+
+}
+
+
+Time complexity and space complexity is O(n)
