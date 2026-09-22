@@ -1,0 +1,11 @@
+ It is difficult to find palindrome in the linked list because we can easy move forward from start but we cannot move backward,i cannot find the previous element.To check palindrome,we first have to find out the middle element.This will decide the left half and right half is equal or not.So finding the mid point is important part.Suppose we find out the middle element,now what we will do is i will reverse the right part of linked list.Now move left and right together and compare each value
+ 
+ Steps:
+ a)Find the middle element
+ b)Reverse the second half of linked list
+ c)move start and end point together and compare each value
+ 
+ Space complexity is O(1) because variable space does not increase on increase of linked list
+ 
+ Time complexity is O(n+n+n)=O(3n)=O(n)
+ 
