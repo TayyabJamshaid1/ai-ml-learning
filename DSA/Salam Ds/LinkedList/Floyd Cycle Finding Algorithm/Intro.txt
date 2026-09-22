@@ -1,0 +1,28 @@
+floyd Cycle Finding ALgrorithm:(Slow & fast pointer approach)
+Suppose if there are two runners(a,b) running in the race,both of these runners running in a circular cycle in a anticlock wise direction(See image floyd algorithm both runners running.png).Now floyd algorithm says,suppose two runners are running,one runner(a) run faster  and other person(b) run slower and both are running in circular track,after some point of time after continuously running with different speed,these slow and faster player will meet at same place while both are running with different speed(See image floyd algorithm both runners meet at same point.png)
+
+
+In linked list logic,i have two pointers
+slow===> 1 step moving
+fast===>2 step moving
+Both will start from head,slow pointer moves 1 step while fast pointer moves 2 step.According to floyd,while both pointers are moving,if linked list is a cycle then one point will come where both pointers will meet while having different speeds(See floyd linked list logic.png) 
+
+Code:
+
+function floydAlgo(head){
+if (!head) return false;
+let slow=head;
+let fast=head.next; //agr hum isy b just head assume krty tu nichay while loop me isny jana he ni tha kyu k slow=head dono equal hu jany thy because dono k pas same head he huna tha
+
+while(slow!=fast){
+if (!fast || !fast.next){return false}
+slow=slow.next
+fast=fast.next.next
+}
+
+return true
+}
+}
+
+Time complexity is O(n) and space complexity is O(1)
+
