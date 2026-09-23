@@ -1,0 +1,30 @@
+When i have to delete any node in linked list,i need to keep a track of previous node also.Without keeping a track of previous element,we cannot delete any thing.So here comes  a new concept "Sentinel node".Sentinel node will keep a watch/check on next element/node.This sentinel node will act like a previous element and will keep a check on next element.
+
+So sentinel node is a dummy node,we dont care about the value of  sentinel node but this is the node that will add on front of list.Now this node will keep a check on next element.So ,sentinel node will becomes our previous node.It helps us delete nodes from starting indexes .
+
+
+Code:
+
+function removeElements(head,val){
+let newNode=new ListNode();//this is how you can create new node,as we know,each node has 2 parts value and next,if no value is provided then default value is 0 and default reference will be null
+
+newNode.next=head;//now we added new dummy node to our linked list
+
+let prev=seden;
+
+while(prev && prev.next){
+if(prev.next.val===val){
+prev.next=prev.next.next //we write prev.next in while condition because agr wo upr na dty tu yaha error a jata
+}else{
+prev=prev.next
+}
+}
+
+return seden.head; //because requirement is give me the head and remove the given number
+
+}
+
+
+
+
+}
