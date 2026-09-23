@@ -1,0 +1,16 @@
+Intersection of two linked lists:
+We have to get that node where two linked lists are intersecting.
+
+1st approach: brute force approach
+
+we have 2 linked list(head a and head b) which is intercepting at some node.brute force is i will each and every element from head 1 and compare with head 2 each node to check that head 1 node exists in head 2 linked list.(See brute force img).
+
+Time complexity :
+consider head a length=m,head b length=n... now we are checking  each m element with n times.
+SO its Time complexity is O(mXn)=O(n^2)
+
+Space complexity:
+We are not using any space,so space complexity is O(1)
+
+2nd Approach:
+In previous approach,i take each head a node  and i was comparing with all the elements of head b.In second approach,we can optimize our searching,we are going to use hash map/table .We will put all the elements of head 2 linked list in set and search for each element of head a into set.So as we know ,set is very fast,thats why its time complexity is O(1)
