@@ -12,7 +12,7 @@ So,first solution is
 ==>i have to find out which position i need to be delete,formula is below
   delete pos=length-n+1
 ===>also i need to know the previous element,its formula is below
-previous element position= delete pos-1
+previous element position= length-n
 
 so by knowing the previous,we can easily delete the element
 

@@ -1,0 +1,38 @@
+In Two pass solution,we have two passes
+
+a)we have to calculate length.Length calculation is manadatory to verify where i need to reach. 
+b)Reach the previous position to delete
+
+Now we have to make a one pass solution
+The first step is as same ,add a sedenal node.Now in this approah,there is no need to find the length,i will directly reach to the previous position.So we can do it by using two pointer approach
+a)My first pointer(first as f) will start from n,it will keep a gap of n,if n=2,it will leave 2 elements and second pointer(second as s) will start from sedenal,now both pointers are moving forward one step  continuously,until f pointer will reach to end.AT that time,the s pointer will reached your previous element position automatically
+O===>1====>2====>3======>4=====>5   when n=2(it leave 2 nodes)
+s          f
+
+O===>1====>2====>3======>4=====>5===>6====>7====>8  when n=5 (it leave 5 nodes)
+s                               f
+
+
+Code:
+
+function OnePass(head,n){
+let seden=new NewNode();
+seden.next=head
+
+let secondPointer=firstPointer=seden;
+
+//find the firstPointer position where it will start by n
+for (let i=0;i<n;i++){
+firstPointer=firstPointer.next;
+}
+
+//run the both pointers
+while(first.next){
+firstPointer=firstPointer.next;
+secondPointer=secondPointer.next;
+}
+
+//delete the node
+secondPointer.next=secondPointer.next.next
+return seden.head
+}
