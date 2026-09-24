@@ -1,0 +1,49 @@
+Whenever in a dsa,they are asking about delete any element, sentenel should come in your mind.Sedenel is important because suppose,in your linked list ,you have only 3 elements,
+
+1====>2====>3
+you have to delete 1 ,then it will become a problem because you have to move your head and we have to maintain the previous position.SO if i added a sedenel node at a starting of your list,it becomes easy for us.Only we have to maintain the previous value and then delete any number
+
+Now our question is tricky because we have to delete element from end,like 1====>2====>3======>4=====>5 if he says n=2,we have to delete 4 because question requirement is that we have come reverse
+SO first we have to find which element have to be deleted,in current question requirement,we have to delete from end.So in linked list, question is how do i calculate which position i need to delete,because in linked list you have to go from the start,we cannot directly jump on any position,we dont even know the length of linked list,we are only given the head
+
+So,first solution is 
+===>add sedenel node in begining to handle corner cases
+==>find the length of linked list,iterate on each element of linked list and count the length one by one
+==>i have to find out which position i need to be delete,formula is below
+  delete pos=length-n+1
+===>also i need to know the previous element,its formula is below
+previous element position= delete pos-1
+
+so by knowing the previous,we can easily delete the element
+
+Code:
+function removeElementFromEnd(head,n){
+//step 1 : Create seden node
+let seden=new NodeList();
+seden.next=head;
+
+//step 2: find length
+let len=0;
+while(head){
+len++;
+head=head.next;
+}
+
+//step 3:find the previous position by formula
+let prevPosition=len-n
+
+//step 4 get the previous node by its position
+let previous=seden;
+for (let i=0;i<prevPosition; i++){
+previous=previous.next
+}
+
+//step 5: Now remove the nth element which question requirement
+previous.next=previous.next.next;
+
+return seden.next
+}
+
+Time complexity is O(n) and space complexity is O(1)
+Imp:
+So here i am traversing through the linkedlist two times(1 to find length and 1 to find previous position),thats why it is also known as Two Pass Solution
