@@ -1,0 +1,25 @@
+function AddTwoNumbers(l1,l2){
+let newNode=new NodeList();
+let carry=0;
+
+while(l1 || l2 || carry){
+//step 1 calculations
+let sum=(!l1?0:l1.val)+(!l2?0:l2.val)+carry;
+let carry=Math.floor(sum/10);
+let digit =sum%10;
+
+//adjust in new node
+let newDataNode=new NodeList();
+newNode.next=newDataNode;
+newNode=newNode.next;
+
+//move l1 & l2 positions
+
+l1=l1&&l1.next;
+l2=l2&&l2.next;
+
+
+}
+return newNode.next
+
+}
