@@ -1,0 +1,13 @@
+if k==length of linked size,it revert back to original linked list.
+if k is greater then size of length,we have to take modulus
+
+Steps:
+a)calculate length of linked list
+b)find k by modulus formula
+c)Now reach on k position of linked list by slow fast pointer
+d)Now connect fast to head
+e)separate the breaker point of linked list by slow.next and assign it to new variable newHead
+f)After breaker point,point your linked list to null
+
+
+
