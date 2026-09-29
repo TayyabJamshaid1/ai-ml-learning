@@ -35,3 +35,4 @@ if (str[n]!=" "){
 }
 
 console.log(count)
+Time complexity is O(n) while Space complexity is O(1) because we are not using extra space.
