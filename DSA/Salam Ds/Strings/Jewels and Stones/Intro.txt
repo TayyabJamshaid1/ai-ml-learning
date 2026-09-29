@@ -1,0 +1,42 @@
+My Solution:(brute force approach)
+let stones="aaAbbbb",jewels="aA",count=0
+for (let i=0;i<stones.length;i++){   
+  for (let j=0;j<jewels.length;j++){
+      if (stones[i]==jewels[j]){
+        count++;
+        break; //we will use break here kyu jab hamara require element match hu chuka ha ,tu un nessessary dosary elements ko match krwany ki zrort ni ha
+      }
+  }
+}
+console.log(count)
+
+Time Complexity:
+m=length of stones , n=length of jewels ,so time complexity is O(m*n) 
+
+Space Complexity:
+O(1)
+---------------------------------------------------------------------------------------------
+
+Whenever you have to search  a particular item inside a string or array,allways try to think to solve it with hash maps or set.Whenever you have to count a number or have to search something,allways try to think about set ,set should automatically click on your head because searching becomes very fast when you use a set or hash table
+Also normally when we are searching an element in a string or array,normally its time complexity is O(n),like str="tayyab",i have to count how many times a has coming,i will iterate all the string,so its time complexity is O(n) while in set,searching is so fast that its time complexity is O(1)
+
+
+
+
+Solution:
+let stones="aaAbbbb",jewels="aA",count=0;
+let seenNodes=new Set();
+
+for (let i=0;i<jewels.length;i++){
+     seenNodes.add(jewels[i])                    //time complexity: O(n)
+}
+for (let i=0;i<stones.length;i++){
+     if (seenNodes.has(stones[i])){              //time complexity: O(1)
+       count++
+     }
+}
+console.log(count)
+
+Now in our problem,in brute force approach, our time complexity was O(m*n),now by using set ,its time complexity by comparing both loops is O(1*n) because i am doing n times ,it is O(n) which is much,much better then O(m*n)
+
+Space Complexity: So we are creating a set with n elements,so its space complexity shoule be O(n) but in reality,it is O(1).Because in question,it is already said that only english alphabets will appear in our problem,so in set,maximum there will be a 52 constant alphabets(small+large alphabets) only,it cannot be increased,so due to its constant value,constant will be ignore and it become O(1)
