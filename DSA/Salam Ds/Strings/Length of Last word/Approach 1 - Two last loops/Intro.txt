@@ -44,3 +44,10 @@ if (str[n] ==" ") break;
 --n;
 count++
 }
+
+----------------
+In trim and split solution,both behind the scenes using loops thats why Time complexity is O(n)
+As we are using split which takes extra space to convert string into arrays,thats why Space complexity is O(n)
+------------------
+
+In our Recommended solution, Time complexity is O(n) while Space complexity is O(1) because we are not using extra space.

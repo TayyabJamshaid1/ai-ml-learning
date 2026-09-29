@@ -1,0 +1,37 @@
+One loop Solution:
+My SOlution:
+
+let str="  Try clicking the Run button   ",count=0,n=str.length-1,startingPoint=true
+while(n>=0){
+if (str[n]==" "){
+   if (startingPoint){
+     --n
+   }else{
+     break;
+   }
+}else{
+  ++count
+  --n;
+  startingPoint=false;
+}
+}
+
+console.log(count)
+
+
+
+
+
+Recommended solution:
+
+let str="  Try clicking the Run button   ",count=0,n=str.length-1;
+while(n>=0){
+if (str[n]!=" "){
+  ++count
+}else if (count>0){
+ break
+}
+  --n
+}
+
+console.log(count)
