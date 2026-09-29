@@ -1,0 +1,28 @@
+My Solution
+a)By Js buit in methods
+
+let words=["leet","code"],finder="e",indexes=[]
+for(let i=0;i<words.length;i++){
+  if (words[i].includes(finder)){
+       indexes.push(i)
+  }
+}
+console.log(indexes)
+
+b)By Ds approach & Recommended solution:
+let words=["leet","code"],finder="e",indexes=[]
+for(let i=0;i<words.length;i++){
+ for (let j=0;j<words[i].length;j++){
+   if (words[i][j]==finder){
+     indexes.push(i)
+     break
+   }
+ }
+}
+console.log(indexes)
+
+n=max length of each word //leet
+m=no of words
+Its time complexity = O(n*m) //it is not n^2 because n length(each word length) can be different to each other
+Space complexity is O(1) //while we are using indexes array then why its space complexity is O(1) instead of O(n) because i did not use indexes for my own purpose/logic,the question is asking to do that,this indexes array is just to store the answer
+
