@@ -1,0 +1,46 @@
+We have to find the length of last word in a string,we first have to find the last word of string.An easy and straight forward way is to start the loop from the end.We have to traverse the loop from backward,the first word will be our target last word.
+
+let str="  fly   to   the   moon   "  
+              <=================== traverse from backward
+              
+SO,first we have to trim all the spaces.Then as soon as i find first character,i will start counting and as soon,i found the space,i will break our loop and will return the counting    
+
+Steps: 
+Trim the space
+Count the character until you reach a space     
+
+
+My Logic:
+
+let str="  Try clicking the Run button   ",count=0,n=str.length-1
+while(str[n]==" "){
+  console.log(n,"n in loop")
+  n--
+}
+for (let i=n;i>=0;i--){
+if (str[i]==" "){
+  break;
+}
+  count++
+  
+}
+console.log(count)   
+
+Recommended Logic:
+
+function findLength(str){
+let n=str.length-1
+//Step 1: Trim the space
+//after this step,we will reach at that point where our last words start
+while(n>=0){
+if (str[n]!==" ") break;
+--n;
+}
+}
+let count=0;
+
+while(n>=0){
+if (str[n] ==" ") break;
+--n;
+count++
+}
