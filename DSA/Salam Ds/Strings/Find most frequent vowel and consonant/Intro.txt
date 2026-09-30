@@ -1,0 +1,48 @@
+My Solution:
+
+let str="successes",obj={},vowel="aeiou",vowelMax=0,consoMax=0
+
+for (let i=0;i<str.length;i++){
+  obj[str[i]]=(obj[str[i]]||0)+1
+  
+}
+console.log(obj)
+for (let key in obj){
+  if (vowel.includes(key)){
+    if(vowelMax<obj[key]){
+      vowelMax=obj[key]
+    }
+  }else{
+     if(consoMax<obj[key]){
+      consoMax=obj[key]
+    }
+  }
+}
+let res=consoMax+vowelMax
+console.log(res)
+-----------------------------------------------------
+More optimized Approach:
+let str="successes",obj={},vowel="aeiou",vowelMax=0,consoMax=0
+
+for (let i=0;i<str.length;i++){                      //part 1
+  obj[str[i]]=(obj[str[i]]||0)+1
+  
+}
+// console.log(Object.keys(obj))
+for (let key in obj){                                //part 2
+  if (vowel.includes(key)){
+    vowelMax=Math.max(vowelMax,obj[key])
+  }else{
+    consoMax=Math.max(consoMax,obj[key])
+  }
+}
+let res=consoMax+vowelMax
+console.log(res)
+
+Time Complexity:
+The Time Complexity of part 1 is O(n) while for part 2 it is O(1).Why????  Because in problem,it is said that only small alphabets will be there and in obj object,there will be not more than constant 26 alphabets allways,maximum it will be 26 alphabets,so 26 is a constant ,so thats why part 2 Time Complexity is O(1).Even in part 2 ,we are using includes, still Time Complexity will be O(1) because includes will run only contant 5 times on given vowels.SO now if your upcoming string size is more than 1 million,still our time complexity will remain the same
+
+So final Time Complexity is O(n+1)=O(n)
+
+Space complexity:
+Some people think obj object takes extra storage,so it should be O(n) but in reality,maximum values it can store is 26 alphabets along with 26 values,so it will take constant 52 key with values,no worry how much string is larger,it will take (26 alphabets+26 values=52 maximum),so its space complexity is O(1)
