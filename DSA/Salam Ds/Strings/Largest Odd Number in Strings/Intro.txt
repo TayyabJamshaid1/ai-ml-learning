@@ -1,0 +1,26 @@
+Scenario:
+if last digit is even,eliminate it until odd number appears
+let str="325476";
+after eliminating 6,it become the highest possible odd number automatically 32547
+
+
+Solution:
+let str="325476";
+
+function largePossibleOddNumber(str){
+let n=str.length-1
+while(n>=0){
+    if (Number(str[n])%2==1){ //check only the last value,if it is odd,it means it will be the maximum number
+        return str.substring(0,n+1)
+    }
+   
+--n;
+      }
+      return "" //return empty if even or empty
+
+}
+let res=largePossibleOddNumber(str)
+console.log(res)
+
+Time Complexity:O(n)
+Space Complexity:O(1)
