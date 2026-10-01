@@ -1,0 +1,40 @@
+//Steps:
+a)make a lower alphabet
+b)Run while loop until i greater then j
+c)while only condition will run at a time
+    i)Check i must be numeric or alphabet,if anything else,move i forward and move on next iteration
+    ii)Check j must be numeric or alphabet,if anything else,move j backward and move on next iteration
+    iii)if both string values are equal,increment in i and decrement in j ,i will be proceed forward and j will be on backward ,then move on next iteration
+    iv)if both string values are not equal,its mean it is not a palindrome,return false immedijiately 
+
+d)All strings matched,return true
+
+
+Code:
+
+let str="A man, a plan, a canal:panama";
+
+function palindrome(str){
+str=str.toLowerCase()
+let i=0,j=str.length-1
+ while(i<j){
+ if (!str[i].match(/[a-z0-9]/i)){
+ ++i
+ }else if (!str[j].match(/[a-z0-9]/i)){
+ --j
+ }else if (str[i]==str[j]){
+ ++i;--j 
+ }else{
+ return false
+ }
+ 
+ }
+ return true
+}
+let res=palindrome(str)
+console.log(res)
+
+
+Time Complexity:O(n)
+Space Complexity:O(1)
+
