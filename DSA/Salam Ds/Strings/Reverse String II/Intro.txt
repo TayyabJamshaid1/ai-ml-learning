@@ -31,3 +31,8 @@ for (let i=0;i<s.length;i+=k*2){  //2k steps chor du per iteration
 
 }
 console.log(s.join(""))
+
+------------------------------------------
+Time complexity is seen to be O(n^2) but in reality it is O(n) because we do not iterate on each element,we skip 2k elements and also reverse only a k part,thats why it is O(n)
+
+Space complexity is O(n) because you are creating a array of  n number of string by str.split("") because in js & other languages,string is immutable ,you have to convert it in array to change its location,but in some languages,strings are mutable,for that languages ,space complexity is O(1) 

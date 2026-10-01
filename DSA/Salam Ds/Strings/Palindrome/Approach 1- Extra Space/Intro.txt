@@ -1,0 +1,39 @@
+My Solution:
+
+let str="A man, a plan, a canal:panama",filteredString="",matchString=false
+str=str.toLowerCase()
+
+for (let i=0;i<str.length;i++){
+    if (str[i].match(/[a-z0-9]/i)){
+        filteredString+=str[i]
+    }
+}
+
+for (let i=0;i<Math.floor(filteredString.length/2);i++){
+  if (filteredString[i]!==filteredString[filteredString.length-1-i]){
+    matchString=false;
+    break
+  }else{
+        matchString=true;
+
+  }
+}
+console.log(matchString)
+
+Recommended Solution:
+let str="A man, a plan, a canal:panama",filteredString="",rev=""
+str=str.toLowerCase()
+
+for (let i=0;i<str.length;i++){
+    if (str[i].match(/[a-z0-9]/i)){
+        filteredString+=str[i]   //See both statement diff in image( filteredString vs rev.png)
+        rev=str[i]+rev
+    }
+}
+let res=filteredString==rev?true:false
+
+console.log(res)
+
+Time Complexity is O(n)
+Space complexity is O(n) because as the string will increasing,the size & space of filteredString & rev also increasing 
+
