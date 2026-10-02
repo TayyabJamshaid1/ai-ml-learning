@@ -1,0 +1,42 @@
+let arr = ["flower", "flight", "flow"], x = 0;
+
+function largePossibleOddNumber(strs) {
+
+    // The longest possible common prefix cannot be longer than the first string.
+    while (x < strs[0].length) {
+
+        // Take the character at the current position from the first string.
+        // We will compare this character with the same position in every other string.
+        let ch = strs[0][x];
+
+        // Start from the second string because the character from the first
+        // string is already stored in "ch".
+        for (let i = 1; i < strs.length; i++) {
+
+            // If any string has a different character at this position,
+            // or this position does not exist in that string,means string has been ended, then the
+            // common prefix ends just before this position.
+            if (strs[i][x] !== ch || x == strs[i].length) {
+
+                // Return everything before index x because index x is
+                // the first position where the common prefix breaks.
+                return strs[0].substring(0, x);
+            }
+        }
+
+        // All strings had the same character at this position,
+        // so move to the next character and continue checking.
+        ++x;
+    }
+
+    // If we reach the end of the first string, every character of the
+    // first string matched in all other strings, so the entire first
+    // string is the common prefix.
+    return strs[0];
+}
+
+let res = largePossibleOddNumber(arr);
+
+console.log(res);
+
+-----------------------------------
