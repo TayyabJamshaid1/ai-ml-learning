@@ -1,0 +1,131 @@
+Anagram is a jumping/shuffling/re arranging of letters,basically you are mixing up these letters and make another word that is known as anagram.
+Anagram Examples:
+
+Example 1 
+wordOne=Anagram
+wordTwo=nagaram
+In example 1,all are anagram
+
+Example 2
+wordOne=Tayyab
+wordTwo=yatbay
+wordThree=yyatab
+In example 2,all are anagram
+
+Example 3:
+wordOne=cat
+wordTwo=rat
+In example 3,wordTwo are not anagram
+
+all the letters that you see over wordOne are present over on wordTwo exactly once .In short,the size of wordOne and wordTwo should be same.If size are different,it means some words are missing,that is not anagram
+
+One solution to check that both strings is anagram or not is that we sort both strings alphabatically and then compare its values.For a sorting purpose,In Js and java,strings are immutable while in some languages it is mutable .We do not directly sort or replace strings,we first have to create a array of it.For this Js and java behaviour,its space complexity is O(n) because we are coneverting the string into array,those languages where strings is mutable ,their space complexity is O(1) and time complexity is O(nlogn)
+
+Solution:
+Approach 1: JS APPROACH
+
+let str1="anagram",str2="nagaram",isAnagram=false;
+str1=str1.split("").sort().join("");
+str2=str2.split("").sort().join("");
+
+
+if (str1==str2){
+    isAnagram=true
+}else{
+    isAnagram=false
+}
+console.log(isAnagram)
+
+This is not a good and optimized solution,we need to move on next approach
+-----------------------------------
+Approach 2 : My Approach
+console.log("Hello, World!");
+let str1="anagram",str2="nagaram"
+
+function isAnagram(str1,str2){
+let obj1={},obj2={};
+
+ for (let i=0;i<str1.length;i++){
+  obj1[str1[i]]=(obj1[str1[i]]||0)+1
+}
+ for (let i=0;i<str2.length;i++){
+  obj2[str2[i]]=(obj2[str2[i]]||0)+1
+}
+let arr1=Object.keys(obj1)
+let arr2=Object.keys(obj2)
+
+if (arr1.length!==arr2.length){
+    return false
+}else{
+    for (let i=0;i<arr1.length;i++){
+        let key=arr1[i]
+        if (!obj2.hasOwnProperty(key)||obj1[key]!==obj2[key]){
+ return false
+        }
+    }
+    return true
+}
+}
+let res=isAnagram(str1,str2)
+console.log(res)
+
+----------------------------
+Approach 3:
+My another better approach:
+let str1="anagram",str2="nagaram"
+
+function isAnagram(str1,str2){
+    if (str1.length!==str2.length) return false
+let obj1={};
+
+ for (let i=0;i<str1.length;i++){
+  obj1[str1[i]]=(obj1[str1[i]]||0)+1
+}
+ 
+ for (let i=0;i<str2.length;i++){
+    let key=str2[i]
+    if (obj1.hasOwnProperty(key)){
+        obj1[key]=obj1[key]-1
+    }
+ }
+ for (let key in obj1){
+    if (obj1[key]!=0){
+     return false
+    }
+ }
+return true
+
+}
+let res=isAnagram(str1,str2)
+console.log(res)
+
+---------------------------------------------------------
+Approach 4: Recommended Approach
+let str1="anagram",str2="nagaram"
+
+function isAnagram(str1,str2){
+    if (str1.length!==str2.length) return false
+let obj1={};
+
+ for (let i=0;i<str1.length;i++){
+  obj1[str1[i]]=(obj1[str1[i]]||0)+1
+}
+ 
+ for (let i=0;i<str2.length;i++){
+      if (!obj1[str2[i]]||obj1[str2[i]]<0){
+        return false
+      }else{
+        --obj1[str2[i]]
+      }
+ }
+return true
+
+}
+let res=isAnagram(str1,str2)
+console.log(res)
+
+Time complexity is O(n) which is far better then js approach which time complexity is O(nlogn)
+Space complexity is O(1)
+
+
+We will just cutting all the match elements from both strings
