@@ -40,3 +40,67 @@ let res = largePossibleOddNumber(arr);
 console.log(res);
 
 -----------------------------------
+Initially,we assume that time complexity is O(n^2) because of nested loops but in reality it is not.
+"O(n²) happens when two nested loops both run based on the same input size n.
+If they depend on different input sizes, use different variables, e.g. O(m × n)."
+Example of O(n^2):
+et arr = [10, 20, 30, 40, 50];
+
+You want to compare every element with every other element:
+
+for (let i = 0; i < arr.length; i++) {
+
+    for (let j = 0; j < arr.length; j++) {
+
+        console.log(arr[i], arr[j]);
+
+    }
+}
+
+Here both loops depend on the same array.
+
+If there are 5 elements:
+
+Outer loop → 5 times
+Inner loop → 5 times for EACH outer iteration
+
+Total = 5 × 5 = 25
+
+If there are 100 elements:
+
+100 × 100 = 10,000
+
+If there are 1,000:
+
+1,000 × 1,000 = 1,000,000
+
+Therefore:
+
+O(n × n) = O(n²)
+So,If two nested loops both iterate based on the same input size n, then it is O(n²).
+----------------------------------
+
+
+In our example,There are 2 nested loops, but they iterate over different things:
+
+while (x < strs[0].length)      // characters
+    for (let i = 1; i < strs.length; i++)  // strings
+Outer loop → iterates through characters → m
+Inner loop → iterates through strings → n
+
+Therefore:
+
+Time Complexity = O(m × n)
+
+Example:
+
+5 strings × 10 characters
+= 5 × 10
+= 50 possible comparisons
+
+So nested loops ≠ automatically O(n²).
+First check what each loop is iterating over.
+
+-----------------
+Space complexity:
+We are using no extra space,so it is O(1)
