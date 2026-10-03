@@ -1,0 +1,28 @@
+let s="far",t="boo"
+
+function isIsomorphic(s, t) {
+    if (s.length !== t.length) return false;
+
+    let map = {};
+    let map2 = {};
+
+    for (let i = 0; i < s.length; i++) {
+        let charS = s[i];
+        let charT = t[i];
+
+        if (
+            (map[charS] && map[charS] !== charT) ||
+            (map2[charT] && map2[charT] !== charS)
+        ) {
+            return false;
+        }
+
+        map[charS] = charT;
+        map2[charT] = charS;
+    }
+
+    return true;
+}
+let res=isIsomorphic(s,t)
+console.log(res)
+
