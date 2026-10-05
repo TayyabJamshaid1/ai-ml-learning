@@ -1,0 +1,57 @@
+ Quene:
+ Quene is a FIFO data structure (FIRST IN FIRST OUT)
+ Quene is represented by FIFO
+ You can only add elements inside the quene from the back.It is also known as "in" operation. 
+ You can only out elements from the front .It is known as "out" operation
+ Suppose,there are some elements.I want to add 1 in quene,so we pushed it inside the quene.So 1 is our first entered element.Now i have pushed another value here 2.After that ,i pushed third element named 3.Now suppose,i have to take out elements one by one,i cannot remove 3 element directly.The elements can only be removed from the front of the quene.That is why it is known as "FIRST IN FIRST OUT".Currently,we have 3 elements in our quene(1,2,3).The element which were gone first inside the quene will be the first to come out.In our case,element 1 is pushed inside quene first,so it will come out first
+ 
+ Methods/Operation/Functions of quene:
+ enquene(add),aequene(remove),peek/front
+ 
+ enquene:
+ When we are adding element,that operation is known as enquene
+ 
+ aequene:
+ Removing elements from the quene from the front.It is also known as removing elements or aequene
+ 
+ Peek/Front
+ This operation finds out which element is there inside the front of the quene.So,if i do quene.peek(),so it will pick first element which is 1 in our case and return to us.
+ 
+ Real World Examples:
+ =>Ticket counter(Jis ko ticket mily gi wohi jai ga),
+ =>operating system task scheduling(the task which is schedule first,will be executed first.The task you schedule later,will be executed later.It will work in order.In this example,order is known as quene
+ =>Printers(It will print the document first come in documents and then print the rest ones)
+ =>Quenes in general(Logo ki labhi qatarain)
+ 
+ 
+ Stack:
+ Stack is a LIFO data structure (LAST IN FIRST OUT)
+ Stack is represented by FIFO
+ 
+ In stack datastructure,you can add elements from the top.The top part is known as "Top of the stack" and bottom part is known as "Bottom of the stack".Now ,"in" and "out" both operations can only happen from the top.So it only has one end where the elements gone inside and come out.Suppose,we have pushed 1 inside stack,then pushed 2 and then pushed 3.So if i have to get elements out,they will come out "Last in first out" fashion.Basically,the element which was gone last which is 3 will be the first to come out
+ 
+  Methods/Operation/Functions of stack:
+  push,pop,peek/top
+  
+  Push:(Adding elements in stack)
+  Pushing value inside the stack.SO if i say s.push(1),it will push 1 inside the stack
+  
+  Pop:(Removing elements from stack)
+  Element comes out from top of the stack.The top most element will come out from the stack.It is known as pop
+  
+  Peek/top:
+  This function means i want to find out the top most element of the stack
+  
+  Real world examples:
+Stack of books,Undo feature,browser history,recursion
+
+Real world code of Stack:
+
+=>Arrays are by default in Js is stack.While in Java,we have a stack class.In C++,we include stack from stl by #include stack.In python,list behaves like a stack.Different languages have different approaches to make a stack 
+
+=>In Js,Stack is nothing but you can create it by exactly like an array
+stack=[]
+
+When you do stack.push,it will add element at end,if you do stack.pop,it will return you last added element
+
+ 
