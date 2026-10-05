@@ -1,0 +1,21 @@
+Approach 1:
+let arr=["eat","ate","tea","tan","bat","nat"],map={}
+
+for (let i=0;i<arr.length;i++){
+    console.log(arr[i])
+    let value=arr[i].split("").sort().join("")
+     map[value]=map[value]?[...map[value],arr[i]]:[arr[i]]
+}
+console.log(Object.values(map))
+
+Time complexity:
+Suppose,we have n strings in arr and suppose, maximum length of each string is m,Now ,the process of sort each string takes a time complexity of mlogm and because we have n strings,we have to do sorting on each string.We will do sorting n times.SO time complexity becomes O(n X mlogm)= O(nmlogm)
+
+arr[i].split("").sort().join("")  // time complexity on each string   mlogm
+
+for n times ,it will be O(n X mlogm)= O(nmlogm)
+
+Space Complexity:
+We have created a new map.This map will have maximum of n keys.Now suppose, maximum length of each string is m,so space complexity becomes O(nm)
+
+

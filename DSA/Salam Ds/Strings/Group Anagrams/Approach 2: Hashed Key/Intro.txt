@@ -1,0 +1,47 @@
+We first have to create  a unique key to gather all the anagram strings.For this,in approach 1,we use sorted strings approach.Now will move on approach 2 which is hashed key
+
+
+let strs = ["eat", "ate", "tea", "tan", "bat", "nat"], map = {}
+
+for (let i = 0; i < strs.length; i++) {             //time complexity O(n)
+
+    // Anagrams have same characters + same frequency.
+    // Create 26 slots: index 0 = a, 1 = b, ..., 25 = z.
+    let freqArray = Array(26).fill(0);
+
+    let s = strs[i]
+
+    // Convert each character to its alphabet index and count it.
+    // Example: 'e' → 101 - 97 = 4
+    for (let j = 0; j < s.length; j++) {              //let m is length of each word,so time complexity is O(m)
+
+        let index = s[j].charCodeAt() - "a".charCodeAt();
+
+        ++freqArray[index]
+    }
+
+    // Convert frequency array into a unique key.
+    // Same character frequencies → same key → anagrams grouped.
+    let key = ""
+
+    for (let k = 0; k < 26; k++) {                      //time complexity O(1)
+
+        // 97 + k converts index 0,1,2... into a,b,c...
+        key = key + String.fromCharCode(97 + k) + freqArray[k]
+    }
+
+    // Same key means the words are anagrams, so group them.
+    if (!map[key]) {
+
+        map[key] = [strs[i]]
+
+    } else {
+
+        map[key].push(strs[i])
+    }
+}
+
+console.log(Object.values(map))
+
+So time complexity is (1*n*m)=O(nm)
+Space complexity is O(mn)
