@@ -1,0 +1,74 @@
+Your solution should use quene methods behind the scenes but it should behave like a stack.
+In this problem,for help,2 quenes are provided(q1,q2).Push stragedy is same in stack & quene,we have only challenge in pop and get.In stack pop method,we know,last added item will remove first while in quene,first added item will be remove first.Now in our problem,we want that using quene methods,last added item will come first.For this,we use another quene q2,we first add all the q1 elements in q2 except last(n-1).Then by using shift,q1 last added item will be removed and at last step,we exchange the names of quenes,q2 will become q1 and q1 will become q2.
+
+Similarly,for get,stack gives the last added item and quene gives the first added element.We have to do the same thing as we doing in a pop.Except last,put all elements in q2 and then by using shift,you can return the last added element and after return,add the last returned element in q2 too.Then exchange their names
+
+Empty method only check while if q1 length is 0,then return false else return true 
+
+
+Solution:
+
+var MyStack = function() {
+    this.q1=[];
+    this.q2=[]
+};
+
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyStack.prototype.push = function(x) {
+   this.q1.push(x) 
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.pop = function() {
+    let n=this.q1.length;
+    for (let i=0;i<n-1;i++){
+        this.q2.push(this.q1.shift())
+    }
+    let ans=this.q1.shift()
+    let temp=this.q1
+    this.q1=this.q2
+    this.q2=temp
+    return ans
+    
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.top = function() {
+     let n=this.q1.length;
+    for (let i=0;i<n-1;i++){
+        this.q2.push(this.q1.shift())
+    }
+    let ans=this.q1.shift()
+     this.q2.push(ans)
+    let temp=this.q1
+    this.q1=this.q2
+    this.q2=temp
+    return ans
+};
+
+/**
+ * @return {boolean}
+ */
+MyStack.prototype.empty = function() {
+    if (this.q1.length>0){
+        return false
+    }else{
+        return true
+    }
+};
+
+/** 
+ * Your MyStack object will be instantiated and called as such:
+ * var obj = new MyStack()
+ * obj.push(x)
+ * var param_2 = obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.empty()
+ */
