@@ -58,5 +58,8 @@ When you do stack.push,it will add element at end,if you do stack.pop,it will re
 Array == Stack/Quene (with restricted access(only allow  add/remove/get elements) 
 
  Stack and Quenes are logical datastructures which are used for a certain reason
+---------------------------------
+While working with stack & quenes,never ever try to get array value by its index,see below
+console.log(stack[7]); //Invalid Operation for stack & quene
 
  
