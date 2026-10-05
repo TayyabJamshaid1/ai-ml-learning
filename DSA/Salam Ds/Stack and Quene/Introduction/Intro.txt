@@ -54,4 +54,9 @@ stack=[]
 
 When you do stack.push,it will add element at end,if you do stack.pop,it will return you last added element
 
+-------------------------------------------------
+Array == Stack/Quene (with restricted access(only allow  add/remove/get elements) 
+
+ Stack and Quenes are logical datastructures which are used for a certain reason
+
  
