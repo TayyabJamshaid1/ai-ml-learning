@@ -42,3 +42,9 @@ var isValid = function(s) {
      }
      return stack.length==0;
 };
+
+Time Complexity:
+O(n)  because we have to iterate all n
+
+Space Complexity:
+O(n)   because stack is taking n elements
