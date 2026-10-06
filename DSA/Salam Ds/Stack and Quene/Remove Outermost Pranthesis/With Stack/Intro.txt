@@ -33,10 +33,10 @@ Recommended solution:
  * @return {string}
  */
 var removeOuterParentheses = function(s) {
-    let map={"(":")"},stack=[],str2="";
+    let stack=[],str2="";
 
 for (let i=0;i<s.length;i++){
-   if (map[s[i]]){
+   if (s[i]=="("){
        stack.push(s[i])
        if (stack.length>1){
         str2=str2+s[i]
@@ -51,3 +51,9 @@ for (let i=0;i<s.length;i++){
 }
 return str2;
 };
+
+Time complexity
+O(n)
+
+Space Complexity
+O(n)
