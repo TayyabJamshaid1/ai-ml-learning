@@ -1,0 +1,53 @@
+whenever there is a pranthesis type question,always use a stack
+
+
+My SOlution:
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function(s) {
+    let map={"(":")"},stack=[],str2="";
+
+for (let i=0;i<s.length;i++){
+   if (map[s[i]]){
+       stack.push(s[i])
+       if (stack.length>1){
+        str2=str2+s[i]
+    }
+   }else{
+    if (stack.length>1){
+       stack.pop();
+        str2=str2+s[i]
+    }else{
+        stack.pop()
+    }
+   }
+}
+return str2;
+};
+
+Recommended solution:
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeOuterParentheses = function(s) {
+    let map={"(":")"},stack=[],str2="";
+
+for (let i=0;i<s.length;i++){
+   if (map[s[i]]){
+       stack.push(s[i])
+       if (stack.length>1){
+        str2=str2+s[i]
+    }
+   }else{
+    if (stack.length>1){
+        str2=str2+s[i]
+    }
+    stack.pop();
+
+   }
+}
+return str2;
+};
