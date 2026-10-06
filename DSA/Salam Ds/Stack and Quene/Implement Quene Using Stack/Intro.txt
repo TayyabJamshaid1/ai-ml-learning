@@ -1,0 +1,59 @@
+
+var MyQueue = function() {
+    this.s1=[]
+    this.s2=[]
+};
+
+/** 
+ * @param {number} x
+ * @return {void}
+ */
+MyQueue.prototype.push = function(x) {    //time complexity: O(1)
+    this.s1.push(x)
+};
+
+/**
+ * @return {number}
+ */
+MyQueue.prototype.pop = function() {  //time complexity: O(1) see reason in important section
+     if (this.s2.length==0){
+        let n=this.s1.length;
+        for (let i=0;i<n;i++){
+            this.s2.push(this.s1.pop())
+        }
+     }
+     let ans=this.s2.pop() //time complexity: O(1)
+     return ans;
+};
+
+/**
+ * @return {number}
+ */
+MyQueue.prototype.peek = function() {  //time complexity: O(1) see reason in important section
+    if (this.s2.length==0){
+        let n=this.s1.length;
+        for (let i=0;i<n;i++){
+            this.s2.push(this.s1.pop())
+        }
+     }
+     let ans=this.s2[this.s2.length-1]
+     return ans;
+};
+
+/**
+ * @return {boolean}
+ */
+MyQueue.prototype.empty = function() { //time complexity: O(1)
+    if (this.s1.length==0 && this.s2.length==0){
+        return true
+    }else{
+        return false
+    }
+};
+
+-----------------------
+Important:
+1-You cannot implement quene using stack with one stack,while we can implement stack using quene with one quene because stack has only one opening.(Srf 1 he door sy chezain a skti ha wohi sy he niqalny ka rasta ha)
+
+2-Time Complexity:
+In an average case,it looks like pop and peek take iteration n times but in reality,we do not shuffling this elements allways,only for first time when s2 is empty,so instead of O(n) its time complexity is O(1)
