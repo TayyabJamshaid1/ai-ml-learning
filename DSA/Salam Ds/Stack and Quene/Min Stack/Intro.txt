@@ -1,0 +1,105 @@
+My Solution:
+QUestion requirement is I have to solve it O(1) time complexity but i solve it by O(n) .According to leet code,Your algorithm gives the right answer — it's just too slow. LeetCode isn't saying your answer is wrong; it's saying it took too long to compute. That's why the error is "Time Limit Exceeded" and not "Wrong Answer."
+
+var MinStack = function() {
+    this.minStack=[]
+};
+
+/** 
+ * @param {number} value
+ * @return {void}
+ */
+MinStack.prototype.push = function(value) {
+    this.minStack.push(value)
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function() {
+     this.minStack.pop()
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.top = function() {
+    let ans= this.minStack[this.minStack.length-1]
+    return ans;
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function() {
+    let temp=[].concat(this.minStack),min=this.minStack[this.minStack.length-1],n=temp.length
+  for (let i=0;i<n;i++){
+let matchedItem=temp.pop();
+if (min>matchedItem){
+    min=matchedItem
+}
+    
+  }
+return min;
+};
+
+
+ ---------------------------------------------------------------------------------------------------------------------
+ Recommended Approach:
+ Now we have to use that solution jis ki time complexity O(1) hu,agr hum getMin mei loop k through krty ha tu isy sary numbers mei iterate krna hu ga aur time complexity O(n) hu jai gi ,is liye behtr ye ha k jab number stack mei push kr rhy ha,tab he mujooda min number b stack mei store kr lein
+ 
+ 
+var MinStack = function() {
+    this.s=[]
+};
+
+/** 
+ * @param {number} value
+ * @return {void}
+ */
+MinStack.prototype.push = function(value) {
+    if (this.s.length==0){
+        this.s.push([value,value])
+    }else{
+        let minValue=Math.min(value,this.s[this.s.length-1][1])
+        this.s.push([value,minValue])
+
+    }
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function() {
+    this.s.pop()
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.top = function() {
+  return  this.s[this.s.length-1][0]
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function() {
+      return  this.s[this.s.length-1][1]
+
+};
+
+/** 
+ * Your MinStack object will be instantiated and called as such:
+ * var obj = new MinStack()
+ * obj.push(value)
+ * obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.getMin()
+ */
+ 
+ -------------
+ Time complexity: As question says,O(1)
+ Space complexity is O(n) because we are using 2 numbers per value
+ 
+ 
