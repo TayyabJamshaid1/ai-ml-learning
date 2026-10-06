@@ -15,15 +15,21 @@ MyQueue.prototype.push = function(x) {    //time complexity: O(1)
 /**
  * @return {number}
  */
-MyQueue.prototype.pop = function() {  //time complexity: O(1) see reason in important section
-     if (this.s2.length==0){
-        let n=this.s1.length;
-        for (let i=0;i<n;i++){
-            this.s2.push(this.s1.pop())
+MyQueue.prototype.pop = function() { //time complexity: O(1) see reason in important section
+    if (this.s2.length == 0) {
+
+        // Worst case: O(n)
+        // But each element moves from s1 → s2 only once
+        // So amortized: O(1)
+
+        let n = this.s1.length;
+
+        for (let i = 0; i < n; i++) {
+            this.s2.push(this.s1.pop());
         }
-     }
-     let ans=this.s2.pop() //time complexity: O(1)
-     return ans;
+    }
+
+    return this.s2.pop(); // O(1)
 };
 
 /**
