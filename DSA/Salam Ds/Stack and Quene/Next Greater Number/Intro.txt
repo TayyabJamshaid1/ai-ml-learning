@@ -1,0 +1,75 @@
+Solution 1:
+Brute Force solution: Time complexity O(n^2)
+
+let arr1=[4,1,2],arr2=[1,3,4,2],arr3=[]
+for (let i=0;i<arr1.length;i++){
+       for (let j=0;j<arr2.length;j++){
+            if (arr1[i]==arr2[j]){
+                let found=false;
+                for (let k=j+1;k<arr2.length;k++){
+                    if (arr1[i]<arr2[k]){
+                       arr3.push(arr2[k])
+                        found=true;
+                        break
+                    }
+                }
+                if (!found){
+                    arr3.push(-1)
+                }
+
+            }
+       }
+}
+
+console.log(arr3)
+----------------------------
+
+In interviews if they ask about Next greater element or Next smallest element or previous greater element or previous smallest element,all this kind of question will be solved by stack
+
+Solution 2 My Solution:
+
+var nextGreaterElement = function(subsetArray, arr) {
+    let res=[], stack = [], nge = {};
+    for (let i = arr.length - 1; i >= 0; i--) {
+    if (i == arr.length - 1) {
+        nge[arr[i]] = -1;
+        stack.push(arr[i])
+    } else {
+        let top = stack[stack.length - 1]
+        if (arr[i] < top) {
+            nge[arr[i]] = top;
+            stack.push(arr[i])
+
+        } else if (arr[i] > top) {
+            let found = false;
+            let n = stack.length
+            for (let j = 0; j < n; j++) {
+
+                let popElement = stack.pop()
+
+                if (popElement && arr[i] < popElement) {
+
+                    found = true;
+                    nge[arr[i]] = popElement;
+                    stack.push(popElement)
+
+                      stack.push(arr[i])
+                    break;
+                }
+            }
+            if (!found) {
+                nge[arr[i]] = -1;
+                   stack.push(arr[i])
+
+            }
+
+        }
+    }
+}
+for (let i=0;i<subsetArray.length;i++){
+    if (nge[subsetArray[i]]){
+   res.push(nge[subsetArray[i]])
+    }
+}
+return res
+};
