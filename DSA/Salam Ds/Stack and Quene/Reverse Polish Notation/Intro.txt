@@ -1,0 +1,52 @@
+Whenever a problem says,we have to work on last 2 /3/4 values,stack should come on your mind
+
+Reverse polish notation is suppose you are given 3 4 + that means 3+4, 3 is first element ,4 is second element,mathematical operation you need to do is + which is third element.So if you have to write a+b,so in reverse polish notation,it will be ab+
+
+
+Solution:
+/**
+ * @param {string[]} tokens
+ * @return {number}
+ */
+var evalRPN = function(arr) {
+    let stack=[];
+    for (let i=0;i<arr.length;i++){
+        if (arr[i]=="+"|| arr[i]=="-"||arr[i]=="*"||arr[i]=="/"){
+  let a=stack.pop()
+  let b=stack.pop()
+  let res=eval(`${b} ${arr[i]} ${a}`)//eval implement the mathematical expression and i use `` because i want that js treated a and b as a number ,not as a string 
+  //i write b first instead of a in eval,see eval image to understand
+  stack.push(Math.trunc(res))  //trunc is use to remove decimal values
+
+        }else{
+            stack.push(arr[i])
+        }
+    }
+    return Number(stack.pop())
+};
+
+
+-------
+Syntax wise better code:
+
+var evalRPN = function(arr) {
+    let stack=[];
+    let operators={
+        "+":(a,b)=>b+a,
+        "-":(a,b)=>b-a,
+        "*":(a,b)=>b*a,
+        "/":(a,b)=>Math.trunc(b/a)
+    }
+    for (let i=0;i<arr.length;i++){
+        if (operators[arr[i]]){
+  let a=stack.pop()
+  let b=stack.pop()
+  let res=operators[arr[i]](Number(a),Number(b))
+  stack.push(res)  
+
+        }else{
+            stack.push(arr[i])
+        }
+    }
+    return Number(stack[0])
+};
