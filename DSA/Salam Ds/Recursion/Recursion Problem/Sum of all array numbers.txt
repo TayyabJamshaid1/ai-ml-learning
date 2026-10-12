@@ -32,7 +32,7 @@ console.log(sum(arr.length-1))
 ---------------------------------------------------------------------------------------
 Sum of odd values in array
 
-My Solution:
+My Solution 1:
 let arr=[5,3,2,0,1];
 function isOdd(n){
   let result=arr[n]%2!==0?true:false
@@ -50,7 +50,17 @@ function sum(n){
               
               }
               
-              
+  //My Solution 2:
+   function sum(n){
+
+  if (n<0) return 0;
+   if (arr[n]%2!=0){
+
+return arr[n]+sum(n-1)
+   }else{
+  return  sum(n-1)
+   }
+}            
               Recommended Solution:
               function sum(n){
   let isOdd=(arr[n]%2!==0)
