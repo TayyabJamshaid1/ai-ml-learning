@@ -73,3 +73,42 @@ for (let i=0;i<subsetArray.length;i++){
 }
 return res
 };
+
+--------------------------
+Recommended Solution
+
+
+  let arr=[1,3,4,2],subsetArray=[4,1,2];
+  let n=arr.length
+  let res={}, stack = [],finalAns=[];
+ 
+stack.push(arr[n-1])
+res[arr[n-1]]=-1;
+for (let i=n-2;i>=0;--i){
+ 
+
+while(stack.length){
+    let top =stack[stack.length-1]
+    if (arr[i]>top){
+    stack.pop()
+    }else{
+     res[arr[i]]=top
+      break
+    }
+}
+if (stack.length==0){
+    res[arr[i]]=-1;
+}
+
+
+stack.push(arr[i])
+}
+
+
+for (let i=0;i<subsetArray.length;i++){
+    if (res[subsetArray[i]]){
+   finalAns.push(res[subsetArray[i]])
+    }
+}
+console.log(finalAns)
+
