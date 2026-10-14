@@ -1,0 +1,35 @@
+In this problem,we will try to find out the difference between indexes thats why we will push index in stack while in previous problem,we push values in stack but this time we will push indexes in stack because we have to find out the difference between greater value index- current value index,by that result  we will know after how many iterations,greater number appears
+
+
+Solution:
+
+/**
+ * @param {number[]} temperatures
+ * @return {number[]}
+ */
+var dailyTemperatures = function(arr) {
+ let n=arr.length
+  let res=Array(n).fill(0), stack = [];
+ 
+stack.push(n-1)
+res[n-1]=0;
+
+for (let i=arr.length-2;i>=0;--i){
+while(stack.length){
+    let top =stack[stack.length-1]
+    if (arr[i]>=arr[top]){
+    stack.pop()
+    }else{
+     res[i]=top-i
+      break
+    }
+}
+if (stack.length==0){
+    res[i]=0;
+}
+stack.push(i)
+}
+return res;
+};
+
+//Time complexity = O(n)
