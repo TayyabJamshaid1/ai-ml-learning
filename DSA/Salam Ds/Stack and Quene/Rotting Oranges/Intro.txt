@@ -1,0 +1,71 @@
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var orangesRotting = function(grid) {
+    let m = grid.length;       // Number of rows
+    let n = grid[0].length;    // Number of columns
+    let queue = [];
+
+    // Step 1: Put all initially rotten oranges into the queue.
+    // They all start at time 0 because they are already rotten.
+    // [row, column, time]
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (grid[i][j] === 2) {
+                queue.push([i, j, 0]);
+            }
+        }
+    }
+
+    let maxMinutes = 0;
+
+    // Step 2: Spread the rot to nearby fresh oranges.(sath walay fresh orange ko b level by level rotten/kharab krty jao,har level pr 1 min/level brta jai ga 
+// Moving from one orange to the next takes 1 minute.
+
+    while (queue.length) {
+        let [x, y, level] = queue.shift();
+
+        // Check the orange above
+        if (x > 0 && grid[x - 1][y] === 1) {
+            grid[x - 1][y] = 2;              // Mark it rotten immediately
+            queue.push([x - 1, y, level + 1]);
+        }
+
+        // Check the orange below
+        if (x < m - 1 && grid[x + 1][y] === 1) {
+            grid[x + 1][y] = 2;
+            queue.push([x + 1, y, level + 1]);
+        }
+
+        // Check the orange to the right
+        if (y < n - 1 && grid[x][y + 1] === 1) {
+            grid[x][y + 1] = 2;
+            queue.push([x, y + 1, level + 1]);
+        }
+
+        // Check the orange to the left
+        if (y > 0 && grid[x][y - 1] === 1) {
+            grid[x][y - 1] = 2;
+            queue.push([x, y - 1, level + 1]);
+        }
+
+        // Keep track of the largest time reached by any orange.
+        maxMinutes = Math.max(maxMinutes, level);
+    }
+
+    // Step 3: If any fresh orange remains, it was unreachable.
+    // Therefore, not all oranges can become rotten.
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            if (grid[i][j] === 1) {
+                return -1;
+            }
+        }
+    }
+
+    return maxMinutes;
+};
+
+
+Time and space complexity is m*n
