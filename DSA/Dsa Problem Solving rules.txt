@@ -1,0 +1,12 @@
+5 Rules Before Solving Any DSA Problem
+1. Read Twice: Read the problem carefully. Identify the input, output, and constraints.
+
+2. Understand the Problem: Explain in your own words what the problem is asking you to find or return.
+
+3. Make an Example: Take a small example and manually calculate the expected output.
+
+4. Think of Brute Force: First, think about how you would solve the problem manually without worrying about optimization.
+
+5. Plan Before Coding: Decide the steps of your solution and choose the appropriate data structure or algorithm. Then start coding.
+
+Remember: Understand → Example → Brute Force → Optimize → Code.

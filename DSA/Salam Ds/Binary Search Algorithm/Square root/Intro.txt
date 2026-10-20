@@ -1,3 +1,4 @@
+
 Brute force approach: (See approach 1 img)
 /**
  * @param {number} x
@@ -53,3 +54,23 @@ l=m+1
 }
 return r;
 };
+
+or
+More better finding middle element(see image too)
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function(val) {
+    if (val<2) return val
+        let l=2,r=Math.floor(val/2),m=0;
+while(l<=r){
+m=l+((r-l)/2)
+if (m*m===val){
+    return m
+}else if(m*m>val){
+r=m-1
+}else{
+l=m+1
+
+}
