@@ -1,0 +1,13 @@
+My Solution:
+var findMin = function(arr) {
+    let l=0,r=arr.length-1
+    while(l<r){
+        let m=Math.floor(l+((r-l)/2))
+        if ((arr[m]>arr[r]&& arr[l]>arr[r])|| (arr[m]>arr[r]&& arr[l]<arr[r])){
+            l=m+1
+        }else if((arr[m]<arr[r]&& arr[l]<arr[r])||arr[m]<arr[r]&& arr[l]>arr[r]){
+            r=m
+        }
+    }
+    return arr[r]
+};
