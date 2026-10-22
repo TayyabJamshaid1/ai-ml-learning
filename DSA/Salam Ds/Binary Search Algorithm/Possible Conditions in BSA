@@ -1,0 +1,29 @@
+Case 1:
+while (l<=r){
+   l=m+1
+   r=m-1
+}  
+Possibilities:
+l==r
+ 
+Use cases
+When you have to search for a specific index
+
+Case 2:
+while (l<r){
+   l=m+1
+   r=m
+}   
+Possibilities:
+l<r
+Use cases
+See good/bad version example
+
+Case 3:
+while (l+1<r){  //or l<r-1
+   l=m
+   r=m
+}   
+
+Possibilities:
+l<m<r

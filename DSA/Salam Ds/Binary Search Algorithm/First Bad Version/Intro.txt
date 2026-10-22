@@ -1,0 +1,11 @@
+In a question,it is given that ,versions start from 1 to n.We have to find bad version.
+So we can implement a linear search solution.
+for (let i=1;i<n;i++){
+//check on each number that it is bad version or not by api,when you find first bad version,return it,
+}
+
+Time complexity of linear search solution is O(n)
+
+Problem with this solution is that it is mention that we have to minimum call the api,so in linear search solution ,we have calling it on each iteration,So it is not recommended.As we know,numbers are sorted,unique and in sequence,so another recommended solution is Binary search algorithm
+
+
