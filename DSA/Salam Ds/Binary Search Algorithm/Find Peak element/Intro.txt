@@ -1,0 +1,22 @@
+In a problem ,it is mention that we have to solve it on time complexity of O(logn) which is binary search algorithm.But as we know bsa is only applicable on sorted array and here arrays are not sorted,but still binary search algorithm is still best for it.See the reason below.
+
+In a question,it is mention that our array is allways surrounded by - infinity which means,allways we have atleast one peak will be here.See below example
+  -∞[3]-∞   3 is greater than -∞ so,it is a peak
+  similarly, -∞[3,4]-∞    4 is greater than 3 and -∞ so 4 is a peak
+  
+ In a graph,if you see small portions of an array,they are in a sorted form.So if there is a peak,that means there will be also a lower elements here.So we conclude that if we have peak,then it is must we have small portions of an array which are sorted(See sorted points images)
+ 
+ Solution:
+ var findPeakElement = function(arr) {
+    let l=0,r=arr.length-1;
+    while(l<r){
+        let m=Math.floor(l+((r-l)/2))
+        if (arr[m]>arr[m+1]){
+r=m
+        }else{
+l=m+1
+        }
+    }
+    //after the loop ,r & l becomes equal and meet at same point,so you either return l or m
+    return l;
+};

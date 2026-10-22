@@ -8,4 +8,23 @@ Time complexity of linear search solution is O(n)
 
 Problem with this solution is that it is mention that we have to minimum call the api,so in linear search solution ,we have calling it on each iteration,So it is not recommended.As we know,numbers are sorted,unique and in sequence,so another recommended solution is Binary search algorithm
 
-
+Solution
+var solution = function(isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function(n) {
+        let l=1,r=n
+        while(l<r){
+            let m=Math.floor(l+((r-l)/2))
+            if (!isBadVersion(m)){
+                l=m+1
+            }else{
+                  r=m
+            }
+        }
+          return r
+    };
+  
+};
