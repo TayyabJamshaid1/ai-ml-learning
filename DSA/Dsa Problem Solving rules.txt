@@ -1,4 +1,4 @@
-5 Rules Before Solving Any DSA Problem
+Must follow 5 Rules Before Solving Any DSA Problem
 1. Read Twice: Read the problem carefully. Identify the input, output, and constraints.
 
 2. Understand the Problem: Explain in your own words what the problem is asking you to find or return.
