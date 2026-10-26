@@ -48,6 +48,7 @@ So final recommended solution is below:
  */
 var searchRange = function(arr, target) {
     let l=0,r=arr.length-1,output=[-1,-1];
+    //for finding first element
    while(l<r){
     let m=l+Math.floor((r-l)/2)
     if (arr[m]<target){
@@ -57,6 +58,7 @@ var searchRange = function(arr, target) {
     }
    }
    if (arr[r]==target) output[0]=r
+   //for finding last element
 l=0,r=arr.length-1;
 while(l<r){
         let m=l+Math.ceil((r-l)/2)

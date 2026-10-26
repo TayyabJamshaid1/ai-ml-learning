@@ -1,0 +1,32 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(arr, target) {
+    let l=0,r=arr.length-1,output=[-1,-1];
+   while(l<=r){
+    let m=l+Math.floor((r-l)/2)
+    if (arr[m]<target){
+   l=m+1
+    }else if(arr[m]>target){
+       r=m-1
+    }else{
+        output[0]=m
+         r=m-1 //starting element ko dhonda ha is liye r ko pichay ly aiy
+    }
+   }
+l=0,r=arr.length-1;
+ while(l<=r){
+    let m=l+Math.floor((r-l)/2)
+    if (arr[m]<target){
+   l=m+1
+    }else if(arr[m]>target){
+       r=m-1
+    }else{
+        output[1]=m
+         l=m+1 //ending element ko dhonda ha is liye l ko agay ly aiy
+    }
+   }
+return output
+};
