@@ -1,0 +1,27 @@
+First scenario of solve this problem is brute force approach(linear search approach).
+
+let arr=[0,2,5,7,10,6,3],curr=arr[0]
+for (let i=0;i<arr.length;i++){
+    if (curr<arr[i]){
+       curr=arr[i]
+    }
+}
+console.log(curr)  
+Time complexity is O(n)
+
+Now,Question requirement is we have to it of time complexity of O(logn)
+So,below is the solution
+
+var peakIndexInMountainArray = function(arr) {
+let l=0,r=arr.length-1;
+while(l<r){
+    let m=l+Math.floor((r-l)/2)
+    if (arr[m]<arr[m+1]){
+        l=m+1
+    }else{
+         r=m
+    }
+}
+return r
+
+};
