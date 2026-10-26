@@ -1,0 +1,11 @@
+var singleNonDuplicate = function(nums) {
+    let res=nums.reduce((acc,curr,index)=>{
+acc[curr]=(acc[curr]||0)+1
+return acc
+},{})
+for (let key in res){
+    if (res[key]==1){
+      return Number(key)
+    }
+}
+};
