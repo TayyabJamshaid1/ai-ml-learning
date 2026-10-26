@@ -1,0 +1,71 @@
+Brute force linear search approach:
+let arr=[5,7,7,8,8,8,10],output=[],target=8
+
+for (let i=0;i<arr.length;i++){
+    if (arr[i]==target){
+       if (output.length==0) output.push(i);
+       output[1]=i
+    }
+}
+console.log(output)
+
+My Solution for binary search:
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(arr, target) {
+    let l=0,r=arr.length-1,output=[];
+    while(l<=r){
+        let m=Math.floor(l+((r-l)/2))
+        if(arr[m]==target){
+           if (arr[m-1]==target){
+            output.push(m-1,m)
+           }else{
+             output.push(m,m+1)
+
+           }
+           return output;
+        }else if(arr[m]>target){
+            r=m-1
+        }else{
+            l=m+1
+        }
+    }
+    return [-1,-1]
+};
+
+Error on my solution:
+The logic fails to find the full range in O(log n) time and only checks immediate neighbors of the first match found.
+
+
+So final recommended solution is below:
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(arr, target) {
+    let l=0,r=arr.length-1,output=[-1,-1];
+   while(l<r){
+    let m=l+Math.floor((r-l)/2)
+    if (arr[m]<target){
+   l=m+1
+    }else{
+        r=m
+    }
+   }
+   if (arr[r]==target) output[0]=r
+l=0,r=arr.length-1;
+while(l<r){
+        let m=l+Math.ceil((r-l)/2)
+if (arr[m]>target){
+    r=m-1
+}else{
+    l=m
+}
+}
+   if (arr[r]==target) output[1]=r
+return output
+};
