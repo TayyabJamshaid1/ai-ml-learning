@@ -1,0 +1,36 @@
+Recommended Solution:
+
+var findClosestElements = function(arr, k, x) {
+    let l=0,r=arr.length-1;
+    while(l<r){
+        let m=l+Math.floor((r-l)/2)
+        if (arr[m+k]-x<x-arr[m]){ 
+        l=m+1
+        }else{
+             r=m
+        }
+    }
+let result=[]
+for (let i=r;i<r+k;i++){
+    result.push(arr[i])
+}
+return result;
+    // return arr.slice(r,r+k)
+};
+
+Imp:
+Upr wala aur nichay wala solution bilkul same ha but diff srf if condition mei ha,hum hamesha l=m+1 wali condition ko if mei rkhy gy kyu k is mei hamai sure ha k m include ni ha,is liye m ko apny range/search mei rkhny k liye hum isy else mei rkhty ha,jesy humny upr walay solution mei kiya,nichay wala solution is not recommeded
+
+var findClosestElements = function(arr, k, x) {
+    let l=0,r=arr.length-1;
+    while(l<r){
+        let m=l+Math.floor((r-l)/2)
+        if (arr[m+k]-x>x-arr[m]){
+         r=m
+        }else{
+l=m+1
+        }
+    }
+
+    return arr.slice(r,r+k)
+};
