@@ -1,3 +1,5 @@
+Brute force Approach:
+
 var singleNonDuplicate = function(nums) {
     let res=nums.reduce((acc,curr,index)=>{
 acc[curr]=(acc[curr]||0)+1
@@ -9,3 +11,6 @@ for (let key in res){
     }
 }
 };
+
+Time Complexity is O(n) and space complexity is also O(n)
+Now,in question,it is mention that solve it with Time Complexity of O(logn) and space complexity with O(1)
