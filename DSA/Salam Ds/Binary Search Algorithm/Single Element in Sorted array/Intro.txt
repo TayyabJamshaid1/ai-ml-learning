@@ -14,3 +14,34 @@ for (let key in res){
 
 Time Complexity is O(n) and space complexity is also O(n)
 Now,in question,it is mention that solve it with Time Complexity of O(logn) and space complexity with O(1)
+
+Solution:
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNonDuplicate = function(arr) {
+   let l=0,r=arr.length-1
+   while(l<=r){
+    let checkOdd=0;
+    let m=l+Math.floor((r-l)/2)
+    if (arr[m]==arr[m-1]){
+        checkOdd=m-1-l
+       if (checkOdd%2==1){
+        r=m-2
+       }else{
+        l=m+1
+       }
+    }else if (arr[m]==arr[m+1]){
+      checkOdd=r-m-1
+    if (checkOdd%2==1){
+        l=m+2
+    }else{
+        r=m-1
+    }
+    }else{
+        return arr[m]
+    }
+   }
+   return arr[r]
+};
