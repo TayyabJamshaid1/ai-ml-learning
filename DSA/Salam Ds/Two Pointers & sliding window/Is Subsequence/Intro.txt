@@ -1,0 +1,32 @@
+My SOlution:
+
+var isSubsequence = function(s, t) {
+    let i=j=0;
+    while(j<s.length && i<t.length){
+        if (s[j]==t[i]){
+            ++i;
+            ++j
+        }else{
+            ++i
+        }
+    }
+    if (j==s.length){
+        return true
+    }else{
+        return false
+    }
+};
+
+Recommended Solution:
+var isSubsequence = function(s, t) {
+    let i=j=0;
+    while( i<t.length){
+        if (s[j]==t[i]){
+            ++j
+        }
+         ++i
+    }
+  return j==s.length
+};
+
+Time complexity is O(n)
