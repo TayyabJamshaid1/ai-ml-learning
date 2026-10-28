@@ -1,0 +1,31 @@
+My Solution: It was same like without sorted array,i just increase the index value by 1
+var twoSum = function(arr, target) {
+    let map={},output=[];
+for (let i=0;i<arr.length;i++){
+    map[arr[i]]=i
+}
+for (let i=0;i<arr.length;i++){
+    let found=target-arr[i]
+    if (map[found] && map[found] !=i ){
+       return[i+1,map[found]+1]   // here i just add the 1,else all the solution are same as before
+       
+    }
+}
+}; 
+
+But in question it is mention that we dont have to use extra space,in upper solution,we use map object as a extra space,so we have to do it without using any extra space.So,we will use two pointers approach,it will be only applicable when arr is sorted .
+
+Recommended Solution:
+var twoSum = function(arr, target) {
+    let i=0,j=arr.length-1;
+   while (i<j){
+    let sum=arr[i]+arr[j]
+    if (sum>target){
+        --j
+    }else if(sum<target){
+        ++i
+    }else{
+        return [i+1,j+1]
+    }
+   }
+};
