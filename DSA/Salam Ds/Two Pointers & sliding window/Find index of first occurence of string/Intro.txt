@@ -2,3 +2,22 @@ When you have to search more then one character,that approach/way is known as sl
 let suppose,we have given two strings ,h & n,we have to find that did n string is avaiable in h,if yes,return the starting index else return -1
 Now we will take below approach,suppose h=saturdaysad & n=sad,we have to check that n is avaiable in h or not.So , we know the length of n and we will check continuously  n element in h ,by below stragedy
 First we check, sat,then atu, then tur,urd,rda,day and finally sad string appears which we match with n string.
+
+Solution:
+
+var strStr = function(haystack, needle) {
+  let n=haystack.length;
+  let m=needle.length, j=0;
+
+  for (let i=0;i<=n-m;i++){
+     for (j=0;j<m;j++){
+        if (haystack[i+j]!==needle[j]){
+            break;
+        }
+     }
+     if (j==m){
+        return i //because i index wo index ha jis sy needle string start huti ha
+     }
+  }
+  return -1
+};
