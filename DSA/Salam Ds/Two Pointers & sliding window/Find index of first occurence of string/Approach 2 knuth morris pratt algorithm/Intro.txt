@@ -11,11 +11,18 @@ Possible prefixes : "","o","on","oni","onio","onion","onions"
 
 Proper Prefix: All of the prefixes except the element it self.(ye sab "","o","on","oni","onio","onion") prefixes hu gy except the element itself("onions")
 
+Example 2:
+For the same string, "leeto":
+Prefixes: l, le, lee, leet
+
 b)Suffix
 It starts from the last character till the first character.  It can be any length. For example,Suffix of onions is below
 Possible Suffixes: "","s","ns","ons","ions","nions","onions"
 
 Proper Suffix: All of the Suffixes except the element it self.(ye sab "","s","ns","ons","ions","nions") Suffixes hu gy except the element itself("onions")
+Example 2:
+For the same string, "leeto":
+Suffixes: o, to, eto, eeto
 
 Now ,most important concept appears.
 LPS (Longest Prefix Suffix)
@@ -23,6 +30,15 @@ LPS (Longest Prefix Suffix)
 See Lps examples in images
 
 The lps array is very useful.It will reduce checking once again from the start.It protects us to search again from the start.It will reduce a burden of checking string again and again for the same string
+
+
+IMPPP Example 3:
+Now apply this to string "leeto" 
+- Proper prefixes: l, le,lee,leet
+- Proper suffixes: o,to,eto,eeto
+
+Now logically , if there is no common strings in prefixes & suffixes ,it means there lps will be all 0
+lps array will be =[0,0,0,0,0]
 
 Now question is divided into two parts
 
