@@ -1,0 +1,71 @@
+knuth morris pratt algorithm (String Searching Algorithm):
+
+Why we use it:
+In previous question,we solve the same problem by dividing them into ranges.Means,let suppose,m=onionionsky n=onions,i have to find n into m,so total 4 operations can be possible( onioni,nioni,ionion,onions,nionsk,ionsky).Each operation will run atleast 6 times because of n length.Means Total operations will be run 6X6=36 times.This approach takes a time complexity of O(mXn).
+
+Now we want that if we check a character once time,we do not need to check it once again.For this puurpose,we have to implement some processes on searching string(in upper example,searching string is n).Here two concepts come
+
+a)Prefix     
+It starts from the first character till the last character.  It can be any length. For example,prefix of onions is below
+Possible prefixes : "","o","on","oni","onio","onion","onions"
+
+Proper Prefix: All of the prefixes except the element it self.(ye sab "","o","on","oni","onio","onion") prefixes hu gy except the element itself("onions")
+
+b)Suffix
+It starts from the last character till the first character.  It can be any length. For example,Suffix of onions is below
+Possible Suffixes: "","s","ns","ons","ions","nions","onions"
+
+Proper Suffix: All of the Suffixes except the element it self.(ye sab "","s","ns","ons","ions","nions") Suffixes hu gy except the element itself("onions")
+
+Now ,most important concept appears.
+LPS (Longest Prefix Suffix)
+"Length of Longest prefix is also a suffix"
+See Lps examples in images
+
+The lps array is very useful.It will reduce checking once again from the start.It protects us to search again from the start.It will reduce a burden of checking string again and again for the same string
+
+Now question is divided into two parts
+
+1-Create/Build a lps array
+2-Then search for a string
+
+Solution:
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+    //step 1 : Build the lps array
+let i=0,j=1,m=haystack.length,n=needle.length,lps=[0];
+while(j<n){
+    if (needle[i]==needle[j]){
+        lps[j]=i+1;
+        ++i;++j
+    }else{
+        if (i==0){
+             lps[j]=0; 
+             ++j
+        }else{
+            i=lps[i-1]
+        }
+    }
+}
+//step 2 : Check for string that needle is avaiable in  haystack or not
+i=j=0;
+while (i<m){
+if (haystack[i]==needle[j]){
+    ++i;++j
+}else{
+    if (j==0){
+        ++i
+    }else{
+      j=lps[j-1]  
+    }
+}
+if (j==n){
+    return i-j
+}
+}
+return -1;
+};
