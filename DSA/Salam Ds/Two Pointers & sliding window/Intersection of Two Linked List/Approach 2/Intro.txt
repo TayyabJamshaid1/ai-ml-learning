@@ -1,0 +1,45 @@
+see image of steps
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+   let n=0;
+   let p1=headA,p2=headB
+//step 1 : check length of head 1
+   while (p1){
+    ++n;
+    p1=p1.next
+   }
+   //step 1 : check length of head 2
+
+  let m=0;
+   while (p2){
+    ++m;
+    p2=p2.next
+   }
+
+//step 3: shuffle heads if headA has larger number of nodes
+   if (n>m){
+    let temp=headA;
+    headA=headB;
+    headB=temp;
+   }
+
+//step 4: make both linked list at same point 
+  let diff=Math.abs(m-n)
+for (let i=0;i<diff;++i){
+    headB=headB.next
+}
+//step 5: CHeck intersection point
+ p1=headA,p2=headB
+while(p1!=p2){
+    p1=p1.next;
+    p2=p2.next
+}
+return p1;
+
+
+};
