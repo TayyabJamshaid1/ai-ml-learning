@@ -1,0 +1,14 @@
+var maxArea = function(arr) {
+    let i=0,j=arr.length-1,area=0;
+    while(i<j){
+let res=Math.min(arr[i],arr[j])*(j-i)
+    area=Math.max(res,area)
+      if (arr[i]<arr[j]){
+        ++i;
+      }else{
+        --j
+      }
+    }
+
+    return area
+};
