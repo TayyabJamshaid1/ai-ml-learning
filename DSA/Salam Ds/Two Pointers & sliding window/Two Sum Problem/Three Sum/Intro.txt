@@ -1,0 +1,63 @@
+First understand (Two Sum-Sorted input) problem then proceed below 
+
+var threeSum = function(arr) {
+
+    // Step 1: Sort the array so we can use two pointers
+    arr.sort((a, b) => a - b);
+
+    // Store all unique triplets
+    let res = [];
+
+    // Step 2: Fix one element and find two other elements
+    for (let i = 0; i < arr.length; ++i) {
+
+        // Skip duplicate fixed elements to avoid duplicate triplets
+        if (arr[i] != arr[i - 1]) {
+            twoSum(arr, i, res);
+        }
+    }
+
+    return res;
+};
+
+var twoSum = function(arr, x, res) {
+
+    // Step 3: Start left pointer after the fixed element
+    let i = x + 1;
+
+    // Start right pointer at the end
+    let j = arr.length - 1;
+
+    // Step 4: Search while both pointers have not crossed
+    while (i < j) {
+
+        // Calculate the sum of all three elements
+        let sum = arr[i] + arr[j] + arr[x];
+
+        if (sum < 0) {
+
+            // Sum is too small, move left pointer forward
+            ++i;
+
+        } else if (sum > 0) {
+
+            // Sum is too large, move right pointer backward
+            --j;
+
+        } else {
+
+            // Sum is zero, so we found a valid triplet
+            res.push([arr[i], arr[j], arr[x]]);
+
+            // Move both pointers to search for another triplet
+            ++i;
+            --j;
+
+            // Skip duplicate left elements to avoid repeating triplets
+            while (i < j && arr[i] == arr[i - 1]) {
+                ++i;
+            }
+        }
+    }
+};
+
