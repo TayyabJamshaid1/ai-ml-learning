@@ -1,0 +1,6 @@
+Whenever you have to find a substring in your question,allways think about a sliding window.
+First i have to use a sliding window.Then i have to check that map obj is valid or not.So our program contain 2 algorithms/stages
+
+a)Sliding a window
+b)Check if map is valid
+
