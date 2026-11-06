@@ -1,0 +1,21 @@
+Whenever you have to find a substring in your question,allways think about a sliding window
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    let i=j=0,map={},max=0
+    while(j<s.length){
+        //check that if character is already avaiable in map and it is on right side,means duplicated character index obviously  greater then i,verify it also
+        if (map[s[j]] != undefined && map[s[j]]>=i){
+            i=map[s[j]]+1
+         } 
+
+        map[s[j]]=j
+        let currentIterationLength=j-i+1 //max string calculation formula
+        max=currentIterationLength>max?currentIterationLength:max
+        ++j;
+    }
+    return max
+};
