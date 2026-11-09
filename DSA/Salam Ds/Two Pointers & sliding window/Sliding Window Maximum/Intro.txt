@@ -15,3 +15,32 @@ var maxSlidingWindow = function(nums, k) {
     }
     return maxArray
 };
+
+Now,for solve this we have to understand deque/Monotonic decreasing deque logic.As we know,quene is first come and first out.Here element can enter/push form right side and shift/remove out from left side but deque is a datastructure where you can also push element from the back and remove element from the front.Here you can remove element from the front and pop the element from the last also.You can also know which value is avaiable in front and back.
+
+So,conclusion is ,In deque/Monotonic decreasing deque,we can
+a)Push element at last
+b)Pop element from both ends front and back
+c)We can check first and last element values
+
+=>Here in this approach,we allways have to maintain maximum value at the front of the stack
+
+My SOlution
+var maxSlidingWindow = function(arr, k) {
+    let i=j=0,res=[],deque=[]
+    while(j<arr.length){
+        while (deque.length>0 && arr[j]>deque[deque.length-1]){
+            deque.pop();
+        }
+        deque.push(arr[j])
+        if (j>=k-1){
+            res.push(deque[0])
+            if (arr[i]==deque[0]){
+                deque.shift()
+            }
+            ++i
+        }
+        ++j
+    }
+    return res;
+};
