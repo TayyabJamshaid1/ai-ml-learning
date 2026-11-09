@@ -1,0 +1,17 @@
+My Brute force solution approach: Not recommended for large nums array,good for small arrays
+
+var maxSlidingWindow = function(nums, k) {
+    if (nums.length==1) return nums
+    let i=0,j=k-1,maxArray=[]
+    while(j<nums.length){
+        let maxNumber=-Infinity
+        for (let m=i;m<=j;++m){
+            maxNumber=Math.max(maxNumber,nums[m])
+        }
+        
+        maxArray.push(maxNumber)
+        ++i;++j
+       
+    }
+    return maxArray
+};
