@@ -1,0 +1,42 @@
+
+var checkInclusion = function(s1, s2) {
+    let hashW = Array(26).fill(0); // Frequency of characters in current window
+    let hashM = Array(26).fill(0); // Frequency of characters in s1
+
+    let window_length = s1.length;
+
+    // Build frequency maps for s1 and the first window of s2
+    for (let i = 0; i < window_length; i++) {
+        ++hashW[s2.charCodeAt(i) - 97];
+        ++hashM[s1.charCodeAt(i) - 97];
+    }
+
+    let i = 0, j = window_length - 1; // i = left, j = right of window
+
+    // Slide the window until the end of s2
+    while (j < s2.length) {
+
+        // If both frequency maps match, a permutation is found
+        if (isHashedConfirmed(hashW, hashM)) {
+            return true;
+        } else {
+            --hashW[s2.charCodeAt(i) - 97]; // Remove outgoing character
+            ++i;                            // Move window's left pointer
+            ++j;                            // Move window's right pointer
+            ++hashW[s2.charCodeAt(j) - 97]; // Add incoming character
+        }
+    }
+
+    return false; // No window matched s1
+};
+
+// Check whether both frequency maps contain the same character counts
+var isHashedConfirmed = function(hashW, hashM) {
+    for (let i = 0; i < 26; i++) {
+        if (hashW[i] !== hashM[i]) {
+            return false; // At least one character count is different
+        }
+    }
+    return true; // All character counts match
+};
+
