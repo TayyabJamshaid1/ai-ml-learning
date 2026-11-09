@@ -44,3 +44,6 @@ var maxSlidingWindow = function(arr, k) {
     }
     return res;
 };
+
+Time complexity is O(n)
+SPace complexity is O(k) because it does  goes/store beyond k length
