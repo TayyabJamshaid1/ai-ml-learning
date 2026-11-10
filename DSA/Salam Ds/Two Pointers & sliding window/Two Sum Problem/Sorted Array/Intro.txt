@@ -29,3 +29,5 @@ var twoSum = function(arr, target) {
     }
    }
 };
+Time complexity is O(n)
+Space compelxity is O(1)
