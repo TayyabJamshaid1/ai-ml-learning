@@ -20,13 +20,13 @@ var isSubsequence = function(s, t) {
 Recommended Solution:
 var isSubsequence = function(s, t) {
     let i=j=0;
-    while( i<t.length){
-        if (s[j]==t[i]){
-            ++j
+    while( j<t.length){
+        if (s[i]==t[j]){
+            ++i
         }
-         ++i
+         ++j
     }
-  return j==s.length
+  return i==s.length
 };
 
 Time complexity is O(n)
