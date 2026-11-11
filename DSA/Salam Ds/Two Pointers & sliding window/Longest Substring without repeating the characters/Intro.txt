@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function(s) {
     let i=j=0,map={},max=0
     while(j<s.length){
         //check that if character is already avaiable in map and it is on right side,means duplicated character index obviously  greater then i,verify it also
-        if (map[s[j]] != undefined && map[s[j]]>=i){
+        if (map[s[j]] != undefined && map[s[j]]>=i){ // >= is used because if first character is repeated ,its value is 0,so thats why we use = 
             i=map[s[j]]+1
          } 
 
