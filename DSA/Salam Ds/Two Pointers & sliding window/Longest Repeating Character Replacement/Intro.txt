@@ -9,6 +9,9 @@ var characterReplacement = function(s, k) {
     map[s[i]]=1;
     while(j<s.length){
         if (isWindowValid(map,k)){
+          //calculate length and store it in maxCount
+       // let length=j-i+1
+       // maxCount=Math.max(maxCount,length)
       maxWindow=Math.max(maxWindow,j-i+1)
       ++j;
       map[s[j]]=(map[s[j]]||0)+1
