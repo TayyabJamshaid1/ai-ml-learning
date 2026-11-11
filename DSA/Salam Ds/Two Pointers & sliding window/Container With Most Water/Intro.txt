@@ -1,9 +1,12 @@
+Here we will use greedy approach.Greedy approach can be defined as we are using two pointers(i,j).i on start and j on last.On both pointers,the short value will be ignored and that side pointer will be increased. Main reason to use this approach is  shorter line impacts the area ,we only have to focus on bigger lines.Bigger lines cover large area
+
+
 var maxArea = function(arr) {
     let i=0,j=arr.length-1,area=0;
     while(i<j){
 let res=Math.min(arr[i],arr[j])*(j-i)
     area=Math.max(res,area)
-      if (arr[i]<arr[j]){
+      if (arr[i]<arr[j]){  //greedy approach is use here
         ++i;
       }else{
         --j
