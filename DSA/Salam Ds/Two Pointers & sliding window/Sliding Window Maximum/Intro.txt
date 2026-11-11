@@ -35,7 +35,7 @@ var maxSlidingWindow = function(arr, k) {
         deque.push(arr[j])
         if (j>=k-1){
             res.push(deque[0])
-            if (arr[i]==deque[0]){
+            if (arr[i]==deque[0]){ //we need this condition because We need to ensure that our deque contains only elements that belong to the current sliding window. Otherwise, an element that has already left the window could incorrectly become the maximum.
                 deque.shift()
             }
             ++i
