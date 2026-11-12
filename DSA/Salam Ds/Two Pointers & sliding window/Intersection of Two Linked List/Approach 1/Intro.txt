@@ -1,3 +1,4 @@
+Solution:
 var getIntersectionNode = function(headA, headB) {
     let setData=new Set()
     while (headA){

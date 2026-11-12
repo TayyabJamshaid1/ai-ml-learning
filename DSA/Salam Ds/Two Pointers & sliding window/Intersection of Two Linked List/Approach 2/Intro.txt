@@ -1,10 +1,6 @@
 see image of steps
 
-/**
- * @param {ListNode} headA
- * @param {ListNode} headB
- * @return {ListNode}
- */
+
 var getIntersectionNode = function(headA, headB) {
    let n=0;
    let p1=headA,p2=headB
