@@ -1,6 +1,6 @@
 knuth morris pratt algorithm (String Searching Algorithm):
 
-Why we use it:
+=>Why we use it:
 In previous question,we solve the same problem by dividing them into ranges.Means,let suppose,m=onionionsky n=onions,i have to find n into m,so total 4 operations can be possible( onioni,nioni,ionion,onions,nionsk,ionsky).Each operation will run atleast 6 times because of n length.Means Total operations will be run 6X6=36 times.This approach takes a time complexity of O(mXn).
 
 Now we want that if we check a character once time,we do not need to check it once again.For this puurpose,we have to implement some processes on searching string(in upper example,searching string is n).Here two concepts come

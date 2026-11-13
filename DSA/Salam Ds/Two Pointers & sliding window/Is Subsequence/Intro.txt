@@ -1,4 +1,4 @@
-My SOlution:
+My Solution:
 
 var isSubsequence = function(s, t) {
     let i=j=0;
