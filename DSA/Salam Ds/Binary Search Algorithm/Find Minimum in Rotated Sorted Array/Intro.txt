@@ -26,3 +26,16 @@ if (arr[m]>arr[r]){
   }  
   return arr[l];
 };
+
+why we cant think like below logic
+var findMin = function(arr) {think t
+  let l=0,r=arr.length-1;
+  while(l<r){
+let m=l+Math.floor((r-l)/2)
+if (arr[m]<arr[l]){
+    l=m
+}else{
+    r=m-1
+}
+  }  
+  it fails because it skips the minimum number,so allways should think towards right means (r=m) especially if you have to find in array
