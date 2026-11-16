@@ -2,7 +2,7 @@ Whenever you have to find a substring in your question,allways think about a sli
 First i have to use a sliding window.Then i have to check that map obj is valid or not.So our program contain 2 algorithms/stages
 
 a)Sliding a window
-b)Check if map is valid
+b)Check if map is valid or not
 
 var characterReplacement = function(s, k) {
     let i=j=0,map={},maxWindow=0;
@@ -35,4 +35,5 @@ let res=totalSum-maxCount<=k;
 return res
 }
 
+Time & Space complexity:
 Time complexity is O(n),space complexity is O(1)
