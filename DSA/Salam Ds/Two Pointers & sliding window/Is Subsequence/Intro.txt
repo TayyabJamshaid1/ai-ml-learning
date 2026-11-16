@@ -1,5 +1,5 @@
 My Solution:
-
+//my own apparosds assa asassa asasas asassa  asas   eew
 var isSubsequence = function(s, t) {
     let i=j=0;
     while(j<s.length && i<t.length){
