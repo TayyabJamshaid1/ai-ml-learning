@@ -1,3 +1,6 @@
+Problem is we have to  find min value in stack by using time complexity of O(1).E.g: [1,2,6,8] min value is 1 ,we have to find it by using stack methods and using time complexity of O(1) instead of O(n)
+
+
 My Solution:
 QUestion requirement is I have to solve it O(1) time complexity but i solve it by O(n) .According to leet code,Your algorithm gives the right answer — it's just too slow. LeetCode isn't saying your answer is wrong; it's saying it took too long to compute. That's why the error is "Time Limit Exceeded" and not "Wrong Answer."
 
