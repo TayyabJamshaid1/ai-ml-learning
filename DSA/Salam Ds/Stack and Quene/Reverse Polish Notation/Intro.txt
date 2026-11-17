@@ -2,6 +2,7 @@ Whenever a problem says,we have to work on last 2 /3/4 values,stack should come 
 
 Reverse polish notation is suppose you are given 3 4 + that means 3+4, 3 is first element ,4 is second element,mathematical operation you need to do is + which is third element.So if you have to write a+b,so in reverse polish notation,it will be ab+
 
+Important: Truncating toward zero means removing the decimal portion without rounding,means if on division,answer appears on 0.045 then it we will consider it as 0
 
 Solution:
 /**
