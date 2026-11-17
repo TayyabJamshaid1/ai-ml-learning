@@ -29,49 +29,38 @@ In interviews if they ask about Next greater element or Next smallest element or
 Solution 2 My Solution:
 
 var nextGreaterElement = function(subsetArray, arr) {
-    let res=[], stack = [], nge = {};
-    for (let i = arr.length - 1; i >= 0; i--) {
-    if (i == arr.length - 1) {
-        nge[arr[i]] = -1;
-        stack.push(arr[i])
-    } else {
-        let top = stack[stack.length - 1]
-        if (arr[i] < top) {
-            nge[arr[i]] = top;
-            stack.push(arr[i])
+   let map={},stack=[arr[arr.length-1]],n=arr.length,finalResponse=[];
+    map[arr[arr.length-1]]=-1
+  
+    for (let i=n-2;i>=0;--i){
 
-        } else if (arr[i] > top) {
-            let found = false;
-            let n = stack.length
-            for (let j = 0; j < n; j++) {
-
-                let popElement = stack.pop()
-
-                if (popElement && arr[i] < popElement) {
-
-                    found = true;
-                    nge[arr[i]] = popElement;
-                    stack.push(popElement)
-
-                      stack.push(arr[i])
-                    break;
+        if (arr[i]<stack[stack.length-1]){           
+            map[arr[i]]=stack[stack.length-1]
+             stack.push(arr[i])
+        }else{
+            let isMatched=false,m=stack.length;
+            for(let j=0;j<m;++j){
+                let popElement=stack.pop()
+                if (popElement>arr[i]){
+                      stack.push(popElement)
+                 stack.push(arr[i])
+            map[arr[i]]=popElement
+            isMatched=true;
+            break
                 }
             }
-            if (!found) {
-                nge[arr[i]] = -1;
-                   stack.push(arr[i])
-
+            if (!isMatched){
+                stack.push(arr[i])
+            map[arr[i]]=-1
             }
-
         }
+          
+
     }
-}
-for (let i=0;i<subsetArray.length;i++){
-    if (nge[subsetArray[i]]){
-   res.push(nge[subsetArray[i]])
+    for (let i=0;i<nums1.length;i++){
+       finalResponse.push(map[nums1[i]])
     }
-}
-return res
+    return finalResponse
 };
 
 --------------------------
