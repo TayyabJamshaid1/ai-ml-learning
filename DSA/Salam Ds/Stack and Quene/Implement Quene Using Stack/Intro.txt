@@ -63,3 +63,4 @@ Important:
 
 2-Time Complexity:
 In an average case,it looks like pop and peek take iteration n times but in reality,we do not shuffling this elements allways,only for first time when s2 is empty,so instead of O(n) its time complexity is O(1)
+-----------------------------

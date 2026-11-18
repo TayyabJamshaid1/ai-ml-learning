@@ -1,4 +1,5 @@
 In this problem,we will try to find out the difference between indexes thats why we will push index in stack while in previous problem,we push values in stack but this time we will push indexes in stack because we have to find out the difference between greater value index- current value index,by that result  we will know after how many iterations,greater number appears.
+
 Remember,is mei hamai difference calculate krna ha ,is liye hum indexes ka use kary gy jab k previous problem mei hamai next greater value ko check krna tha,is liye waha values ly thi,waha difference ki zrort ni thi
 
 
