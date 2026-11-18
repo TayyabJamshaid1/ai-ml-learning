@@ -12,6 +12,8 @@ Count the character until you reach a space
 
 My Logic:
 
+Solution 1:
+
 let str="  Try clicking the Run button   ",count=0,n=str.length-1
 while(str[n]==" "){
   console.log(n,"n in loop")
@@ -25,6 +27,23 @@ if (str[i]==" "){
   
 }
 console.log(count)   
+
+Solution 2:
+
+var lengthOfLastWord = function(s) {
+
+let count=0;
+let n=s.length
+for (let i=n-1;i>=0;--i){
+if (s[i]==" " && count==0){
+continue
+}else if (s[i]!=" "){
+++count}else{
+
+break}
+}
+return count
+};
 
 Recommended Logic:
 
