@@ -4,7 +4,20 @@ let str="325476";
 after eliminating 6,it become the highest possible odd number automatically 32547
 
 
-Solution:
+
+My Approach:
+var largestOddNumber = function(num) {
+    let arr=num.split(""),maxOdd=0
+    let n=arr.length
+    for (let i=n-1;i>=0;i--){
+        if (arr[i]%2==1){
+            return arr.slice(0,i+1).join("")
+        }
+    } 
+    return ""
+};
+
+akshay Solution:
 let str="325476";
 
 function largePossibleOddNumber(str){
