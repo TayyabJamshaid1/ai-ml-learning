@@ -1,3 +1,19 @@
+My Approach:
+var groupAnagrams = function(strs) {
+    let map={}
+    for (let i=0;i<strs.length;++i){
+        let item=[...strs[i]]
+  .sort((a, b) => a.localeCompare(b))
+  .join('');
+        if (!map[item]){
+            map[item]=[strs[i]]
+        }else{
+            map[item].push(strs[i])
+        }
+    }
+return Object.values(map)
+};
+
 Approach 1:
 let arr=["eat","ate","tea","tan","bat","nat"],map={}
 
