@@ -1,3 +1,6 @@
+
+
+
 let s="far",t="boo"
 
 function isIsomorphic(s, t) {
@@ -11,7 +14,7 @@ function isIsomorphic(s, t) {
         let charT = t[i];
 
         if (
-            (map[charS] && map[charS] !== charT) ||
+            (map[charS] && map[charS] !== charT) ||  //agr phly sy he element mujood ha aur us ki value b dosri string sy different ha tu its mean it is not isomorphic
             (map2[charT] && map2[charT] !== charS)
         ) {
             return false;
