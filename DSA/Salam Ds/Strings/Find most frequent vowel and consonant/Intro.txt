@@ -1,4 +1,4 @@
-My Solution:
+My Solution 1:
 
 let str="successes",obj={},vowel="aeiou",vowelMax=0,consoMax=0
 
@@ -20,8 +20,33 @@ for (let key in obj){
 }
 let res=consoMax+vowelMax
 console.log(res)
+
 -----------------------------------------------------
 More optimized Approach:
+Approach 1:
+var maxFreqSum = function(s) {
+  let vowel=["a","e","i","o","u"],mapVowel={},mapConso={},maxVowel=0,maxconsonant=0
+  for (let i=0;i<s.length;i++){
+     if (vowel.includes(s[i])){
+        mapVowel[s[i]]=(mapVowel[s[i]]||0)+1
+     }else{
+        mapConso[s[i]]=(mapConso[s[i]]||0)+1
+
+     }
+  }
+  if (Object.values(mapVowel).length>0){
+   maxVowel=Math.max(...Object.values(mapVowel))
+  }
+  if (Object.values(mapConso).length>0){
+     maxconsonant=Math.max(...Object.values(mapConso))
+  }
+   
+    let sum=Number(maxconsonant)+Number(maxVowel)
+   return sum
+ 
+};
+-----------
+Approach 2:More better
 let str="successes",obj={},vowel="aeiou",vowelMax=0,consoMax=0
 
 for (let i=0;i<str.length;i++){                      //part 1
