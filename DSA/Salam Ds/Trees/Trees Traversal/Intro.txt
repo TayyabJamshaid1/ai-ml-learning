@@ -16,3 +16,11 @@ First we have to traverse the left sub tree,then we will go to the root,then we 
 ----------------------------
 
 Post order traversal: (post means ,root is in the right)
+
+First we have to traverse the left sub tree,then we will traverse the right sub tree,then we will go to the root
+ left traverse whole ===>  right traverse whole ===> root 
+ 
+ ------------------------------
+ Level traversal:
+ 
+ We have to traverse level by level
