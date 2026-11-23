@@ -1,0 +1,18 @@
+Preorder traversal (pre means root is first)
+First of all go to your parent root,then traverse the whole left node and then traverse the whole right node.Once we visit the root,then we move to left node ,after whole traversal, move to right node
+parent(root) ===> left traverse whole ===> right traverse whole
+
+So first traverse the root node,then traverse the left sub-tree,then in left sub tree, first traverse  the left sub-tree root and then traverse it all and then traverse the right subtree ,then  traverse  the right sub-tree root and then traverse it all (see image Pre-order traversal run time idea.png)
+
+You can say ,it is a kind of recursion
+
+----------------
+
+In order traversal: (in means ,root is in the center)
+First we have to traverse the left sub tree,then we will go to the root,then we will traverse the right sub tree
+
+ left traverse whole ===>root ===> right traverse whole
+ 
+----------------------------
+
+Post order traversal: (post means ,root is in the right)

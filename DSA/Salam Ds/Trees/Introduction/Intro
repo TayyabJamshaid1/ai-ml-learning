@@ -24,4 +24,15 @@ a)File Systems( in our laptops,data is distributed like trees,like we have deskt
 b)Html Dom
 c)Databases
 d)Hierarchial data
-e)Virtual dom in react
+e)Virtual dom in react 
+-------------------------
+Trees and recursion go hand in band.
+--------------------
+Important terminologies:
+Leaf:
+The nodes which do not have children is known as leaf
+
+Height:
+The number of levels starting from 0(root) to last (leaf)
+
+A smaller tree inside a tree is known as subtree
