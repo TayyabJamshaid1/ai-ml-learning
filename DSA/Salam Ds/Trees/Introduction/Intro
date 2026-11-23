@@ -1,0 +1,27 @@
+Trees:
+Properties:
+
+Trees are non linear data structures.It has different kind of nodes which are stored separately(Arrays are linear data structure which store values one after the other)
+
+Trees are also known as hierarchial datastructures: A single node inside a tree can be connected to various other nodes.It is known as hierarchy
+
+Each node inside a  tree has 0 or more than 0 children
+The node have only one parent except root(starting point of tree/the most top level of tree)
+
+Nodes cannot have cycles(it means,there will be only parent of each node,not more then 1,if it have more then 1 parent,it will become a cycle which is not possible in tree)
+
+If we have to travel one node to another node,it will have exactly 1 path (see one travel path image)
+
+No 2 parents can have same child (exactly same as each node has only 1 parent)
+
+------------------------------------------------------
+Why we need trees when we have arrays and Linked list?
+Not every type of data can be stored inside an array or inside linked list.Suppose,we have to store hierarchial data,then trees are the best data structure for that
+
+Examples:
+a)File Systems( in our laptops,data is distributed like trees,like we have desktop folder ,inside that we have document & download folder,so file system is best example of trees)
+
+b)Html Dom
+c)Databases
+d)Hierarchial data
+e)Virtual dom in react
