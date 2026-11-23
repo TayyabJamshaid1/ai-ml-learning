@@ -45,7 +45,7 @@ var maxFreqSum = function(s) {
    return sum
  
 };
------------
+-------------------------------------
 Approach 2:More better
 let str="successes",obj={},vowel="aeiou",vowelMax=0,consoMax=0
 
