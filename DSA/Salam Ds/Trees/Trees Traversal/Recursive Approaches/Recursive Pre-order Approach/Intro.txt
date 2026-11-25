@@ -1,0 +1,11 @@
+var preorderTraversal = function(root) {
+let data=[]
+function traverse(curr){
+    if (!curr) return;
+    data.push(curr.val)
+    traverse(curr.left) //in js as we know,every thing run line by line ,so it will execute all left recursion ,after completion,it will move to below right recursion
+    traverse(curr.right)
+}
+traverse(root)
+return data
+};
